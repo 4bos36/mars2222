@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+    }
+}
+
+dependencies {
+    compile "com.google.android.gms:play-services-games:15.0.1"
+    compile "com.google.android.gms:play-services-plus:15.0.1"
+    compile "com.google.android.gms:play-services-auth:16.0.0"
+}
+
+android {
+    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+    }
+}
+
+

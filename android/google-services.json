@@ -1,0 +1,58 @@
+{
+  "project_info": {
+    "project_number": "394611475334",
+    "firebase_url": "https://mars-2222-87448695.firebaseio.com",
+    "project_id": "mars-2222-87448695",
+    "storage_bucket": "mars-2222-87448695.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394611475334:android:b868c9918db689e1",
+        "android_client_info": {
+          "package_name": "studio.rashka.mars2222"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394611475334-883qmickbk4027hp0sr30et74olnr98r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "studio.rashka.mars2222",
+            "certificate_hash": "f7440fa4637d34d84b869d81bebcfb24819ab004"
+          }
+        },
+        {
+          "client_id": "394611475334-gibd7jfakdlispku31f6tgfg1lmrgdrs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZLrZ0jgt2NFLncXD8951cdfnyRe0skNc"
+        },
+        {
+          "current_key": "AIzaSyDoVtNkiVED2OiikWXAXd6tVvMZ1zgZ0_8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394611475334-gibd7jfakdlispku31f6tgfg1lmrgdrs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

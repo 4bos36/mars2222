@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_id">394611475334</string>
+
+    <string name="achievementInitialCapital">CgkIhoe1hb4LEAIQDA</string>
+    <string name="achievementSuccessfulInvestment">CgkIhoe1hb4LEAIQDQ</string>
+    <string name="achievementYoungBusinessman">CgkIhoe1hb4LEAIQDg</string>
+    <string name="achievementExcellentBusinessman">CgkIhoe1hb4LEAIQDw</string>
+    <string name="achievementMyFirstMillion">CgkIhoe1hb4LEAIQEA</string>
+
+    <string name="achievementBum">CgkIhoe1hb4LEAIQHw</string>
+    <string name="achievementSpender">CgkIhoe1hb4LEAIQIA</string>
+    <string name="achievementStandStill">CgkIhoe1hb4LEAIQKA</string>
+    <string name="achievementBorrower">CgkIhoe1hb4LEAIQKQ</string>
+    <string name="achievementOfficial">CgkIhoe1hb4LEAIQKg</string>
+
+    <string name="achievementDigger">CgkIhoe1hb4LEAIQEQ</string>
+    <string name="achievementExtractor">CgkIhoe1hb4LEAIQEg</string>
+    <string name="achievementIdealCrystals">CgkIhoe1hb4LEAIQEw</string>
+    <string name="achievementPreciousDiamonds">CgkIhoe1hb4LEAIQFA</string>
+    <string name="achievementMiner">CgkIhoe1hb4LEAIQFQ</string>
+
+    <string name="achievementSpeculator">CgkIhoe1hb4LEAIQKw</string>
+    <string name="achievementMolybdenum">CgkIhoe1hb4LEAIQLA</string>
+    <string name="achievementWhySoMany">CgkIhoe1hb4LEAIQLQ</string>
+    <string name="achievementYouSteal">CgkIhoe1hb4LEAIQLg</string>
+    <string name="achievementDidYouGetItYourself">CgkIhoe1hb4LEAIQLw</string>
+
+    <string name="achievementBoss1">CgkIhoe1hb4LEAIQFg</string>
+    <string name="achievementBoss2">CgkIhoe1hb4LEAIQFw</string>
+    <string name="achievementBoss3">CgkIhoe1hb4LEAIQGA</string>
+    <string name="achievementBoss4">CgkIhoe1hb4LEAIQGQ</string>
+    <string name="achievementBoss5">CgkIhoe1hb4LEAIQIg</string>
+    <string name="achievementBoss6">CgkIhoe1hb4LEAIQIw</string>
+    <string name="achievementBoss7">CgkIhoe1hb4LEAIQJA</string>
+    <string name="achievementBoss8">CgkIhoe1hb4LEAIQJQ</string>
+    <string name="achievementBoss9">CgkIhoe1hb4LEAIQJg</string>
+    <string name="achievementBoss10">CgkIhoe1hb4LEAIQJw</string>
+
+    <string name="achievementSoldier">CgkIhoe1hb4LEAIQGg</string>
+    <string name="achievementSniper">CgkIhoe1hb4LEAIQGw</string>
+    <string name="achievementKiller">CgkIhoe1hb4LEAIQHA</string>
+    <string name="achievementTerminator">CgkIhoe1hb4LEAIQHQ</string>
+    <string name="achievementMeatGrinder">CgkIhoe1hb4LEAIQHg</string>
+    <string name="achievementTheRipper">CgkIhoe1hb4LEAIQIQ</string>
+
+    <string name="achievementFirstBlood">CgkIhoe1hb4LEAIQMQ</string>
+    <string name="achievement4Stars">CgkIhoe1hb4LEAIQNA</string>
+    <string name="achievement3DaysOfGame">CgkIhoe1hb4LEAIQNQ</string>
+    <string name="achievement5DaysOfGame">CgkIhoe1hb4LEAIQNg</string>
+    <string name="achievementBanker">CgkIhoe1hb4LEAIQNw</string>
+    <string name="achievementCrystalSoldier">CgkIhoe1hb4LEAIQOA</string>
+    <string name="achievementStrongBase">CgkIhoe1hb4LEAIQOQ</string>
+    <string name="achievementRepairOfTheBase">CgkIhoe1hb4LEAIQOw</string>
+    <string name="achievementImprovedGenerator">CgkIhoe1hb4LEAIQOg</string>
+    <string name="achievementEnergyRecovery">CgkIhoe1hb4LEAIQPA</string>
+    <string name="achievementFire">CgkIhoe1hb4LEAIQPQ</string>
+    <string name="achievementRestorationOfFire">CgkIhoe1hb4LEAIQPg</string>
+    <string name="achievementCold">CgkIhoe1hb4LEAIQPw</string>
+    <string name="achievementRestorationOfCold">CgkIhoe1hb4LEAIQQA</string>
+    <string name="achievementPoison">CgkIhoe1hb4LEAIQQA</string>
+    <string name="achievementRestorationOfPoison">CgkIhoe1hb4LEAIQQg</string>
+    <string name="achievementTechnologies">CgkIhoe1hb4LEAIQQw</string>
+    <string name="achievementLightTurret">CgkIhoe1hb4LEAIQRA</string>
+    <string name="achievementArmorPiercingTurret">CgkIhoe1hb4LEAIQRQ</string>
+
+    <string name="leaderboardTopDefenseGenerals">CgkIhoe1hb4LEAIQBg</string>
+    <string name="leaderboardMonetarySavings">CgkIhoe1hb4LEAIQMg</string>
+    <string name="leaderboardCrystalTycoon">CgkIhoe1hb4LEAIQMw</string>
+
+    <string name="eventEarnMoney">CgkIhoe1hb4LEAIQAQ</string>
+    <string name="eventSpentMoney">CgkIhoe1hb4LEAIQAg</string>
+    <string name="eventEarnMinerals">CgkIhoe1hb4LEAIQAw</string>
+    <string name="eventSpentMinerals">CgkIhoe1hb4LEAIQBA</string>
+    <string name="eventKillingMonsters">CgkIhoe1hb4LEAIQBQ</string>
+    <string name="eventKillingBoss1">CgkIhoe1hb4LEAIQCA</string>
+    <string name="eventKillingBoss2">CgkIhoe1hb4LEAIQCQ</string>
+    <string name="eventKillingBoss3">CgkIhoe1hb4LEAIQCg</string>
+    <string name="eventKillingBoss4">CgkIhoe1hb4LEAIQCw</string>
+    <string name="eventDeath">CgkIhoe1hb4LEAIQMA</string>
+</resources>
