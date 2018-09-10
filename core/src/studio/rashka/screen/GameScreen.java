@@ -167,11 +167,11 @@ public class GameScreen extends State {
             } else if (idMission == 3) {
                 text.get("SizeTerritory").setText("80x40");
                 text.get("MineralTerritory").setText(String.valueOf(MarsGame.getPreference().getCrystal("Missions_1_3")));
-                text.get("MonsterTerritory").setText("285");
+                text.get("MonsterTerritory").setText("135");
             } else if (idMission == 4) {
                 text.get("SizeTerritory").setText("80x40");
                 text.get("MineralTerritory").setText(String.valueOf(MarsGame.getPreference().getCrystal("Missions_1_4")));
-                text.get("MonsterTerritory").setText("355");
+                text.get("MonsterTerritory").setText("225");
             } else if (idMission == 5) {
                 text.get("SizeTerritory").setText("60x40");
                 text.get("MineralTerritory").setText(String.valueOf(MarsGame.getPreference().getCrystal("Missions_1_5")));

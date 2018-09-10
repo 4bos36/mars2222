@@ -60,7 +60,7 @@ public class MonsterArmy {
         } else if (mission.equals("Missions_1_2")) {
             //region code
             timeFinish = new Time(1, "sec");
-            timeFinishMinute = 15;
+            timeFinishMinute = 8;
             timeFinishSecond = 0;
             timeStart = new Time(8.5f, "noSec");
             timeStart2 = new Time(6.5f, "noSec");
@@ -79,7 +79,7 @@ public class MonsterArmy {
         } else if (mission.equals("Missions_1_4")) {
             //region code
             wavesMonster = 8;
-            totalWaveMonster = 75;
+            totalWaveMonster = 50;
             timeStart = new Time(3.5f, "noSec");
             timeStart2 = new Time(8.5f, "noSec");
             wormCaves.add(0, new WormCave(352, 1080 - 64, 1.0f, 0));
@@ -396,8 +396,8 @@ public class MonsterArmy {
         if (wavesMonster > 1) {
             isStartNewWave = false;
             wavesMonster--;
-            if (mission.equals("Missions_1_3")) totalWaveMonster += 50;
-            else if (mission.equals("Missions_1_4")) totalWaveMonster += 35;
+            if (mission.equals("Missions_1_3")) totalWaveMonster += 25;
+            else if (mission.equals("Missions_1_4")) totalWaveMonster += 20;
             else if (mission.equals("Missions_1_5")) totalWaveMonster += 45;
             else if (mission.equals("Missions_2_1")) totalWaveMonster += 50;
             else if (mission.equals("Missions_2_2")) totalWaveMonster += 50;
@@ -452,16 +452,16 @@ public class MonsterArmy {
                     timeStart.setTimeReset();
                     add++;
                 }
-                if (wormCaves.get(1).isLiving()) {
-                    monster_List.add(add, new AllMonsters(mission, 1, random.nextInt(4), 1, 1));
-                    timeStart.setTimeReset();
+                if (wormCaves.get(2).isLiving()) {
+                    monster_List.add(add, new AllMonsters(mission, 1, random.nextInt(4), 1, 2));
+                    timeStart2.setTimeReset();
                     add++;
                 }
             }
             if (timeStart2.isActive()) {
-                if (wormCaves.get(2).isLiving()) {
-                    monster_List.add(add, new AllMonsters(mission, 1, random.nextInt(4), 1, 2));
-                    timeStart2.setTimeReset();
+                if (wormCaves.get(1).isLiving()) {
+                    monster_List.add(add, new AllMonsters(mission, 1, random.nextInt(4), 1, 1));
+                    timeStart.setTimeReset();
                     add++;
                 }
                 if (wormCaves.get(3).isLiving()) {

@@ -54,7 +54,7 @@ public class Language {
                 textScreen.put("Start_1", new StringBuilder("Как так вышло. Ведь было доказано, что на Марсе нет жизни. Откуда они повылазили?"));
                 textScreen.put("Start_2", new StringBuilder("Чтобы не случилось, мы останемся на Марсе и продолжим добывать кремарий. Он необходим для выживания землян, да и платят за него щедро."));
                 textScreen.put("Start_3", new StringBuilder("Мои ищейки нашли много кремария, но есть одна проблема - инкубаторы. Они способны выращивать большие колонии монстров за короткое время."));
-                textScreen.put("Start_4", new StringBuilder("Человек, сооружай оборонительные башни, используй химическое оружие. Не подпускай их к базе и собирай кремарий. За тобой прилетит шаттл через 15:00 минут."));
+                textScreen.put("Start_4", new StringBuilder("Человек, сооружай оборонительные башни, используй химическое оружие. Не подпускай их к базе и собирай кремарий. За тобой прилетит шаттл через 8:00 минут."));
                 textScreen.put("Start_5", new StringBuilder("Чтоооо?! Эти твари мутируют. Я обнаружил у некоторых особей иммунитет к нашему химическому оружию. Смотри, у них на тельце появляется оттенок к чему у них иммунитет. Если он красный, то огонь не причинит ему вреда."));
                 textScreen.put("Start_6", new StringBuilder("1. Есть добывать кремарий.\n2. Почему я должен это делать?\n3. О да, я всех испепелю.\n4. Р-7, может ты этим займёшься?"));
                 textScreen.put("Finish_1", new StringBuilder("Эти твари не понимают на кого они нарвались. Их стало слишком много. Пора мне нанести ответный удар."));
@@ -64,7 +64,7 @@ public class Language {
                 textScreen.put("Start_1", new StringBuilder("How did it happen. Everyone said that there is no life on Mars. Where did they come from?"));
                 textScreen.put("Start_2", new StringBuilder("In order not to happen, we will stay on Mars and continue to get the cremaria. It is necessary for the survival of earthlings, and they pay generously for it."));
                 textScreen.put("Start_3", new StringBuilder("My bloodhounds found a lot of cremaria, but it is surrounded by incubators. They are able to grow large colonies of monsters in a short time."));
-                textScreen.put("Start_4", new StringBuilder("Man, build defensive towers, use chemical weapons. Do not let them get to the base and get a cremaria. The shuttle arrives in 15:00 minutes."));
+                textScreen.put("Start_4", new StringBuilder("Man, build defensive towers, use chemical weapons. Do not let them get to the base and get a cremaria. The shuttle arrives in 8:00 minutes."));
                 textScreen.put("Start_5", new StringBuilder("What?! These creatures mutate. I found some individuals immune to our chemical weapons. Look, they have a shade on the body to what they have immunity. If it is red, then the fire will not harm it."));
                 textScreen.put("Start_6", new StringBuilder("1. I go to get a cremaria.\n2. Why should I do this?\n3. Oh yeah, I'll burn it all.\n4. R-7, can you do it?"));
                 textScreen.put("Finish_1", new StringBuilder("These creatures do not understand who they attacked. There were too many of them. It's time for me to strike back."));
@@ -1019,7 +1019,7 @@ public class Language {
     }
 
     public void aboutScreen() {
-        textScreen.put("Version", new StringBuilder("v. 0.1.8 (29)"));
+        textScreen.put("Version", new StringBuilder("v. 0.1.8 (30)"));
         if (MarsGame.getPreference().language().equals("ru")) {
             textScreen.put("Menu", new StringBuilder("Меню"));
             textScreen.put("Developer", new StringBuilder("Разработчик"));
