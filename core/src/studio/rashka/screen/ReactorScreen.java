@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
 import studio.rashka.lib.implement.Buttons;
@@ -42,6 +43,7 @@ public class ReactorScreen extends State {
     private ParticleEffect core;
 
     private static final Drawable img = MarsGame.getTextures().getTextureButtonSkin().getDrawable("NULL");
+    private static final LabelStyle style28 = new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE);
 
     public ReactorScreen(Game game) {
         super(game);
@@ -66,25 +68,25 @@ public class ReactorScreen extends State {
     }
 
     private void textPutGet() {
-        text.put("Money", new Label(String.valueOf(MarsGame.getPreference().loadMoney()), new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.MAGENTA)));
-        text.put("Mineral", new Label(String.valueOf(MarsGame.getPreference().loadMineral()), new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.GREEN)));
+        text.put("Money", new Label(String.valueOf(MarsGame.getPreference().loadMoney()), new LabelStyle(FontTTF.getInstance().getFont48(), Color.MAGENTA)));
+        text.put("Mineral", new Label(String.valueOf(MarsGame.getPreference().loadMineral()), new LabelStyle(FontTTF.getInstance().getFont48(), Color.GREEN)));
         text.get("Money").setPosition((MarsGame.WIDTH / 2 - 128) * MarsGame.getRatioMonitorW() - text.get("Money").getPrefWidth(), (MarsGame.HEIGHT - 116) * MarsGame.getRatioMonitorH());
         text.get("Mineral").setPosition((MarsGame.WIDTH / 2 + 132) * MarsGame.getRatioMonitorW(), (MarsGame.HEIGHT - 116) * MarsGame.getRatioMonitorH());
 
         stage.addActor(text.get("Money"));
         stage.addActor(text.get("Mineral"));
 
-        text.put("HPup", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("CurrentHP", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("NextHP", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("PriceHP", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("BuyHP", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
+        text.put("HPup", new Label("", style28));
+        text.put("CurrentHP", new Label("", style28));
+        text.put("NextHP", new Label("", style28));
+        text.put("PriceHP", new Label("", style28));
+        text.put("BuyHP", new Label("", style28));
 
-        text.put("MPup", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("CurrentMP", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("NextMP", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("PriceMP", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("BuyMP", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
+        text.put("MPup", new Label("", style28));
+        text.put("CurrentMP", new Label("", style28));
+        text.put("NextMP", new Label("", style28));
+        text.put("PriceMP", new Label("", style28));
+        text.put("BuyMP", new Label("",style28));
 
         text.get("HPup").setPosition((MarsGame.WIDTH + 100) * MarsGame.getRatioMonitorW(), 540 * MarsGame.getRatioMonitorH());
         text.get("CurrentHP").setPosition((MarsGame.WIDTH + 100) * MarsGame.getRatioMonitorW(), 540 * MarsGame.getRatioMonitorH());
@@ -101,9 +103,9 @@ public class ReactorScreen extends State {
     private void textLoading() {
         menuButtonsText();
 
-        text.put("HP", new Label(MarsGame.getLanguage().textScreen.get("HP"), new LabelStyle(MarsGame.getFontTTF().getFont35(), Color.WHITE)));
-        text.put("MP", new Label(MarsGame.getLanguage().textScreen.get("MP"), new LabelStyle(MarsGame.getFontTTF().getFont35(), Color.WHITE)));
-        text.put("Reactor-34M", new Label(MarsGame.getLanguage().textScreen.get("Reactor"), new LabelStyle(MarsGame.getFontTTF().getFont35(), Color.WHITE)));
+        text.put("HP", new Label(MarsGame.getLanguage().textScreen.get("HP"), new LabelStyle(FontTTF.getInstance().getFont35(), Color.WHITE)));
+        text.put("MP", new Label(MarsGame.getLanguage().textScreen.get("MP"), new LabelStyle(FontTTF.getInstance().getFont35(), Color.WHITE)));
+        text.put("Reactor-34M", new Label(MarsGame.getLanguage().textScreen.get("Reactor"), new LabelStyle(FontTTF.getInstance().getFont35(), Color.WHITE)));
         text.get("HP").setPosition(255 * MarsGame.getRatioMonitorW(), (166 + MarsGame.getRatioAdd()) * MarsGame.getRatioMonitorH());
         text.get("MP").setPosition((MarsGame.WIDTH - 340) * MarsGame.getRatioMonitorW() - text.get("MP").getPrefWidth(), (187 + MarsGame.getRatioAdd()) * MarsGame.getRatioMonitorH());
         text.get("Reactor-34M").setPosition((MarsGame.WIDTH / 2 + 80) * MarsGame.getRatioMonitorW(), (572 + MarsGame.getRatioAdd()) * MarsGame.getRatioMonitorH());
@@ -153,11 +155,11 @@ public class ReactorScreen extends State {
     }
 
     private void menuButtonsText() {
-        text.put("Hangar", new Label(MarsGame.getLanguage().textScreen.get("Hangar"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
-        text.put("Bridge", new Label(MarsGame.getLanguage().textScreen.get("Bridge"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
-        text.put("Arsenal", new Label(MarsGame.getLanguage().textScreen.get("Arsenal"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
-        text.put("Laboratory", new Label(MarsGame.getLanguage().textScreen.get("Laboratory"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
-        text.put("Reactor", new Label(MarsGame.getLanguage().textScreen.get("Reactor"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
+        text.put("Hangar", new Label(MarsGame.getLanguage().textScreen.get("Hangar"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
+        text.put("Bridge", new Label(MarsGame.getLanguage().textScreen.get("Bridge"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
+        text.put("Arsenal", new Label(MarsGame.getLanguage().textScreen.get("Arsenal"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
+        text.put("Laboratory", new Label(MarsGame.getLanguage().textScreen.get("Laboratory"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
+        text.put("Reactor", new Label(MarsGame.getLanguage().textScreen.get("Reactor"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
 
         text.get("Hangar").setPosition((MarsGame.WIDTH / 2 - 384) * MarsGame.getRatioMonitorW(), 69 * MarsGame.getRatioMonitorH());
         text.get("Bridge").setPosition(text.get("Hangar").getX() + text.get("Hangar").getPrefWidth() + 32 * MarsGame.getRatioMonitorW(), 69 * MarsGame.getRatioMonitorH());

@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
 import studio.rashka.models.Stars;
@@ -29,7 +30,6 @@ public class LoadScreen extends State {
         super(game);
         stage = new Stage();
         text = new HashMap<String, Label>();
-        MarsGame.getFontTTF().loadSizeParameter54();
 
         loading = new HashMap<String, TextureRegion>();
         loading.put("logo", new TextureRegion(new Texture("loading.tga"), 0, 0, 256, 160));
@@ -38,8 +38,8 @@ public class LoadScreen extends State {
         MarsGame.getTextures().loadFile();
         MarsGame.getMusicSound().loadSounds();
 
-        text.put("loading", new Label(MarsGame.getLanguage().textScreen.get("loading"), new LabelStyle(MarsGame.getFontTTF().getFont54(), Color.WHITE)));
-        text.put("logo", new Label("rashka.studio", new LabelStyle(MarsGame.getFontTTF().getFont54(), Color.LIME)));
+        text.put("loading", new Label(MarsGame.getLanguage().textScreen.get("loading"), new LabelStyle(FontTTF.getInstance().getFont54(), Color.WHITE)));
+        text.put("logo", new Label("rashka.studio", new LabelStyle(FontTTF.getInstance().getFont54(), Color.LIME)));
         text.get("loading").setPosition(MarsGame.WIDTH / 2 * MarsGame.getRatioMonitorW() - text.get("loading").getPrefWidth() / 2, 128 * MarsGame.getRatioMonitorH());
         text.get("logo").setPosition(MarsGame.WIDTH / 2 * MarsGame.getRatioMonitorW() - text.get("logo").getPrefWidth() / 2, 16 * MarsGame.getRatioMonitorH());
 
@@ -61,8 +61,6 @@ public class LoadScreen extends State {
             }
             if (i == 10) MarsGame.getTextures().loadFile2();
             if (i == 20) {
-                MarsGame.getFontTTF().loadSizeParameter28_48();
-                MarsGame.getFontTTF().loadSizeParameter100_200();
                 MarsGame.getTextures().loadFileTexture();
                 MarsGame.playServices.showAds(200);
             }
@@ -74,9 +72,6 @@ public class LoadScreen extends State {
             if (i == 40) {
                 if (!MarsGame.playServices.getSignedInGPGS()) MarsGame.playServices.loginGPGS();
             }
-            /*if (i == 43) MarsGame.getTextures().loadMonstersBoss2();
-            if (i == 46) MarsGame.getTextures().loadMonstersBoss3();
-            if (i == 48) MarsGame.getTextures().loadMonstersBoss4();*/
             if (i == 50) {
                 if (MarsGame.getPreference().loadMusic() == 1) {
                     try {

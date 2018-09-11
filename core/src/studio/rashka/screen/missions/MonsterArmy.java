@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Time;
 import studio.rashka.models.games.Magic;
 import studio.rashka.models.games.Towers;
@@ -41,7 +42,7 @@ public class MonsterArmy {
         wormCaves = new ArrayList<WormCave>();
         workers = new ArrayList<Worker>();
         monster_List = new ArrayList<AllMonsters>();
-        showTextEnd = new Label("", new LabelStyle(MarsGame.getFontTTF().getFont54(), Color.WHITE));
+        showTextEnd = new Label("", new LabelStyle(FontTTF.getInstance().getFont54(), Color.WHITE));
 
         timeStartRobot = new Time(4, "sec");
         workersNumber = MarsGame.getPreference().getTacticsTechnologiesRobot();
@@ -454,14 +455,14 @@ public class MonsterArmy {
                 }
                 if (wormCaves.get(2).isLiving()) {
                     monster_List.add(add, new AllMonsters(mission, 1, random.nextInt(4), 1, 2));
-                    timeStart2.setTimeReset();
+                    timeStart.setTimeReset();
                     add++;
                 }
             }
             if (timeStart2.isActive()) {
                 if (wormCaves.get(1).isLiving()) {
                     monster_List.add(add, new AllMonsters(mission, 1, random.nextInt(4), 1, 1));
-                    timeStart.setTimeReset();
+                    timeStart2.setTimeReset();
                     add++;
                 }
                 if (wormCaves.get(3).isLiving()) {

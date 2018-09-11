@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
 import studio.rashka.lib.implement.Buttons;
@@ -83,21 +84,21 @@ public class PirateScreen extends State {
     }
 
     private void textSet() {
-        setPromo = new TextField("", new TextFieldStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE, MarsGame.getTextures().getTextureButtonSkin().getDrawable("Input"), null, MarsGame.getTextures().getTextureButtonSkin().getDrawable("Text")));
+        setPromo = new TextField("", new TextFieldStyle(FontTTF.getInstance().getFont28(), Color.WHITE, MarsGame.getTextures().getTextureButtonSkin().getDrawable("Input"), null, MarsGame.getTextures().getTextureButtonSkin().getDrawable("Text")));
         setPromo.setPosition(64 * MarsGame.getRatioMonitorW(), (MarsGame.HEIGHT - 128) * MarsGame.getRatioMonitorH());
         setPromo.setSize(256 * MarsGame.getRatioMonitorW(), 64 * MarsGame.getRatioMonitorH());
         setPromo.setMessageText("PROMO KOD");
 
-        text.put("Money", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.GOLD)));
-        text.put("getMoney", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.GOLD)));
-        text.put("Mineral", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.BLUE)));
-        text.put("getMineral", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.BLUE)));
-        text.put("ShieldHPAdd", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.ORANGE)));
-        text.put("getShieldHPAdd", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.ORANGE)));
-        text.put("EnergyAdd", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.CORAL)));
-        text.put("getEnergyAdd", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.CORAL)));
-        text.put("Microwave", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.SKY)));
-        text.put("getMicrowave", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.SKY)));
+        text.put("Money", new Label("", new LabelStyle(FontTTF.getInstance().getFont48(), Color.GOLD)));
+        text.put("getMoney", new Label("", new LabelStyle(FontTTF.getInstance().getFont48(), Color.GOLD)));
+        text.put("Mineral", new Label("", new LabelStyle(FontTTF.getInstance().getFont48(), Color.BLUE)));
+        text.put("getMineral", new Label("", new LabelStyle(FontTTF.getInstance().getFont48(), Color.BLUE)));
+        text.put("ShieldHPAdd", new Label("", new LabelStyle(FontTTF.getInstance().getFont48(), Color.ORANGE)));
+        text.put("getShieldHPAdd", new Label("", new LabelStyle(FontTTF.getInstance().getFont48(), Color.ORANGE)));
+        text.put("EnergyAdd", new Label("", new LabelStyle(FontTTF.getInstance().getFont48(), Color.CORAL)));
+        text.put("getEnergyAdd", new Label("", new LabelStyle(FontTTF.getInstance().getFont48(), Color.CORAL)));
+        text.put("Microwave", new Label("", new LabelStyle(FontTTF.getInstance().getFont48(), Color.SKY)));
+        text.put("getMicrowave", new Label("", new LabelStyle(FontTTF.getInstance().getFont48(), Color.SKY)));
     }
 
     private void textPutGet(int numberPrice) {

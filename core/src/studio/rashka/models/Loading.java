@@ -11,8 +11,10 @@ import java.util.Calendar;
 import java.util.Random;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
+import studio.rashka.models.load.Space;
 import studio.rashka.screen.AboutScreen;
 import studio.rashka.screen.ArsenalScreen;
 import studio.rashka.screen.ArsenalTowerScreen;
@@ -75,8 +77,8 @@ public class Loading extends State {
     }
 
     private void loading() {
-        text = new Label(MarsGame.getLanguage().textScreen.get("loading"), new LabelStyle(MarsGame.getFontTTF().getFont54(), Color.WHITE));
-        phrase = new Label(MarsGame.getLanguage().textScreen.get(String.valueOf(new Random().nextInt(15)+1)), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.WHITE));
+        text = new Label(MarsGame.getLanguage().textScreen.get("loading"), new LabelStyle(FontTTF.getInstance().getFont54(), Color.WHITE));
+        phrase = new Label(MarsGame.getLanguage().textScreen.get(String.valueOf(new Random().nextInt(15)+1)), new LabelStyle(FontTTF.getInstance().getFont40(), Color.WHITE));
         text.setPosition(MarsGame.WIDTH / 2 * MarsGame.getRatioMonitorW() - text.getPrefWidth() / 2, (MarsGame.HEIGHT + MarsGame.getRatioAdd()) / 2 * MarsGame.getRatioMonitorH());
         phrase.setPosition(MarsGame.WIDTH / 2 * MarsGame.getRatioMonitorW() - phrase.getPrefWidth() / 2, 64 * MarsGame.getRatioMonitorH());
         stageLoading.addActor(text);
@@ -199,7 +201,7 @@ public class Loading extends State {
 
     @Override
     public void render(SpriteBatch batch) {
-        MarsGame.getSpace().render(batch);
+        Space.getInstance().render(batch);
         stageLoading.act();
         stageLoading.draw();
     }

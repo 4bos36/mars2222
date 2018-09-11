@@ -13,31 +13,40 @@ import studio.rashka.MarsGame;
 
 public class FontTTF {
 
-    private static final String FONT_NAME = "fonts/marske.ttf"; // расположение шрифта
-    private FreeTypeFontGenerator generator;
-    private FreeTypeFontParameter parameter;
-    private Map<String, BitmapFont> typeFont;
+    private static volatile FontTTF instance;
 
-    private StringBuilder FONT_CHARS;
+    private Map<String, BitmapFont> typeFont;
     private float RatioMonitor;
 
-    public FontTTF() {
+    public static FontTTF getInstance() {
+        if (instance == null) {
+            synchronized (FontTTF.class) {
+                if (instance == null) {
+                    instance = new FontTTF();
+                }
+            }
+        }
+        return instance;
+    }
+
+    private FontTTF() {
+        String FONT_NAME = "fonts/marske.ttf";
+
         typeFont = new HashMap<String, BitmapFont>();
 
-        generator = new FreeTypeFontGenerator(Gdx.files.internal(FONT_NAME));
-        parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal(FONT_NAME));
+        FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
 
         RatioMonitor = (float) Gdx.graphics.getWidth() / (float) MarsGame.WIDTH; // коэффициент масштаба графики
 
-        FONT_CHARS = new StringBuilder("");
+        StringBuilder FONT_CHARS = new StringBuilder("");
 
         for (int i = 32; i < 127; i++) FONT_CHARS.append((char)i);
         for (int i = 1025; i < 1170; i++) FONT_CHARS.append((char)i); // русские символы
 
         parameter.characters = FONT_CHARS.toString(); // заполняем массив символами рус и остальные
-    }
 
-    public void loadSizeParameter28_48() {
+        //region Size param
         parameter.size = (int)(48 * RatioMonitor);
         typeFont.put("font48", generator.generateFont(parameter));
 
@@ -49,19 +58,16 @@ public class FontTTF {
 
         parameter.size = (int)(28 * RatioMonitor);
         typeFont.put("font28", generator.generateFont(parameter));
-    }
 
-    public void loadSizeParameter54() {
         parameter.size = (int)(54 * RatioMonitor);
         typeFont.put("font54", generator.generateFont(parameter));
-    }
 
-    public void loadSizeParameter100_200() {
         parameter.size = (int)(200 * RatioMonitor);
         typeFont.put("font200", generator.generateFont(parameter));
 
         parameter.size = (int)(100 * RatioMonitor);
         typeFont.put("font100", generator.generateFont(parameter));
+        //endregion
     }
 
     public BitmapFont getFont200() {
@@ -94,7 +100,7 @@ public class FontTTF {
 
     public void dispose() {
         typeFont.clear();
-        generator.dispose();
-        parameter = null;
+//        generator.dispose();
+//        parameter = null;
     }
 }

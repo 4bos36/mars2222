@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.Random;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
 import studio.rashka.lib.Time;
@@ -60,10 +61,10 @@ public class Missions extends State {
     private ParticleEffect explosion;
 
     private static final Drawable img = MarsGame.getTextures().getTextureButtonSkin().getDrawable("NULL");
-    private static final LabelStyle style100 = new LabelStyle(MarsGame.getFontTTF().getFont100(), Color.WHITE);
-    private static final LabelStyle style54 = new LabelStyle(MarsGame.getFontTTF().getFont54(), Color.WHITE);
-    private static final LabelStyle style48 = new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.WHITE);
-    private static final LabelStyle style28 = new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE);
+    private static final LabelStyle style100 = new LabelStyle(FontTTF.getInstance().getFont100(), Color.WHITE);
+    private static final LabelStyle style54 = new LabelStyle(FontTTF.getInstance().getFont54(), Color.WHITE);
+    private static final LabelStyle style48 = new LabelStyle(FontTTF.getInstance().getFont48(), Color.WHITE);
+    private static final LabelStyle style28 = new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE);
 
     private Skin touchpadSkin;
     private Touchpad touchpad;
@@ -128,7 +129,7 @@ public class Missions extends State {
         text.put("EnergyIcon2", new Label("25", style28));
         text.put("EnergyIcon3", new Label("25", style28));
         text.put("ShowTitleRate", new Label("", style54));
-        text.put("ShowTextRate", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont35(), Color.WHITE)));
+        text.put("ShowTextRate", new Label("", new LabelStyle(FontTTF.getInstance().getFont35(), Color.WHITE)));
         text.put("ShowClickRate", new Label("", style48));
 
         text.get("ShieldHPAdd").setPosition((MarsGame.WIDTH / 2 - 548) * MarsGame.getRatioMonitorW() - text.get("ShieldHPAdd").getPrefWidth() / 2, 68 * MarsGame.getRatioMonitorH());
@@ -1988,12 +1989,12 @@ public class Missions extends State {
             MarsGame.getPreference().setEventDeath();
             MarsGame.getPreference().setDeath();
             MarsGame.getPreference().setAchievementDeath();
-            text.put("Finish", new Label(MarsGame.getLanguage().textScreen.get("Defeat"), new Label.LabelStyle(MarsGame.getFontTTF().getFont100(), Color.RED)));
+            text.put("Finish", new Label(MarsGame.getLanguage().textScreen.get("Defeat"), new Label.LabelStyle(FontTTF.getInstance().getFont100(), Color.RED)));
         } else if (type == 1) { // gamefinish
             rank = 1;
             if (MarsGame.getPreference().loadSound() == 1)
                 MarsGame.getMusicSound().musics.get("Victory").play();
-            text.put("Finish", new Label(MarsGame.getLanguage().textScreen.get("Victory"), new Label.LabelStyle(MarsGame.getFontTTF().getFont100(), Color.GREEN)));
+            text.put("Finish", new Label(MarsGame.getLanguage().textScreen.get("Victory"), new Label.LabelStyle(FontTTF.getInstance().getFont100(), Color.GREEN)));
             if (!isCompleteMission) {
                 isCompleteMission = true;
                 MarsGame.getPreference().saveMissionFinish(mission);

@@ -6,8 +6,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
-import com.badlogic.gdx.scenes.scene2d.ui.ImageButton.ImageButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
@@ -16,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
 import studio.rashka.lib.implement.Buttons;
@@ -57,12 +56,12 @@ public class HelpScreen extends State {
         text = new HashMap<String, Label>();
         buttons = new HashMap<String, Buttons>();
 
-        text.put("Menu", new Label(MarsGame.getLanguage().textScreen.get("Menu"), new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("1", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("2", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("3", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("4", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("5", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
+        text.put("Menu", new Label(MarsGame.getLanguage().textScreen.get("Menu"), new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("1", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("2", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("3", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("4", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("5", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
 
         buttons();
         textLoading();

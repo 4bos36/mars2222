@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.models.lightbulb.GreenLightbulb;
 
 public class ButtonsMission {
@@ -26,12 +27,12 @@ public class ButtonsMission {
         greenLightbulb = new GreenLightbulb();
 
         text = new HashMap<String, Label>();
-        text.put("Mission-1", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont54(), Color.WHITE)));
-        text.put("Mission-2", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont54(), Color.WHITE)));
-        text.put("Mission-3", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont54(), Color.WHITE)));
-        text.put("Mission-4", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont54(), Color.WHITE)));
-        text.put("Mission-5", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont54(), Color.WHITE)));
-        text.put("Mission-6", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont54(), Color.WHITE)));
+        text.put("Mission-1", new Label("", new LabelStyle(FontTTF.getInstance().getFont54(), Color.WHITE)));
+        text.put("Mission-2", new Label("", new LabelStyle(FontTTF.getInstance().getFont54(), Color.WHITE)));
+        text.put("Mission-3", new Label("", new LabelStyle(FontTTF.getInstance().getFont54(), Color.WHITE)));
+        text.put("Mission-4", new Label("", new LabelStyle(FontTTF.getInstance().getFont54(), Color.WHITE)));
+        text.put("Mission-5", new Label("", new LabelStyle(FontTTF.getInstance().getFont54(), Color.WHITE)));
+        text.put("Mission-6", new Label("", new LabelStyle(FontTTF.getInstance().getFont54(), Color.WHITE)));
 
         stageMissions.addActor(text.get("Mission-1"));
         stageMissions.addActor(text.get("Mission-2"));

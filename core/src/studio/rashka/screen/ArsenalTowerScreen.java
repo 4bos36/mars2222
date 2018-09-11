@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
 import studio.rashka.lib.implement.Buttons;
@@ -42,7 +43,7 @@ public class ArsenalTowerScreen extends State {
     private Weapons weapons, weaponsNow;
 
     private static final Drawable img = MarsGame.getTextures().getTextureButtonSkin().getDrawable("NULL");
-    private static final LabelStyle style28 = new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE);
+    private static final LabelStyle style28 = new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE);
 
     public ArsenalTowerScreen(Game game) {
         super(game);
@@ -68,10 +69,10 @@ public class ArsenalTowerScreen extends State {
     }
 
     private void textPutGet() {
-        text.put("Money", new Label(String.valueOf(MarsGame.getPreference().loadMoney()), new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.MAGENTA)));
-        text.put("Mineral", new Label(String.valueOf(MarsGame.getPreference().loadMineral()), new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.GREEN)));
-        text.put("BuyPriceMoney", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont35(), Color.WHITE)));
-        text.put("BuyPriceMineral", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont35(), Color.WHITE)));
+        text.put("Money", new Label(String.valueOf(MarsGame.getPreference().loadMoney()), new LabelStyle(FontTTF.getInstance().getFont48(), Color.MAGENTA)));
+        text.put("Mineral", new Label(String.valueOf(MarsGame.getPreference().loadMineral()), new LabelStyle(FontTTF.getInstance().getFont48(), Color.GREEN)));
+        text.put("BuyPriceMoney", new Label("", new LabelStyle(FontTTF.getInstance().getFont35(), Color.WHITE)));
+        text.put("BuyPriceMineral", new Label("", new LabelStyle(FontTTF.getInstance().getFont35(), Color.WHITE)));
 
         text.get("Money").setPosition((MarsGame.WIDTH / 2 - 128) * MarsGame.getRatioMonitorW() - text.get("Money").getPrefWidth(), (MarsGame.HEIGHT - 116) * MarsGame.getRatioMonitorH());
         text.get("Mineral").setPosition((MarsGame.WIDTH / 2 + 132) * MarsGame.getRatioMonitorW(), (MarsGame.HEIGHT - 116) * MarsGame.getRatioMonitorH());
@@ -94,7 +95,7 @@ public class ArsenalTowerScreen extends State {
         if (MarsGame.getPreference().getTacticsAttackLaserGun()) text.put("LaserGun", new Label(MarsGame.getLanguage().textScreen.get("LaserGun"), style28));
         else text.put("LaserGun", new Label("", style28));
         text.put("Arsenal", new Label(MarsGame.getLanguage().textScreen.get("Arsenal"), style28));
-        text.put("WarningTower", new Label(MarsGame.getLanguage().textScreen.get("WarningTower"), new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.GOLD)));
+        text.put("WarningTower", new Label(MarsGame.getLanguage().textScreen.get("WarningTower"), new LabelStyle(FontTTF.getInstance().getFont28(), Color.GOLD)));
 
         text.get("OnOff").setPosition(108 * MarsGame.getRatioMonitorW(), (180 + MarsGame.getRatioAdd()) * MarsGame.getRatioMonitorH());
         text.get("MachineGun").setPosition(190 * MarsGame.getRatioMonitorW(), (305 + MarsGame.getRatioAdd()) * MarsGame.getRatioMonitorH());

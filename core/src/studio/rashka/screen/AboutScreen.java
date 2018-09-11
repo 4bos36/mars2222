@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
 import studio.rashka.lib.implement.Buttons;
@@ -37,7 +38,7 @@ public class AboutScreen extends State {
     private Stars stars;
 
     private static final Drawable img = MarsGame.getTextures().getTextureButtonSkin().getDrawable("NULL");
-    private static final LabelStyle style28 = new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE);
+    private static final LabelStyle style28 = new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE);
 
     public AboutScreen(Game game) {
         super(game);
@@ -87,8 +88,8 @@ public class AboutScreen extends State {
 
     private void textLoading() {
         text.put("Menu", new Label(MarsGame.getLanguage().textScreen.get("Menu"), style28));
-        text.put("Developer", new Label(MarsGame.getLanguage().textScreen.get("Developer"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.WHITE)));
-        text.put("Name", new Label(MarsGame.getLanguage().textScreen.get("Name"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.WHITE)));
+        text.put("Developer", new Label(MarsGame.getLanguage().textScreen.get("Developer"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.WHITE)));
+        text.put("Name", new Label(MarsGame.getLanguage().textScreen.get("Name"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.WHITE)));
         text.put("Version", new Label(MarsGame.getLanguage().textScreen.get("Version"), style28));
         text.put("Site", new Label(MarsGame.getLanguage().textScreen.get("Site"), style28));
         text.put("GooglePlay", new Label(MarsGame.getLanguage().textScreen.get("GooglePlay"), style28));

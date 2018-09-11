@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
 import studio.rashka.lib.implement.Buttons;
@@ -51,7 +52,7 @@ public class ArsenalScreen extends State {
     private Tactics tactics;
 
     private static final Drawable img = MarsGame.getTextures().getTextureButtonSkin().getDrawable("NULL");
-    private static final LabelStyle style28 = new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE);
+    private static final LabelStyle style28 = new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE);
 
     public ArsenalScreen(Game game) {
         super(game);
@@ -81,20 +82,20 @@ public class ArsenalScreen extends State {
     }
 
     private void textPutGet() {
-        text.put("Money", new Label(String.valueOf(MarsGame.getPreference().loadMoney()), new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.MAGENTA)));
-        text.put("Mineral", new Label(String.valueOf(MarsGame.getPreference().loadMineral()), new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.GREEN)));
-        text.put("Installed", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.WHITE)));
-        text.put("InstallBuy", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.BLACK)));
-        text.put("BuyPriceMoney", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont35(), Color.WHITE)));
-        text.put("BuyPriceMineral", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont35(), Color.WHITE)));
-        text.put("EnergyWeapon", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont35(), Color.GOLD)));
-        text.put("TacticsName", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont35(), Color.SKY)));
-        text.put("TacticsInfo", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont35(), Color.WHITE)));
-        text.put("TacticsMoney", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.WHITE)));
-        text.put("TacticsMineral", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.WHITE)));
-        text.put("Current", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.GOLD)));
-        text.put("Next", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.GOLDENROD)));
-        text.put("BuyTactics", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.WHITE)));
+        text.put("Money", new Label(String.valueOf(MarsGame.getPreference().loadMoney()), new LabelStyle(FontTTF.getInstance().getFont48(), Color.MAGENTA)));
+        text.put("Mineral", new Label(String.valueOf(MarsGame.getPreference().loadMineral()), new LabelStyle(FontTTF.getInstance().getFont48(), Color.GREEN)));
+        text.put("Installed", new Label("", new LabelStyle(FontTTF.getInstance().getFont40(), Color.WHITE)));
+        text.put("InstallBuy", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.BLACK)));
+        text.put("BuyPriceMoney", new Label("", new LabelStyle(FontTTF.getInstance().getFont35(), Color.WHITE)));
+        text.put("BuyPriceMineral", new Label("", new LabelStyle(FontTTF.getInstance().getFont35(), Color.WHITE)));
+        text.put("EnergyWeapon", new Label("", new LabelStyle(FontTTF.getInstance().getFont35(), Color.GOLD)));
+        text.put("TacticsName", new Label("", new LabelStyle(FontTTF.getInstance().getFont35(), Color.SKY)));
+        text.put("TacticsInfo", new Label("", new LabelStyle(FontTTF.getInstance().getFont35(), Color.WHITE)));
+        text.put("TacticsMoney", new Label("", new LabelStyle(FontTTF.getInstance().getFont40(), Color.WHITE)));
+        text.put("TacticsMineral", new Label("", new LabelStyle(FontTTF.getInstance().getFont40(), Color.WHITE)));
+        text.put("Current", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.GOLD)));
+        text.put("Next", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.GOLDENROD)));
+        text.put("BuyTactics", new Label("", new LabelStyle(FontTTF.getInstance().getFont40(), Color.WHITE)));
 
         text.get("Money").setPosition((MarsGame.WIDTH / 2 - 128) * MarsGame.getRatioMonitorW() - text.get("Money").getPrefWidth(), (MarsGame.HEIGHT - 116) * MarsGame.getRatioMonitorH());
         text.get("Mineral").setPosition((MarsGame.WIDTH / 2 + 132) * MarsGame.getRatioMonitorW(), (MarsGame.HEIGHT - 116) * MarsGame.getRatioMonitorH());
@@ -835,11 +836,11 @@ public class ArsenalScreen extends State {
     }
 
     private void menuButtonsText() {
-        text.put("Hangar", new Label(MarsGame.getLanguage().textScreen.get("Hangar"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
-        text.put("Bridge", new Label(MarsGame.getLanguage().textScreen.get("Bridge"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
-        text.put("Arsenal", new Label(MarsGame.getLanguage().textScreen.get("Arsenal"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
-        text.put("Laboratory", new Label(MarsGame.getLanguage().textScreen.get("Laboratory"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
-        text.put("Reactor", new Label(MarsGame.getLanguage().textScreen.get("Reactor"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
+        text.put("Hangar", new Label(MarsGame.getLanguage().textScreen.get("Hangar"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
+        text.put("Bridge", new Label(MarsGame.getLanguage().textScreen.get("Bridge"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
+        text.put("Arsenal", new Label(MarsGame.getLanguage().textScreen.get("Arsenal"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
+        text.put("Laboratory", new Label(MarsGame.getLanguage().textScreen.get("Laboratory"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
+        text.put("Reactor", new Label(MarsGame.getLanguage().textScreen.get("Reactor"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
 
         text.get("Hangar").setPosition((MarsGame.WIDTH / 2 - 384) * MarsGame.getRatioMonitorW(), 69 * MarsGame.getRatioMonitorH());
         text.get("Bridge").setPosition(text.get("Hangar").getX() + text.get("Hangar").getPrefWidth() + 32 * MarsGame.getRatioMonitorW(), 69 * MarsGame.getRatioMonitorH());

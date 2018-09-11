@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
 import studio.rashka.lib.implement.Buttons;
@@ -55,26 +56,26 @@ public class LaboratoryScreen extends State {
     }
 
     private void textPutGet() {
-        text.put("Money", new Label(String.valueOf(MarsGame.getPreference().loadMoney()), new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.MAGENTA)));
-        text.put("Mineral", new Label(String.valueOf(MarsGame.getPreference().loadMineral()), new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.GREEN)));
+        text.put("Money", new Label(String.valueOf(MarsGame.getPreference().loadMoney()), new LabelStyle(FontTTF.getInstance().getFont48(), Color.MAGENTA)));
+        text.put("Mineral", new Label(String.valueOf(MarsGame.getPreference().loadMineral()), new LabelStyle(FontTTF.getInstance().getFont48(), Color.GREEN)));
         text.get("Money").setPosition((MarsGame.WIDTH / 2 - 128) * MarsGame.getRatioMonitorW() - text.get("Money").getPrefWidth(), (MarsGame.HEIGHT - 116) * MarsGame.getRatioMonitorH());
         text.get("Mineral").setPosition((MarsGame.WIDTH / 2 + 132) * MarsGame.getRatioMonitorW(), (MarsGame.HEIGHT - 116) * MarsGame.getRatioMonitorH());
 
         stage.addActor(text.get("Money"));
         stage.addActor(text.get("Mineral"));
 
-        text.put("Info", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont35(), Color.WHITE)));
-        text.put("SwitchOff", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont35(), Color.WHITE)));
-        text.put("Damage", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("Cooldown", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("CurrentPower", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("NextPower", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("BuyPower", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("CurrentTime", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("NextTime", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("BuyTime", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("PricePower", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("PriceTime", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
+        text.put("Info", new Label("", new LabelStyle(FontTTF.getInstance().getFont35(), Color.WHITE)));
+        text.put("SwitchOff", new Label("", new LabelStyle(FontTTF.getInstance().getFont35(), Color.WHITE)));
+        text.put("Damage", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("Cooldown", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("CurrentPower", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("NextPower", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("BuyPower", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("CurrentTime", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("NextTime", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("BuyTime", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("PricePower", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("PriceTime", new Label("", new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
         text.get("Info").setPosition((MarsGame.WIDTH + 100) * MarsGame.getRatioMonitorW(), 540 * MarsGame.getRatioMonitorH());
         text.get("SwitchOff").setPosition((MarsGame.WIDTH + 100) * MarsGame.getRatioMonitorW(), 540 * MarsGame.getRatioMonitorH());
         text.get("Damage").setPosition((MarsGame.WIDTH + 100) * MarsGame.getRatioMonitorW(), 540 * MarsGame.getRatioMonitorH());
@@ -136,12 +137,12 @@ public class LaboratoryScreen extends State {
     private void textLoading() {
         menuButtonsText();
 
-        text.put("Hydrogen", new Label(MarsGame.getLanguage().textScreen.get("Hydrogen"), new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("Refrigerant", new Label(MarsGame.getLanguage().textScreen.get("Refrigerant"), new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("Zoman", new Label(MarsGame.getLanguage().textScreen.get("Zoman"), new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("Info1", new Label(MarsGame.getLanguage().textScreen.get("Info"), new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("Info2", new Label(MarsGame.getLanguage().textScreen.get("Info"), new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
-        text.put("Info3", new Label(MarsGame.getLanguage().textScreen.get("Info"), new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE)));
+        text.put("Hydrogen", new Label(MarsGame.getLanguage().textScreen.get("Hydrogen"), new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("Refrigerant", new Label(MarsGame.getLanguage().textScreen.get("Refrigerant"), new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("Zoman", new Label(MarsGame.getLanguage().textScreen.get("Zoman"), new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("Info1", new Label(MarsGame.getLanguage().textScreen.get("Info"), new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("Info2", new Label(MarsGame.getLanguage().textScreen.get("Info"), new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
+        text.put("Info3", new Label(MarsGame.getLanguage().textScreen.get("Info"), new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE)));
 
         text.get("Hydrogen").setPosition((MarsGame.WIDTH / 2 - 490) * MarsGame.getRatioMonitorW() - text.get("Hydrogen").getPrefWidth(), (210 + MarsGame.getRatioAdd()) * MarsGame.getRatioMonitorH());
         text.get("Refrigerant").setPosition(MarsGame.WIDTH / 2 * MarsGame.getRatioMonitorW(), (260 + MarsGame.getRatioAdd()) * MarsGame.getRatioMonitorH());
@@ -159,11 +160,11 @@ public class LaboratoryScreen extends State {
     }
 
     private void menuButtonsText() {
-        text.put("Hangar", new Label(MarsGame.getLanguage().textScreen.get("Hangar"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
-        text.put("Bridge", new Label(MarsGame.getLanguage().textScreen.get("Bridge"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
-        text.put("Arsenal", new Label(MarsGame.getLanguage().textScreen.get("Arsenal"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
-        text.put("Laboratory", new Label(MarsGame.getLanguage().textScreen.get("Laboratory"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
-        text.put("Reactor", new Label(MarsGame.getLanguage().textScreen.get("Reactor"), new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK)));
+        text.put("Hangar", new Label(MarsGame.getLanguage().textScreen.get("Hangar"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
+        text.put("Bridge", new Label(MarsGame.getLanguage().textScreen.get("Bridge"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
+        text.put("Arsenal", new Label(MarsGame.getLanguage().textScreen.get("Arsenal"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
+        text.put("Laboratory", new Label(MarsGame.getLanguage().textScreen.get("Laboratory"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
+        text.put("Reactor", new Label(MarsGame.getLanguage().textScreen.get("Reactor"), new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK)));
 
         text.get("Hangar").setPosition((MarsGame.WIDTH / 2 - 384) * MarsGame.getRatioMonitorW(), 69 * MarsGame.getRatioMonitorH());
         text.get("Bridge").setPosition(text.get("Hangar").getX() + text.get("Hangar").getPrefWidth() + 32 * MarsGame.getRatioMonitorW(), 69 * MarsGame.getRatioMonitorH());

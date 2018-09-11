@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
 import studio.rashka.lib.implement.Buttons;
@@ -45,9 +46,9 @@ public class MenuScreen extends State {
     }
 
     private void logoText() {
-        logoName = new Label("m  a  r  s", new LabelStyle(MarsGame.getFontTTF().getFont200(), Color.WHITE));
-        logoTire = new Label("--------", new LabelStyle(MarsGame.getFontTTF().getFont100(), Color.WHITE));
-        logoNumber = new Label("2 2 2 2", new LabelStyle(MarsGame.getFontTTF().getFont100(), Color.WHITE));
+        logoName = new Label("m  a  r  s", new LabelStyle(FontTTF.getInstance().getFont200(), Color.WHITE));
+        logoTire = new Label("--------", new LabelStyle(FontTTF.getInstance().getFont100(), Color.WHITE));
+        logoNumber = new Label("2 2 2 2", new LabelStyle(FontTTF.getInstance().getFont100(), Color.WHITE));
 
         logoName.setPosition(MarsGame.WIDTH / 2 * MarsGame.getRatioMonitorW() - logoName.getPrefWidth() / 2, MarsGame.HEIGHT / 2 * MarsGame.getRatioMonitorH());
         logoTire.setPosition((MarsGame.WIDTH / 2 + 20) * MarsGame.getRatioMonitorW() - logoTire.getPrefWidth() / 2, (MarsGame.HEIGHT / 2 - 35) * MarsGame.getRatioMonitorH());

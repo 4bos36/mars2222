@@ -35,15 +35,14 @@ public class MarsGame extends ApplicationAdapter {
 
 	private static SpriteBatch batch;
 	private static Game game;
-	//private static FPSLogger fps;
 	private static OrthographicCamera camera;
 	private static Frustum frustum;
-	private static Preference preference; // lib
+
+	private static Preference preference;
 	private static MusicSound musicSound;
 	private static Language language;
 	private static Textures textures;
-	private static FontTTF fontTTF;
-	private static Space space;
+
 	private Monitor monitor;
 
 	private static float ratioMonitorW, ratioMonitorH, ratioAdd;
@@ -53,13 +52,10 @@ public class MarsGame extends ApplicationAdapter {
 		preference = new Preference();
 		musicSound = new MusicSound();
 		textures = new Textures();
-		fontTTF = new FontTTF();
 		language = new Language();
 		monitor = new Monitor();
-		space = new Space();
 
 		batch = new SpriteBatch();
-		//fps = new FPSLogger();
 		game = new Game();
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, WIDTH, HEIGHT);
@@ -81,8 +77,6 @@ public class MarsGame extends ApplicationAdapter {
 
 		game.update(Gdx.graphics.getDeltaTime());
 		game.render(batch);
-
-		//fps.log();
 	}
 
 	public static OrthographicCamera getCamera() {
@@ -129,16 +123,8 @@ public class MarsGame extends ApplicationAdapter {
 		return textures;
 	}
 
-	public static FontTTF getFontTTF() {
-		return fontTTF;
-	}
-
-	public static Space getSpace() {
-		return space;
-	}
-
 	@Override
-	public void pause () {
+	public void pause() {
 		try {
 			if (MarsGame.getMusicSound().fon.get("Fon").isPlaying()) MarsGame.getMusicSound().fon.get("Fon").pause();
 			MarsGame.getPreference().isPlay = false;
@@ -148,7 +134,7 @@ public class MarsGame extends ApplicationAdapter {
 	}
 
 	@Override
-	public void resume () {
+	public void resume() {
 		try {
 			if (MarsGame.getPreference().loadMusic() == 1) MarsGame.getMusicSound().fon.get("Fon").play();
 			MarsGame.getPreference().isPlay = true;
@@ -158,14 +144,15 @@ public class MarsGame extends ApplicationAdapter {
 	}
 
 	@Override
-	public void dispose () {
+	public void dispose() {
 		try {
 			MarsGame.getMusicSound().fon.get("Fon").stop();
 			musicSound.dispose();
 			textures.dispose();
-			fontTTF.dispose();
 			language.dispose();
 			batch.dispose();
+			Space.getInstance().dispose();
+			FontTTF.getInstance().dispose();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

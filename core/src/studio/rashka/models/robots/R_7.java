@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
@@ -17,6 +16,7 @@ import java.util.Random;
 
 import studio.rashka.MarsGame;
 import studio.rashka.lib.AnimationModels;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.implement.Buttons;
 
 public class R_7 {
@@ -40,7 +40,7 @@ public class R_7 {
         MarsGame.getMusicSound().robotR7();
 
         text = new HashMap<String, Label>();
-        text.put("RobotMessage", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.BLACK)));
+        text.put("RobotMessage", new Label("", new LabelStyle(FontTTF.getInstance().getFont48(), Color.BLACK)));
 
         animation = new AnimationModels(new TextureRegion(MarsGame.getTextures().textureRegionScreen.get("R-7_RUN")), 4, 0.6f);
 

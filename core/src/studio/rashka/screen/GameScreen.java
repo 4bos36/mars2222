@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
 import studio.rashka.lib.implement.Buttons;
@@ -50,8 +51,8 @@ public class GameScreen extends State {
     private ParticleEffect pandora;
 
     private static final Drawable img = MarsGame.getTextures().getTextureButtonSkin().getDrawable("NULL");
-    private static final LabelStyle style28 = new LabelStyle(MarsGame.getFontTTF().getFont28(), Color.WHITE);
-    private static final LabelStyle style40 = new LabelStyle(MarsGame.getFontTTF().getFont40(), Color.BLACK);
+    private static final LabelStyle style28 = new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE);
+    private static final LabelStyle style40 = new LabelStyle(FontTTF.getInstance().getFont40(), Color.BLACK);
 
     public GameScreen(Game game) {
         super(game);
@@ -90,15 +91,15 @@ public class GameScreen extends State {
     }
 
     private void textPutGet() {
-        text.put("Money", new Label(String.valueOf(MarsGame.getPreference().loadMoney()), new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.MAGENTA)));
-        text.put("Mineral", new Label(String.valueOf(MarsGame.getPreference().loadMineral()), new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.GREEN)));
-        text.put("MissionPlay", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont35(), Color.WHITE)));
-        text.put("MissionPage", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont54(), Color.WHITE)));
+        text.put("Money", new Label(String.valueOf(MarsGame.getPreference().loadMoney()), new LabelStyle(FontTTF.getInstance().getFont48(), Color.MAGENTA)));
+        text.put("Mineral", new Label(String.valueOf(MarsGame.getPreference().loadMineral()), new LabelStyle(FontTTF.getInstance().getFont48(), Color.GREEN)));
+        text.put("MissionPlay", new Label("", new LabelStyle(FontTTF.getInstance().getFont35(), Color.WHITE)));
+        text.put("MissionPage", new Label("", new LabelStyle(FontTTF.getInstance().getFont54(), Color.WHITE)));
         text.put("SizeTerritory", new Label("", style28));
         text.put("MineralTerritory", new Label("", style28));
         text.put("MonsterTerritory", new Label("", style28));
-        text.put("MoneyReward", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.MAGENTA)));
-        text.put("MineralReward", new Label("", new LabelStyle(MarsGame.getFontTTF().getFont48(), Color.GREEN)));
+        text.put("MoneyReward", new Label("", new LabelStyle(FontTTF.getInstance().getFont48(), Color.MAGENTA)));
+        text.put("MineralReward", new Label("", new LabelStyle(FontTTF.getInstance().getFont48(), Color.GREEN)));
 
         text.get("Money").setPosition((MarsGame.WIDTH / 2 - 128) * MarsGame.getRatioMonitorW() - text.get("Money").getPrefWidth(), (MarsGame.HEIGHT - 116) * MarsGame.getRatioMonitorH());
         text.get("Mineral").setPosition((MarsGame.WIDTH / 2 + 132) * MarsGame.getRatioMonitorW(), (MarsGame.HEIGHT - 116) * MarsGame.getRatioMonitorH());

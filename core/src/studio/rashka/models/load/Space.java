@@ -10,10 +10,23 @@ import studio.rashka.lib.GifDecoder;
 
 public class Space {
 
-    private Animation<TextureRegion> animation;
-    float deltaTime;
+    private static volatile Space instance;
 
-    public Space() {
+    public static Space getInstance() {
+        if (instance == null) {
+            synchronized (Space.class) {
+                if (instance == null) {
+                    instance = new Space();
+                }
+            }
+        }
+        return instance;
+    }
+
+    private Animation<TextureRegion> animation;
+    private float deltaTime;
+
+    private Space() {
         animation = GifDecoder.loadGIFAnimation(Animation.PlayMode.LOOP, Gdx.files.internal("load/load.gif").read());
     }
 
@@ -22,5 +35,9 @@ public class Space {
         batch.begin();
         batch.draw(animation.getKeyFrame(deltaTime), MarsGame.WIDTH / 2 - 100, MarsGame.HEIGHT / 2 - 200 + MarsGame.getRatioAdd() / 2);
         batch.end();
+    }
+
+    public void dispose() {
+
     }
 }
