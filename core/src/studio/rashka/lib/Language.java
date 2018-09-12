@@ -1019,7 +1019,7 @@ public class Language {
     }
 
     public void aboutScreen() {
-        textScreen.put("Version", new StringBuilder("v. 0.1.8 (30)"));
+        textScreen.put("Version", new StringBuilder("v. 0.1.8 (31)"));
         if (MarsGame.getPreference().language().equals("ru")) {
             textScreen.put("Menu", new StringBuilder("Меню"));
             textScreen.put("Developer", new StringBuilder("Разработчик"));

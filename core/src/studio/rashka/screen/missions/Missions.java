@@ -2102,7 +2102,7 @@ public class Missions extends State {
 
         int scoreUserRecord;
         if (monsterArmy.getDieMonster() == 0) scoreUserRecord = 1;
-        else scoreUserRecord = monsterArmy.getMonsterPrice() / monsterArmy.getDieMonster() * rank / 10;
+        else scoreUserRecord = monsterArmy.getMonsterPrice() / monsterArmy.getDieMonster() * rank;
         MarsGame.getPreference().setRecordTop(scoreUserRecord);
 
         //region Text

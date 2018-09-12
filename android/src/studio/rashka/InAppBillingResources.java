@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InAppBillingResources {
-    private static final String RSA_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhn5oPeLeT2ypPkdtV9hc0k3pSIfyPiPf2ArdKCTi3oS9GtedotroZuTMP8sQDow4hiaSpJQoWATuI95/sGBL59ZgsG/0MMLQm6V2vY4wbglRbzWnZY0rIFXiye/r21yZrrovmEvNCe6Wlzk+DkWIb4qnZgq6uOiUBjHfoCsKE9r7WknIsJVp/4F12RrcAVJtl5wAyryweCbTFc4+39zsYZ1iVlXSPZHdN5GTArVKrygUBfn0hHDv2AAfjvx/41DZ0t7GPDu3z7UtmICuSeEWSu+/3shyVQfCuk5oKx/uG1eGyOUsOJ6UU+c/R0AyCgWN6FsuBrfc5V+i9RoG1kJHEwIDAQAB";
-    private static final String MERCHANT_ID = "05806023186655529771";
+
     private static final String MONEY = "money";
     private static final String MONEY_2 = "money_2";
     private static final String MONEY_3 = "money_3";
@@ -72,14 +71,6 @@ public class InAppBillingResources {
         listProduct.add(MICROWAVE_5);
 
         return listProduct;
-    }
-
-    public static String getRsaKey() {
-        return RSA_KEY;
-    }
-
-    public static String getMerchantId() {
-        return MERCHANT_ID;
     }
 
     public static String getMONEY() {
