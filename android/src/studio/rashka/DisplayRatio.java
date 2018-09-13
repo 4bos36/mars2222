@@ -16,7 +16,7 @@ public class DisplayRatio {
         Display display = windowManager.getDefaultDisplay();
         int realWidth, realHeight;
 
-        if (Build.VERSION.SDK_INT >= 17){ //new pleasant way to get real metrics
+        if (Build.VERSION.SDK_INT >= 17) { //new pleasant way to get real metrics
             DisplayMetrics realMetrics = new DisplayMetrics();
             display.getRealMetrics(realMetrics);
             realWidth = realMetrics.widthPixels;

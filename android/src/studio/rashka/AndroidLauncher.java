@@ -387,7 +387,7 @@ public class AndroidLauncher extends AndroidApplication implements RewardedVideo
     @Override
     protected void onStop() {
         super.onStop();
-        googleApiClient.disconnect();
+        if (getSignedInGPGS()) googleApiClient.disconnect();
     }
 
     @Override
@@ -767,8 +767,6 @@ public class AndroidLauncher extends AndroidApplication implements RewardedVideo
     }
 
     // The rest of this code is all about building the error dialog
-
-//    private FragmentActivity fragmentActivity = new FragmentActivity();
 
     /* Creates a dialog for an error message */
     private void showErrorDialog(int errorCode) {

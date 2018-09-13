@@ -2109,7 +2109,7 @@ public class Missions extends State {
         text.put("Home", new Label(MarsGame.getLanguage().textScreen.get("Home"), style54));
         text.put("Newly", new Label(MarsGame.getLanguage().textScreen.get("Newly"), style54));
         text.put("Money", new Label(new StringBuilder().append("+").append(money), style48));
-        text.put("Mineral", new Label(new StringBuilder().append("+").append(mineral).append(" (+").append(crystalAdd).append(")"), style48));
+        text.put("Mineral", new Label(new StringBuilder().append("+").append(crystalAdd).append(" (+").append(mineral).append(")"), style48));
 
         text.get("Home").setPosition(128 * MarsGame.getRatioMonitorW(), 64 * MarsGame.getRatioMonitorH());
         text.get("Newly").setPosition((MarsGame.WIDTH - 128) * MarsGame.getRatioMonitorW() - text.get("Newly").getPrefWidth(), 64 * MarsGame.getRatioMonitorH());
