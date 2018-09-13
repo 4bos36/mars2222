@@ -90,6 +90,7 @@ public class Preference {
     public void setReward(boolean give) {
         setting.putBoolean("RewardYes", give);
         setting.flush();
+        setAchievementDaysOfGame();
     }
 
     public int getRewardDay() {
@@ -98,7 +99,6 @@ public class Preference {
 
     public void setRewardDay(int day) {
         setting.putInteger("RewardDay", day);
-        setAchievementDaysOfGame();
     }
 
     public int getRewardBonus() {

@@ -35,7 +35,7 @@ public class ArsenalScreen extends State {
     private Stage stage;
     private Map<String, Label> text;
     private boolean isBuyTactics = false, touchTurnOffTerminal = false, touchMachineGun = false, touchLauncherGun = false,
-            touchFlareGun = false, touchLaserGun = false, isOffTerminal = true, touchReset = false, showReset = false,
+            touchFlareGun = false, touchLaserGun = false, isOffTerminal = false, touchReset = false, showReset = false,
             touchWeapons_1 = false, touchWeapons_2 = false, touchWeapons_3 = false, touchWeapons_4 = false,
             touchWeapons_5 = false, touchWeapons_6 = false, touchWeapons_7 = false, touchWeapons_8 = false,
             touchAttack = false, touchDefense = false, touchTechnologies = false;
@@ -1528,6 +1528,10 @@ public class ArsenalScreen extends State {
                     if (MarsGame.getPreference().loadSound() == 1)
                         MarsGame.getMusicSound().sounds.get("ClickTerminal").play();
                     showWeapons = MACHINEGUN;
+                    text.get("MachineGun").setColor(Color.ORANGE);
+                    text.get("LauncherGun").setColor(Color.WHITE);
+                    text.get("FlareGun").setColor(Color.WHITE);
+                    text.get("LaserGun").setColor(Color.WHITE);
                 }
             } else if (name.equals("LauncherGun")) {
                 if (tactics.getNameTactic().equals("NULL")) {
@@ -1535,6 +1539,10 @@ public class ArsenalScreen extends State {
                     if (MarsGame.getPreference().loadSound() == 1)
                         MarsGame.getMusicSound().sounds.get("ClickTerminal").play();
                     showWeapons = GRENADELAUNCHERS;
+                    text.get("MachineGun").setColor(Color.WHITE);
+                    text.get("LauncherGun").setColor(Color.ORANGE);
+                    text.get("FlareGun").setColor(Color.WHITE);
+                    text.get("LaserGun").setColor(Color.WHITE);
                 }
             } else if (name.equals("FlareGun")) {
                 if (tactics.getNameTactic().equals("NULL")) {
@@ -1542,6 +1550,10 @@ public class ArsenalScreen extends State {
                     if (MarsGame.getPreference().loadSound() == 1)
                         MarsGame.getMusicSound().sounds.get("ClickTerminal").play();
                     showWeapons = ROCKETLAUNCHERS;
+                    text.get("MachineGun").setColor(Color.WHITE);
+                    text.get("LauncherGun").setColor(Color.WHITE);
+                    text.get("FlareGun").setColor(Color.ORANGE);
+                    text.get("LaserGun").setColor(Color.WHITE);
                 }
             } else if (name.equals("LaserGun")) {
                 if (tactics.getNameTactic().equals("NULL")) {
@@ -1549,6 +1561,10 @@ public class ArsenalScreen extends State {
                     if (MarsGame.getPreference().loadSound() == 1)
                         MarsGame.getMusicSound().sounds.get("ClickTerminal").play();
                     showWeapons = LASERGUNS;
+                    text.get("MachineGun").setColor(Color.WHITE);
+                    text.get("LauncherGun").setColor(Color.WHITE);
+                    text.get("FlareGun").setColor(Color.WHITE);
+                    text.get("LaserGun").setColor(Color.ORANGE);
                 }
             } else if (name.equals("BuyActive")) {
                 //region
