@@ -24,14 +24,22 @@ import studio.rashka.MarsGame;
 import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
+import studio.rashka.lib.Textures;
 import studio.rashka.lib.Time;
 import studio.rashka.lib.implement.Buttons;
+import studio.rashka.lib.implement.crystals.AbstractFactoryCrystals;
+import studio.rashka.lib.implement.crystals.CreateMissionCrystals;
+import studio.rashka.lib.implement.crystals.Crystals;
+import studio.rashka.lib.singleton.ScaleMap;
 import studio.rashka.models.Loading;
 import studio.rashka.models.games.AimShoot;
 import studio.rashka.models.games.Base;
 import studio.rashka.models.games.GamesPanel;
 
 public class Missions extends State {
+
+    private AbstractFactoryCrystals createMissionCrystals = new CreateMissionCrystals();
+    private Crystals crystals;
 
     private static final int NONE = 0, NORM = 1, MIMI = 2, SURPRISE = 3, ANGER = 4, MARSIAN = 5;
     private boolean isCompleteMission, isCompleteCrystals, isCompleteIntact, isCompleteDieWormCave, isGameEnd = false,
@@ -55,12 +63,11 @@ public class Missions extends State {
     private AimShoot aimShoot;
     private Maps maps;
     private MonsterArmy monsterArmy;
-    private Crystals crystals;
     private Time runMicrowaves;
 
     private ParticleEffect explosion;
 
-    private static final Drawable img = MarsGame.getTextures().getTextureButtonSkin().getDrawable("NULL");
+    private static final Drawable img = Textures.getInstance().getTextureButtonSkin().getDrawable("NULL");
     private static final LabelStyle style100 = new LabelStyle(FontTTF.getInstance().getFont100(), Color.WHITE);
     private static final LabelStyle style54 = new LabelStyle(FontTTF.getInstance().getFont54(), Color.WHITE);
     private static final LabelStyle style48 = new LabelStyle(FontTTF.getInstance().getFont48(), Color.WHITE);
@@ -82,7 +89,7 @@ public class Missions extends State {
 
         maps = new Maps(mission, MarsGame.getCamera());
         monsterArmy = new MonsterArmy(mission);
-        crystals = new Crystals(mission);
+        crystals = createMissionCrystals.createMissionCrystals(mission);
         gamesPanel = new GamesPanel(mission);
         base = new Base();
         aimShoot = new AimShoot(base.getShotPower(), base.getShotSpeed(), base.getShotRange(), base.getShotDistance());
@@ -219,8 +226,8 @@ public class Missions extends State {
         buttons.get("Microwave").addListener(new ButtonsInputListener(buttons.get("Microwave").getName()));
 
         touchpadSkin = new Skin();
-        touchpadSkin.add("touchBackground", MarsGame.getTextures().textureRegion.get("Move"));
-        touchpadSkin.add("touchKnob", MarsGame.getTextures().textureRegion.get("Aim"));
+        touchpadSkin.add("touchBackground", Textures.getInstance().textureRegion.get("Move"));
+        touchpadSkin.add("touchKnob", Textures.getInstance().textureRegion.get("Aim"));
         touchpadStyle = new TouchpadStyle();
         touchpadStyle.background = touchpadSkin.getDrawable("touchBackground");
         touchpadStyle.knob = touchpadSkin.getDrawable("touchKnob");
@@ -2094,7 +2101,7 @@ public class Missions extends State {
         MarsGame.getPreference().setEventEarnMoney(money);
         MarsGame.getPreference().setAchievementMoney(MarsGame.getPreference().getEventEarnMoney());
 
-        MarsGame.getPreference().setEventEarnMinerals(crystalAdd);
+        MarsGame.getPreference().setEventEarnMinerals(crystalAdd + mineral);
         MarsGame.getPreference().setAchievementMineral(MarsGame.getPreference().getEventEarnMinerals());
 
         MarsGame.getPreference().setEventKillingMonsters(monsterArmy.getDieMonster());
@@ -2275,6 +2282,7 @@ public class Missions extends State {
                 //endregion
             }
         }
+        crystals.update(deltaTime);
     }
 
     @Override
@@ -2304,11 +2312,11 @@ public class Missions extends State {
             gamesPanel.render(batch, monsterArmy.getMonster_List());
             if (monsterArmy.isBoss()) gamesPanel.renderBoss(batch, monsterArmy.getBoss());
             if (monsterArmy.isStartNewWave()) {
-                batch.draw(MarsGame.getTextures().textureRegion.get("NextWave"), MarsGame.WIDTH / 2 - 64, 288);
+                batch.draw(Textures.getInstance().textureRegion.get("NextWave"), MarsGame.WIDTH / 2 - 64, 288);
                 if (buttons.get("NextWave").getX() == -2000)
                     buttons.get("NextWave").setPosition(MarsGame.WIDTH / 2 - 64, 288);
                 startNewWave++;
-                batch.draw(MarsGame.getTextures().textureRegion.get("ColorWhite"), 0, 0, 6.4f * startNewWave, 2);
+                batch.draw(Textures.getInstance().textureRegion.get("ColorWhite"), 0, 0, 6.4f * startNewWave, 2);
                 if (startNewWave >= 300) {
                     startNewWave = 0;
                     monsterArmy.wavesTotalMonster();
@@ -2320,33 +2328,33 @@ public class Missions extends State {
             //region Story Start
             if (isStoryActive) {
                 batch.begin();
-                batch.draw(MarsGame.getTextures().textureRegion.get("Hide"), 0, 0, MarsGame.WIDTH, MarsGame.HEIGHT);
+                batch.draw(Textures.getInstance().textureRegion.get("Hide"), 0, 0, MarsGame.WIDTH, MarsGame.HEIGHT);
                 if (robotSpeak == NORM)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("R_7Speak_norm"), 80, text.get("SpeakRobot").getPrefHeight() / MarsGame.getRatioMonitorH() + 16);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("R_7Speak_norm"), 80, text.get("SpeakRobot").getPrefHeight() / MarsGame.getRatioMonitorH() + 16);
                 else if (robotSpeak == MIMI)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("R_7Speak_mimi"), 80, text.get("SpeakRobot").getPrefHeight() / MarsGame.getRatioMonitorH() + 16);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("R_7Speak_mimi"), 80, text.get("SpeakRobot").getPrefHeight() / MarsGame.getRatioMonitorH() + 16);
                 else if (robotSpeak == SURPRISE)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("R_7Speak_surprise"), 80, text.get("SpeakRobot").getPrefHeight() / MarsGame.getRatioMonitorH() + 16);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("R_7Speak_surprise"), 80, text.get("SpeakRobot").getPrefHeight() / MarsGame.getRatioMonitorH() + 16);
                 else if (robotSpeak == ANGER)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("R_7Speak_anger"), 80, text.get("SpeakRobot").getPrefHeight() / MarsGame.getRatioMonitorH() + 16);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("R_7Speak_anger"), 80, text.get("SpeakRobot").getPrefHeight() / MarsGame.getRatioMonitorH() + 16);
                 else if (robotSpeak == MARSIAN)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("Marsian"), 80, text.get("SpeakRobot").getPrefHeight() / MarsGame.getRatioMonitorH() + 80);
-                batch.draw(MarsGame.getTextures().textureRegion.get("MP"), 64, 64, MarsGame.WIDTH - 128, text.get("SpeakRobot").getPrefHeight() / MarsGame.getRatioMonitorH() + 42);
-                batch.draw(MarsGame.getTextures().textureRegion.get("Black"), 65, 65, MarsGame.WIDTH - 130, text.get("SpeakRobot").getPrefHeight() / MarsGame.getRatioMonitorH() + 40);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("Marsian"), 80, text.get("SpeakRobot").getPrefHeight() / MarsGame.getRatioMonitorH() + 80);
+                batch.draw(Textures.getInstance().textureRegion.get("MP"), 64, 64, MarsGame.WIDTH - 128, text.get("SpeakRobot").getPrefHeight() / MarsGame.getRatioMonitorH() + 42);
+                batch.draw(Textures.getInstance().textureRegion.get("Black"), 65, 65, MarsGame.WIDTH - 130, text.get("SpeakRobot").getPrefHeight() / MarsGame.getRatioMonitorH() + 40);
                 if (robotSpeak != NONE)
-                    batch.draw(MarsGame.getTextures().textureRegion.get("FastOff"), MarsGame.WIDTH - 100, 16, 80, 80);
+                    batch.draw(Textures.getInstance().textureRegion.get("FastOff"), MarsGame.WIDTH - 100, 16, 80, 80);
                 else if (robotSpeak == NONE) {
-                    batch.draw(MarsGame.getTextures().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 - 256, MarsGame.HEIGHT / 2 + 96);
-                    batch.draw(MarsGame.getTextures().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 - 128, MarsGame.HEIGHT / 2 + 96, -64, 128);
+                    batch.draw(Textures.getInstance().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 - 256, MarsGame.HEIGHT / 2 + 96);
+                    batch.draw(Textures.getInstance().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 - 128, MarsGame.HEIGHT / 2 + 96, -64, 128);
 
-                    batch.draw(MarsGame.getTextures().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 - 256, MarsGame.HEIGHT / 2 - 96);
-                    batch.draw(MarsGame.getTextures().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 - 128, MarsGame.HEIGHT / 2 - 96, -64, 128);
+                    batch.draw(Textures.getInstance().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 - 256, MarsGame.HEIGHT / 2 - 96);
+                    batch.draw(Textures.getInstance().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 - 128, MarsGame.HEIGHT / 2 - 96, -64, 128);
 
-                    batch.draw(MarsGame.getTextures().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 + 64, MarsGame.HEIGHT / 2 - 96);
-                    batch.draw(MarsGame.getTextures().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 + 192, MarsGame.HEIGHT / 2 - 96, -64, 128);
+                    batch.draw(Textures.getInstance().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 + 64, MarsGame.HEIGHT / 2 - 96);
+                    batch.draw(Textures.getInstance().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 + 192, MarsGame.HEIGHT / 2 - 96, -64, 128);
 
-                    batch.draw(MarsGame.getTextures().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 + 64, MarsGame.HEIGHT / 2 + 96);
-                    batch.draw(MarsGame.getTextures().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 + 192, MarsGame.HEIGHT / 2 + 96, -64, 128);
+                    batch.draw(Textures.getInstance().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 + 64, MarsGame.HEIGHT / 2 + 96);
+                    batch.draw(Textures.getInstance().textureRegion.get("MenuGames3"), MarsGame.WIDTH / 2 + 192, MarsGame.HEIGHT / 2 + 96, -64, 128);
                 }
                 batch.end();
             }
@@ -2355,16 +2363,16 @@ public class Missions extends State {
         } else {
             batch.begin();
             if (rank == 1)
-                batch.draw(MarsGame.getTextures().textureRegion.get("Rank_1"), MarsGame.WIDTH / 2 - 64, MarsGame.HEIGHT - 416);
+                batch.draw(Textures.getInstance().textureRegion.get("Rank_1"), MarsGame.WIDTH / 2 - 64, MarsGame.HEIGHT - 416);
             else if (rank == 2)
-                batch.draw(MarsGame.getTextures().textureRegion.get("Rank_2"), MarsGame.WIDTH / 2 - 64, MarsGame.HEIGHT - 416);
+                batch.draw(Textures.getInstance().textureRegion.get("Rank_2"), MarsGame.WIDTH / 2 - 64, MarsGame.HEIGHT - 416);
             else if (rank == 3)
-                batch.draw(MarsGame.getTextures().textureRegion.get("Rank_3"), MarsGame.WIDTH / 2 - 64, MarsGame.HEIGHT - 416);
+                batch.draw(Textures.getInstance().textureRegion.get("Rank_3"), MarsGame.WIDTH / 2 - 64, MarsGame.HEIGHT - 416);
             else if (rank == 4)
-                batch.draw(MarsGame.getTextures().textureRegion.get("Rank_4"), MarsGame.WIDTH / 2 - 64, MarsGame.HEIGHT - 416);
+                batch.draw(Textures.getInstance().textureRegion.get("Rank_4"), MarsGame.WIDTH / 2 - 64, MarsGame.HEIGHT - 416);
 
-            batch.draw(MarsGame.getTextures().textureRegion.get("MoneyMission"), MarsGame.WIDTH / 2 - 100, MarsGame.HEIGHT / 2);
-            batch.draw(MarsGame.getTextures().textureRegion.get("MineralMission"), MarsGame.WIDTH / 2 - 100, MarsGame.HEIGHT / 2 - 128);
+            batch.draw(Textures.getInstance().textureRegion.get("MoneyMission"), MarsGame.WIDTH / 2 - 100, MarsGame.HEIGHT / 2);
+            batch.draw(Textures.getInstance().textureRegion.get("MineralMission"), MarsGame.WIDTH / 2 - 100, MarsGame.HEIGHT / 2 - 128);
             batch.end();
             MarsGame.getCamera().update();
         }
@@ -2577,10 +2585,10 @@ public class Missions extends State {
                         gamesPanel.getMagic().setMagicPowerFire(MarsGame.getPreference().loadHydrogenDamage());
                         if (scale == 1) {
                             gamesPanel.getMagic().setPushMagicFire(Gdx.input.getX(pointer) / MarsGame.getRatioMonitorW() + MarsGame.getCamera().position.x,
-                                    (MarsGame.HEIGHT * MarsGame.getRatioMonitorH() - Gdx.input.getY(pointer)) / MarsGame.getRatioMonitorH() + MarsGame.getCamera().position.y, true, scale);
+                                    (MarsGame.HEIGHT * MarsGame.getRatioMonitorH() - Gdx.input.getY(pointer)) / MarsGame.getRatioMonitorH() + MarsGame.getCamera().position.y, true);
                         } else if (scale == 0.5f) {
                             gamesPanel.getMagic().setPushMagicFire(Gdx.input.getX(pointer) / MarsGame.getRatioMonitorW() * 2 + MarsGame.getCamera().position.x,
-                                    (MarsGame.HEIGHT * MarsGame.getRatioMonitorH() - Gdx.input.getY(pointer)) / MarsGame.getRatioMonitorH() * 2 + MarsGame.getCamera().position.y, true, scale);
+                                    (MarsGame.HEIGHT * MarsGame.getRatioMonitorH() - Gdx.input.getY(pointer)) / MarsGame.getRatioMonitorH() * 2 + MarsGame.getCamera().position.y, true);
                         }
                     } else if (gamesPanel.isActiveFire() && gamesPanel.getMP() < 25) {
                         if (MarsGame.getPreference().loadSound() == 1)
@@ -2601,10 +2609,10 @@ public class Missions extends State {
                         gamesPanel.getMagic().setMagicPowerPoison(MarsGame.getPreference().loadZomanDamage());
                         if (scale == 1) {
                             gamesPanel.getMagic().setPushMagicPoison(Gdx.input.getX(pointer) / MarsGame.getRatioMonitorW() + MarsGame.getCamera().position.x,
-                                    (MarsGame.HEIGHT * MarsGame.getRatioMonitorH() - Gdx.input.getY(pointer)) / MarsGame.getRatioMonitorW() + MarsGame.getCamera().position.y, true, scale);
+                                    (MarsGame.HEIGHT * MarsGame.getRatioMonitorH() - Gdx.input.getY(pointer)) / MarsGame.getRatioMonitorW() + MarsGame.getCamera().position.y, true);
                         } else if (scale == 0.5f) {
                             gamesPanel.getMagic().setPushMagicPoison(Gdx.input.getX(pointer) / MarsGame.getRatioMonitorW() * 2 + MarsGame.getCamera().position.x,
-                                    (MarsGame.HEIGHT * MarsGame.getRatioMonitorH() - Gdx.input.getY(pointer)) / MarsGame.getRatioMonitorW() * 2 + MarsGame.getCamera().position.y, true, scale);
+                                    (MarsGame.HEIGHT * MarsGame.getRatioMonitorH() - Gdx.input.getY(pointer)) / MarsGame.getRatioMonitorW() * 2 + MarsGame.getCamera().position.y, true);
                         }
                     } else if (gamesPanel.isActivePoison() && gamesPanel.getMP() < 25) {
                         if (MarsGame.getPreference().loadSound() == 1)
@@ -2625,10 +2633,10 @@ public class Missions extends State {
                         gamesPanel.getMagic().setMagicPowerIce(MarsGame.getPreference().loadRefrigerantDamage());
                         if (scale == 1) {
                             gamesPanel.getMagic().setPushMagicIce(Gdx.input.getX(pointer) / MarsGame.getRatioMonitorW() + MarsGame.getCamera().position.x,
-                                    (MarsGame.HEIGHT * MarsGame.getRatioMonitorH() - Gdx.input.getY(pointer)) / MarsGame.getRatioMonitorW() + MarsGame.getCamera().position.y, true, scale);
+                                    (MarsGame.HEIGHT * MarsGame.getRatioMonitorH() - Gdx.input.getY(pointer)) / MarsGame.getRatioMonitorW() + MarsGame.getCamera().position.y, true);
                         } else if (scale == 0.5f) {
                             gamesPanel.getMagic().setPushMagicIce(Gdx.input.getX(pointer) / MarsGame.getRatioMonitorW() * 2 + MarsGame.getCamera().position.x,
-                                    (MarsGame.HEIGHT * MarsGame.getRatioMonitorH() - Gdx.input.getY(pointer)) / MarsGame.getRatioMonitorW() * 2 + MarsGame.getCamera().position.y, true, scale);
+                                    (MarsGame.HEIGHT * MarsGame.getRatioMonitorH() - Gdx.input.getY(pointer)) / MarsGame.getRatioMonitorW() * 2 + MarsGame.getCamera().position.y, true);
                         }
                     } else if (gamesPanel.isActiveIce() && gamesPanel.getMP() < 25) {
                         if (MarsGame.getPreference().loadSound() == 1)
@@ -2800,13 +2808,15 @@ public class Missions extends State {
                     MarsGame.getMusicSound().sounds.get("ClickTerminal").play();
                 if (scale == 1) {
                     scale = 0.5f;
-                    gamesPanel.setScale(0.5f);
-                    maps.setScale(0.5f);
+//                    maps.setScale(scale);
+//                    gamesPanel.setScale(scale);
+                    ScaleMap.INSTANCE.setScale(scale);
                     MarsGame.getCamera().zoom = 2.0f;
                 } else if (scale == 0.5f) {
                     scale = 1;
-                    gamesPanel.setScale(1);
-                    maps.setScale(1);
+//                    maps.setScale(scale);
+//                    gamesPanel.setScale(scale);
+                    ScaleMap.INSTANCE.setScale(scale);
                     MarsGame.getCamera().zoom = 1.0f;
                 }
                 //endregion

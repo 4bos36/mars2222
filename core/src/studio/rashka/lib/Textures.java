@@ -26,7 +26,20 @@ public class Textures {
     public Map<String, Data> data, dataBoss;
     public Map<String, Loader> loader, loaderBoss;
 
-    public Textures() {
+    private static volatile Textures instance;
+
+    public static Textures getInstance() {
+        if (instance == null) {
+            synchronized (Textures.class) {
+                if (instance == null) {
+                    instance = new Textures();
+                }
+            }
+        }
+        return instance;
+    }
+
+    private Textures() {
         spaceShip = new HashMap<String, AssetManager>();
 
         load = new Texture("load/load.gif");

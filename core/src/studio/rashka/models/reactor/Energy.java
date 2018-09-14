@@ -1,18 +1,11 @@
 package studio.rashka.models.reactor;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 import studio.rashka.MarsGame;
-import studio.rashka.lib.AnimationModels;
-import studio.rashka.lib.GifDecoder;
+import studio.rashka.lib.Textures;
 
 public class Energy {
 
@@ -43,7 +36,7 @@ public class Energy {
 
     public void render(SpriteBatch batch) {
         energy.draw(batch);
-        batch.draw(MarsGame.getTextures().textureRegion.get("ColorBlack"), MarsGame.WIDTH / 2 - 200, 290 + MarsGame.getRatioAdd(), 400, 400);
+        batch.draw(Textures.getInstance().textureRegion.get("ColorBlack"), MarsGame.WIDTH / 2 - 200, 290 + MarsGame.getRatioAdd(), 400, 400);
         life.draw(batch);
         mana.draw(batch);
     }

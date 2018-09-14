@@ -21,6 +21,7 @@ import studio.rashka.MarsGame;
 import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
+import studio.rashka.lib.Textures;
 import studio.rashka.lib.implement.Buttons;
 import studio.rashka.models.Loading;
 import studio.rashka.models.Stars;
@@ -47,7 +48,7 @@ public class PirateScreen extends State {
     private Stars stars;
     private ParticleEffect engineUp, engineDown;
 
-    private static final Drawable drawable = MarsGame.getTextures().getTextureButtonSkin().getDrawable("NULL");
+    private static final Drawable drawable = Textures.getInstance().getTextureButtonSkin().getDrawable("NULL");
 
     public PirateScreen(Game game) {
         super(game);
@@ -84,7 +85,7 @@ public class PirateScreen extends State {
     }
 
     private void textSet() {
-        setPromo = new TextField("", new TextFieldStyle(FontTTF.getInstance().getFont28(), Color.WHITE, MarsGame.getTextures().getTextureButtonSkin().getDrawable("Input"), null, MarsGame.getTextures().getTextureButtonSkin().getDrawable("Text")));
+        setPromo = new TextField("", new TextFieldStyle(FontTTF.getInstance().getFont28(), Color.WHITE, Textures.getInstance().getTextureButtonSkin().getDrawable("Input"), null, Textures.getInstance().getTextureButtonSkin().getDrawable("Text")));
         setPromo.setPosition(64 * MarsGame.getRatioMonitorW(), (MarsGame.HEIGHT - 128) * MarsGame.getRatioMonitorH());
         setPromo.setSize(256 * MarsGame.getRatioMonitorW(), 64 * MarsGame.getRatioMonitorH());
         setPromo.setMessageText("PROMO KOD");
@@ -219,44 +220,44 @@ public class PirateScreen extends State {
     public void render(SpriteBatch batch) {
         batch.begin();
         stars.render(batch);
-        batch.draw(MarsGame.getTextures().textureRegion.get("Mars"), 256, MarsGame.HEIGHT / 2, 192, 192, 384, 384, 1, 1, angleMars);
+        batch.draw(Textures.getInstance().textureRegion.get("Mars"), 256, MarsGame.HEIGHT / 2, 192, 192, 384, 384, 1, 1, angleMars);
 
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("PirateShip"), 320 + position.x, 256 + position.y, 896, 384);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("PirateShip"), 320 + position.x, 256 + position.y, 896, 384);
         engineUp.draw(batch);
         engineDown.draw(batch);
 
-        if (!isGetMoney) batch.draw(MarsGame.getTextures().textureRegionScreen.get("BuyMoney"), MarsGame.WIDTH / 2, MarsGame.HEIGHT - 256, 192, 192);
-        else batch.draw(MarsGame.getTextures().textureRegionScreen.get("BuyMoney"), MarsGame.WIDTH / 2 + 2, MarsGame.HEIGHT - 258, 188, 188);
-        if (!isGetMineral) batch.draw(MarsGame.getTextures().textureRegionScreen.get("BuyMineral"), MarsGame.WIDTH / 2 + 320, MarsGame.HEIGHT - 256, 192, 192);
-        else batch.draw(MarsGame.getTextures().textureRegionScreen.get("BuyMineral"), MarsGame.WIDTH / 2 + 322, MarsGame.HEIGHT - 258, 188, 188);
-        if (!isShieldHPAdd) batch.draw(MarsGame.getTextures().textureRegionScreen.get("BuyShieldHPAdd"), MarsGame.WIDTH / 2 + 640, MarsGame.HEIGHT - 256, 192, 192);
-        else batch.draw(MarsGame.getTextures().textureRegionScreen.get("BuyShieldHPAdd"), MarsGame.WIDTH / 2 + 642, MarsGame.HEIGHT - 258, 188, 188);
-        if (!isEnergyAdd) batch.draw(MarsGame.getTextures().textureRegionScreen.get("BuyEnergyAdd"), MarsGame.WIDTH / 2 + 640, MarsGame.HEIGHT - 576, 192, 192);
-        else batch.draw(MarsGame.getTextures().textureRegionScreen.get("BuyEnergyAdd"), MarsGame.WIDTH / 2 + 642, MarsGame.HEIGHT - 578, 188, 188);
-        if (!isMicrowave) batch.draw(MarsGame.getTextures().textureRegionScreen.get("BuyMicrowave"), MarsGame.WIDTH / 2 + 640, MarsGame.HEIGHT - 896, 192, 192);
-        else batch.draw(MarsGame.getTextures().textureRegionScreen.get("BuyMicrowave"), MarsGame.WIDTH / 2 + 642, MarsGame.HEIGHT - 898, 188, 188);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Home"), 64, 64, 128, 128);
+        if (!isGetMoney) batch.draw(Textures.getInstance().textureRegionScreen.get("BuyMoney"), MarsGame.WIDTH / 2, MarsGame.HEIGHT - 256, 192, 192);
+        else batch.draw(Textures.getInstance().textureRegionScreen.get("BuyMoney"), MarsGame.WIDTH / 2 + 2, MarsGame.HEIGHT - 258, 188, 188);
+        if (!isGetMineral) batch.draw(Textures.getInstance().textureRegionScreen.get("BuyMineral"), MarsGame.WIDTH / 2 + 320, MarsGame.HEIGHT - 256, 192, 192);
+        else batch.draw(Textures.getInstance().textureRegionScreen.get("BuyMineral"), MarsGame.WIDTH / 2 + 322, MarsGame.HEIGHT - 258, 188, 188);
+        if (!isShieldHPAdd) batch.draw(Textures.getInstance().textureRegionScreen.get("BuyShieldHPAdd"), MarsGame.WIDTH / 2 + 640, MarsGame.HEIGHT - 256, 192, 192);
+        else batch.draw(Textures.getInstance().textureRegionScreen.get("BuyShieldHPAdd"), MarsGame.WIDTH / 2 + 642, MarsGame.HEIGHT - 258, 188, 188);
+        if (!isEnergyAdd) batch.draw(Textures.getInstance().textureRegionScreen.get("BuyEnergyAdd"), MarsGame.WIDTH / 2 + 640, MarsGame.HEIGHT - 576, 192, 192);
+        else batch.draw(Textures.getInstance().textureRegionScreen.get("BuyEnergyAdd"), MarsGame.WIDTH / 2 + 642, MarsGame.HEIGHT - 578, 188, 188);
+        if (!isMicrowave) batch.draw(Textures.getInstance().textureRegionScreen.get("BuyMicrowave"), MarsGame.WIDTH / 2 + 640, MarsGame.HEIGHT - 896, 192, 192);
+        else batch.draw(Textures.getInstance().textureRegionScreen.get("BuyMicrowave"), MarsGame.WIDTH / 2 + 642, MarsGame.HEIGHT - 898, 188, 188);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Home"), 64, 64, 128, 128);
 
         if (numberPrice != 0) {
             if (numberPrice >= 1 && numberPrice < 5) {
-                if (isUP) batch.draw(MarsGame.getTextures().textureRegionScreen.get("UP"), 66, MarsGame.HEIGHT / 2 + 194, 124, -124);
-                else batch.draw(MarsGame.getTextures().textureRegionScreen.get("UP"), 64, MarsGame.HEIGHT / 2 + 192, 128, -128);
+                if (isUP) batch.draw(Textures.getInstance().textureRegionScreen.get("UP"), 66, MarsGame.HEIGHT / 2 + 194, 124, -124);
+                else batch.draw(Textures.getInstance().textureRegionScreen.get("UP"), 64, MarsGame.HEIGHT / 2 + 192, 128, -128);
             }
             if (numberPrice > 1 && numberPrice <= 5) {
-                if (isDOWN) batch.draw(MarsGame.getTextures().textureRegionScreen.get("UP"), 66, MarsGame.HEIGHT / 2 - 62, 124, 124);
-                else batch.draw(MarsGame.getTextures().textureRegionScreen.get("UP"), 64, MarsGame.HEIGHT / 2 - 64, 128, 128);
+                if (isDOWN) batch.draw(Textures.getInstance().textureRegionScreen.get("UP"), 66, MarsGame.HEIGHT / 2 - 62, 124, 124);
+                else batch.draw(Textures.getInstance().textureRegionScreen.get("UP"), 64, MarsGame.HEIGHT / 2 - 64, 128, 128);
             }
         }
 
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Cash"), text.get("Money").getX() / MarsGame.getRatioMonitorW() - 64, text.get("Money").getY() / MarsGame.getRatioMonitorH() - 25, 48, 48);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Cash"), text.get("Mineral").getX() / MarsGame.getRatioMonitorW() - 64, text.get("Mineral").getY() / MarsGame.getRatioMonitorH() - 25, 48, 48);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Cash"), text.get("ShieldHPAdd").getX() / MarsGame.getRatioMonitorW() - 64, text.get("ShieldHPAdd").getY() / MarsGame.getRatioMonitorH() - 25, 48, 48);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Cash"), text.get("EnergyAdd").getX() / MarsGame.getRatioMonitorW() - 64, text.get("EnergyAdd").getY() / MarsGame.getRatioMonitorH() - 25, 48, 48);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Cash"), text.get("Microwave").getX() / MarsGame.getRatioMonitorW() - 64, text.get("Microwave").getY() / MarsGame.getRatioMonitorH() - 25, 48, 48);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Cash"), text.get("Money").getX() / MarsGame.getRatioMonitorW() - 64, text.get("Money").getY() / MarsGame.getRatioMonitorH() - 25, 48, 48);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Cash"), text.get("Mineral").getX() / MarsGame.getRatioMonitorW() - 64, text.get("Mineral").getY() / MarsGame.getRatioMonitorH() - 25, 48, 48);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Cash"), text.get("ShieldHPAdd").getX() / MarsGame.getRatioMonitorW() - 64, text.get("ShieldHPAdd").getY() / MarsGame.getRatioMonitorH() - 25, 48, 48);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Cash"), text.get("EnergyAdd").getX() / MarsGame.getRatioMonitorW() - 64, text.get("EnergyAdd").getY() / MarsGame.getRatioMonitorH() - 25, 48, 48);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Cash"), text.get("Microwave").getX() / MarsGame.getRatioMonitorW() - 64, text.get("Microwave").getY() / MarsGame.getRatioMonitorH() - 25, 48, 48);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("ColorOrange"), 50, MarsGame.HEIGHT - 128, 345, 64);
-        if (!isPromo) batch.draw(MarsGame.getTextures().textureRegion.get("PromoKod"), 325, MarsGame.HEIGHT - 128);
-        else batch.draw(MarsGame.getTextures().textureRegion.get("PromoKod"), 327, MarsGame.HEIGHT - 126, 60, 60);
+        batch.draw(Textures.getInstance().textureRegion.get("ColorOrange"), 50, MarsGame.HEIGHT - 128, 345, 64);
+        if (!isPromo) batch.draw(Textures.getInstance().textureRegion.get("PromoKod"), 325, MarsGame.HEIGHT - 128);
+        else batch.draw(Textures.getInstance().textureRegion.get("PromoKod"), 327, MarsGame.HEIGHT - 126, 60, 60);
         batch.end();
 
         stage.act();

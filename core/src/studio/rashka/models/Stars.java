@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.Textures;
 
 public class Stars {
 
@@ -22,11 +23,11 @@ public class Stars {
         randomsX = new ArrayList<Integer>();
         randomsY = new ArrayList<Integer>();
         for (int i = 0; i < 300; i++) {
-            if (i < 50) stars.add(i, new TextureRegion(MarsGame.getTextures().textureRegion.get("LightbulbYellowMini")));
-            if (i >= 50 && i < 100) stars.add(i, new TextureRegion(MarsGame.getTextures().textureRegion.get("LightbulbRedMini")));
-            if (i >= 100 && i < 150) stars.add(i, new TextureRegion(MarsGame.getTextures().textureRegion.get("LightbulbGreenMini")));
-            if (i >= 150 && i < 200) stars.add(i, new TextureRegion(MarsGame.getTextures().textureRegion.get("LightbulbRedMini")));
-            if (i >= 200) stars.add(i, new TextureRegion(MarsGame.getTextures().textureRegion.get("LightbulbBlueMini")));
+            if (i < 50) stars.add(i, new TextureRegion(Textures.getInstance().textureRegion.get("LightbulbYellowMini")));
+            if (i >= 50 && i < 100) stars.add(i, new TextureRegion(Textures.getInstance().textureRegion.get("LightbulbRedMini")));
+            if (i >= 100 && i < 150) stars.add(i, new TextureRegion(Textures.getInstance().textureRegion.get("LightbulbGreenMini")));
+            if (i >= 150 && i < 200) stars.add(i, new TextureRegion(Textures.getInstance().textureRegion.get("LightbulbRedMini")));
+            if (i >= 200) stars.add(i, new TextureRegion(Textures.getInstance().textureRegion.get("LightbulbBlueMini")));
             randomsX.add(i, new Random().nextInt(MarsGame.WIDTH));
             randomsY.add(i, new Random().nextInt(MarsGame.HEIGHT));
         }

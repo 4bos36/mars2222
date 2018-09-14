@@ -21,6 +21,7 @@ public class DesktopLauncher implements PlayServices {
 		config.title = MarsGame.TITLE;
 		config.width = MarsGame.WIDTH / 2;
 		config.height = MarsGame.HEIGHT / 2;
+
 		new LwjglApplication(new MarsGame(application), config);
 	}
 

@@ -16,6 +16,7 @@ import studio.rashka.MarsGame;
 import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
+import studio.rashka.lib.Textures;
 import studio.rashka.models.Stars;
 
 public class LoadScreen extends State {
@@ -35,7 +36,7 @@ public class LoadScreen extends State {
         loading.put("logo", new TextureRegion(new Texture("loading.tga"), 0, 0, 256, 160));
         loading.put("progressBar", new TextureRegion(new Texture("loading.tga"), 155, 64, 1, 1));
 
-        MarsGame.getTextures().loadFile();
+        Textures.getInstance().loadFile();
         MarsGame.getMusicSound().loadSounds();
 
         text.put("loading", new Label(MarsGame.getLanguage().textScreen.get("loading"), new LabelStyle(FontTTF.getInstance().getFont54(), Color.WHITE)));
@@ -53,20 +54,20 @@ public class LoadScreen extends State {
             MarsGame.getMusicSound().click();
             MarsGame.getMusicSound().fonSound();
         }
-        if (MarsGame.getTextures().getSpaceShip().get("SpaceShip").update()) {
-            if (MarsGame.getTextures().getSpaceShip().get("SpaceShip").update() && i <= 60) i++;
+        if (Textures.getInstance().getSpaceShip().get("SpaceShip").update()) {
+            if (Textures.getInstance().getSpaceShip().get("SpaceShip").update() && i <= 60) i++;
             if (i == 2) {
-                MarsGame.getTextures().spaceship();
+                Textures.getInstance().spaceship();
                 stars = new Stars();
             }
-            if (i == 10) MarsGame.getTextures().loadFile2();
+            if (i == 10) Textures.getInstance().loadFile2();
             if (i == 20) {
-                MarsGame.getTextures().loadFileTexture();
+                Textures.getInstance().loadFileTexture();
                 MarsGame.playServices.showAds(200);
             }
-            if (i == 30) MarsGame.getTextures().loadMonsters();
+            if (i == 30) Textures.getInstance().loadMonsters();
             if (i == 35) {
-                MarsGame.getTextures().loadMonsters2();
+                Textures.getInstance().loadMonsters2();
                 MarsGame.playServices.showAds(404);
             }
             if (i == 40) {

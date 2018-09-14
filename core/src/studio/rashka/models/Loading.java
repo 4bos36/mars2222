@@ -14,6 +14,7 @@ import studio.rashka.MarsGame;
 import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
+import studio.rashka.lib.Textures;
 import studio.rashka.models.load.Space;
 import studio.rashka.screen.AboutScreen;
 import studio.rashka.screen.ArsenalScreen;
@@ -50,7 +51,7 @@ public class Loading extends State {
             updateReward();
         } else if (nameScreen.equals("Hangar")) {
             updateReward();
-            MarsGame.getTextures().clearBoss();
+            Textures.getInstance().clearBoss();
             MarsGame.getMusicSound().getLoadSoundWeapon().clear();
             MarsGame.getMusicSound().disposeSounds();
             MarsGame.getCamera().zoom = 1.0f;
@@ -127,10 +128,10 @@ public class Loading extends State {
                         MarsGame.getMusicSound().mission();
                         MarsGame.getMusicSound().soundWeapon();
                     }
-                    if (mission.equals("Missions_1_6")) MarsGame.getTextures().loadBoss1();
-                    else if (mission.equals("Missions_2_6")) MarsGame.getTextures().loadBoss2();
-                    else if (mission.equals("Missions_3_6")) MarsGame.getTextures().loadBoss3();
-                    else if (mission.equals("Missions_4_6")) MarsGame.getTextures().loadBoss4();
+                    if (mission.equals("Missions_1_6")) Textures.getInstance().loadBoss1();
+                    else if (mission.equals("Missions_2_6")) Textures.getInstance().loadBoss2();
+                    else if (mission.equals("Missions_3_6")) Textures.getInstance().loadBoss3();
+                    else if (mission.equals("Missions_4_6")) Textures.getInstance().loadBoss4();
                     game.set(new Missions(game, mission));
                 }
             } else if (nameScreen.equals("Hangar")) {

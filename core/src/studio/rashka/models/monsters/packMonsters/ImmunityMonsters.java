@@ -2,7 +2,7 @@ package studio.rashka.models.monsters.packMonsters;
 
 import com.brashmonkey.spriter.Player;
 
-import studio.rashka.MarsGame;
+import studio.rashka.lib.Textures;
 
 public class ImmunityMonsters {
 
@@ -11,19 +11,19 @@ public class ImmunityMonsters {
     private Player monster;
 
     public ImmunityMonsters(String nameMonster, int immunity) {
-        if (nameMonster.equals("Monster_1")) monster = new Player(MarsGame.getTextures().data.get("Monster_1").getEntity(0));
-        else if (nameMonster.equals("Monster_2")) monster = new Player(MarsGame.getTextures().data.get("Monster_2").getEntity(0));
-        else if (nameMonster.equals("Monster_3")) monster = new Player(MarsGame.getTextures().data.get("Monster_3").getEntity(0));
+        if (nameMonster.equals("Monster_1")) monster = new Player(Textures.getInstance().data.get("Monster_1").getEntity(0));
+        else if (nameMonster.equals("Monster_2")) monster = new Player(Textures.getInstance().data.get("Monster_2").getEntity(0));
+        else if (nameMonster.equals("Monster_3")) monster = new Player(Textures.getInstance().data.get("Monster_3").getEntity(0));
         else if (nameMonster.equals("Monster_4")) {
-            if (immunity == NONE) monster = new Player(MarsGame.getTextures().data.get("Monster_4").getEntity("monster"));
-            else if (immunity == FIRE) monster = new Player(MarsGame.getTextures().data.get("Monster_4").getEntity("monsterR"));
-            else if (immunity == ICE) monster = new Player(MarsGame.getTextures().data.get("Monster_4").getEntity("monsterB"));
-            else if (immunity == POISON) monster = new Player(MarsGame.getTextures().data.get("Monster_4").getEntity("monsterG"));
+            if (immunity == NONE) monster = new Player(Textures.getInstance().data.get("Monster_4").getEntity("monster"));
+            else if (immunity == FIRE) monster = new Player(Textures.getInstance().data.get("Monster_4").getEntity("monsterR"));
+            else if (immunity == ICE) monster = new Player(Textures.getInstance().data.get("Monster_4").getEntity("monsterB"));
+            else if (immunity == POISON) monster = new Player(Textures.getInstance().data.get("Monster_4").getEntity("monsterG"));
         } else if (nameMonster.equals("Monster_5")) {
-            if (immunity == NONE) monster = new Player(MarsGame.getTextures().data.get("Monster_5").getEntity("monster"));
-            else if (immunity == FIRE) monster = new Player(MarsGame.getTextures().data.get("Monster_5").getEntity("monsterR"));
-            else if (immunity == ICE) monster = new Player(MarsGame.getTextures().data.get("Monster_5").getEntity("monsterB"));
-            else if (immunity == POISON) monster = new Player(MarsGame.getTextures().data.get("Monster_5").getEntity("monsterG"));
+            if (immunity == NONE) monster = new Player(Textures.getInstance().data.get("Monster_5").getEntity("monster"));
+            else if (immunity == FIRE) monster = new Player(Textures.getInstance().data.get("Monster_5").getEntity("monsterR"));
+            else if (immunity == ICE) monster = new Player(Textures.getInstance().data.get("Monster_5").getEntity("monsterB"));
+            else if (immunity == POISON) monster = new Player(Textures.getInstance().data.get("Monster_5").getEntity("monsterG"));
         }
 
         if (immunity == NONE) {

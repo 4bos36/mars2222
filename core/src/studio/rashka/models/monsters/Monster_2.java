@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.brashmonkey.spriter.gdx.Drawer;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.Textures;
 import studio.rashka.lib.implement.monster.Monsters;
 import studio.rashka.models.monsters.packMonsters.ImmunityMonsters;
 
@@ -47,7 +48,7 @@ public class Monster_2 implements Monsters {
             price = 4;
         }
 
-        drawer = new Drawer(MarsGame.getTextures().loader.get("Monster_2"), MarsGame.getBatch(), null);
+        drawer = new Drawer(Textures.getInstance().loader.get("Monster_2"), MarsGame.getBatch(), null);
         immunityMonsters = new ImmunityMonsters("Monster_2", immunity);
         immunityMonsters.getMonster().setScale(scaleSize);
         immunityMonsters.getMonster().setPosition(-MarsGame.WIDTH * 2, 0);
@@ -78,7 +79,7 @@ public class Monster_2 implements Monsters {
     @Override
     public void renderDie(SpriteBatch batch) {
         if (MarsGame.getFrustum().sphereInFrustum(position.x, position.y, 0, 30 * scaleSize)) {
-            if (!isLiving) batch.draw(MarsGame.getTextures().textureRegion.get("Monsters_2Die"), position.x - 42 * scaleSize, position.y - 42 * scaleSize, 84 * scaleSize, 84 * scaleSize);
+            if (!isLiving) batch.draw(Textures.getInstance().textureRegion.get("Monsters_2Die"), position.x - 42 * scaleSize, position.y - 42 * scaleSize, 84 * scaleSize, 84 * scaleSize);
         }
     }
 
@@ -94,7 +95,7 @@ public class Monster_2 implements Monsters {
                 immunityMonsters.getMonster().setPosition(position.x, position.y);
                 drawer.draw(immunityMonsters.getMonster());
                 if (MarsGame.getPreference().getTacticsTechnologiesShowMonsterLife())
-                    batch.draw(MarsGame.getTextures().textureRegion.get("HP"), position.x - 24 * scaleSize, position.y + 64 * scaleSize, life * 48 * scaleSize / lifeMAX, 4);
+                    batch.draw(Textures.getInstance().textureRegion.get("HP"), position.x - 24 * scaleSize, position.y + 64 * scaleSize, life * 48 * scaleSize / lifeMAX, 4);
             }
         }
     }

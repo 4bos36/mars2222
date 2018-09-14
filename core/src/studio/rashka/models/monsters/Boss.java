@@ -9,6 +9,7 @@ import com.brashmonkey.spriter.gdx.Drawer;
 import java.util.Random;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.Textures;
 import studio.rashka.lib.Time;
 
 import static java.lang.Math.cos;
@@ -49,8 +50,8 @@ public class Boss {
             speed = 3;
             price = 1500;
 
-            drawer = new Drawer(MarsGame.getTextures().loaderBoss.get("Boss_1"), MarsGame.getBatch(), null);
-            monster = new Player(MarsGame.getTextures().dataBoss.get("Boss_1").getEntity(0));
+            drawer = new Drawer(Textures.getInstance().loaderBoss.get("Boss_1"), MarsGame.getBatch(), null);
+            monster = new Player(Textures.getInstance().dataBoss.get("Boss_1").getEntity(0));
             monster.setPosition(-MarsGame.WIDTH * 2, 0);
             body = new Circle(monster.getX(), monster.getY(), 20 * scaleSize);
             //endregion
@@ -65,8 +66,8 @@ public class Boss {
             speed = 3;
             price = 2500;
 
-            drawer = new Drawer(MarsGame.getTextures().loaderBoss.get("Boss_2"), MarsGame.getBatch(), null);
-            monster = new Player(MarsGame.getTextures().dataBoss.get("Boss_2").getEntity(0));
+            drawer = new Drawer(Textures.getInstance().loaderBoss.get("Boss_2"), MarsGame.getBatch(), null);
+            monster = new Player(Textures.getInstance().dataBoss.get("Boss_2").getEntity(0));
             monster.setPosition(-MarsGame.WIDTH * 2, 0);
             body = new Circle(monster.getX(), monster.getY(), 75 * scaleSize);
             //endregion
@@ -81,8 +82,8 @@ public class Boss {
             speed = 3;
             price = 3150;
 
-            drawer = new Drawer(MarsGame.getTextures().loaderBoss.get("Boss_3"), MarsGame.getBatch(), null);
-            monster = new Player(MarsGame.getTextures().dataBoss.get("Boss_3").getEntity(0));
+            drawer = new Drawer(Textures.getInstance().loaderBoss.get("Boss_3"), MarsGame.getBatch(), null);
+            monster = new Player(Textures.getInstance().dataBoss.get("Boss_3").getEntity(0));
             monster.setPosition(-MarsGame.WIDTH * 2, 0);
             body = new Circle(monster.getX(), monster.getY(), 25 * scaleSize);
             //endregion
@@ -99,8 +100,8 @@ public class Boss {
 
             choice = new Random().nextInt(2);
 
-            drawer = new Drawer(MarsGame.getTextures().loaderBoss.get("Boss_4"), MarsGame.getBatch(), null);
-            monster = new Player(MarsGame.getTextures().dataBoss.get("Boss_4").getEntity(0));
+            drawer = new Drawer(Textures.getInstance().loaderBoss.get("Boss_4"), MarsGame.getBatch(), null);
+            monster = new Player(Textures.getInstance().dataBoss.get("Boss_4").getEntity(0));
             monster.setPosition(-MarsGame.WIDTH * 2, 0);
             body = new Circle(monster.getX(), monster.getY(), 25 * scaleSize);
             //endregion

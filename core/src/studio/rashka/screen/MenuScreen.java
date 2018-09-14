@@ -17,6 +17,7 @@ import studio.rashka.MarsGame;
 import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
+import studio.rashka.lib.Textures;
 import studio.rashka.lib.implement.Buttons;
 import studio.rashka.models.Loading;
 import studio.rashka.models.Stars;
@@ -61,7 +62,7 @@ public class MenuScreen extends State {
 
     private void buttons() {
         buttons = new HashMap<String, Buttons>();
-        Drawable drawable = MarsGame.getTextures().getTextureButtonSkin().getDrawable("NULL");
+        Drawable drawable = Textures.getInstance().getTextureButtonSkin().getDrawable("NULL");
 
         buttons.put("Exit", new Buttons("Exit", drawable, 128, 128, 32, 16));
         buttons.put("Start", new Buttons("Start", drawable, 192, 192, MarsGame.WIDTH / 2 - 96, 128));
@@ -128,43 +129,43 @@ public class MenuScreen extends State {
     public void render(SpriteBatch batch) {
         batch.begin();
         stars.render(batch);
-        batch.draw(MarsGame.getTextures().textureRegion.get("Mars"), MarsGame.WIDTH - 760, MarsGame.HEIGHT - 660, 352, 352, 704, 704, 1, 1, angleMars);
-        if (!touchStart) batch.draw(MarsGame.getTextures().textureRegion.get("Start"), MarsGame.WIDTH / 2 - 96, 128);
-        else batch.draw(MarsGame.getTextures().textureRegion.get("Start"), MarsGame.WIDTH / 2 - 90, 134, 180, 180);
-        if (!touchExit) batch.draw(MarsGame.getTextures().textureRegion.get("Exit"), 32, 16, 128, 128);
-        else batch.draw(MarsGame.getTextures().textureRegion.get("Exit"), 36, 20, 120, 120);
+        batch.draw(Textures.getInstance().textureRegion.get("Mars"), MarsGame.WIDTH - 760, MarsGame.HEIGHT - 660, 352, 352, 704, 704, 1, 1, angleMars);
+        if (!touchStart) batch.draw(Textures.getInstance().textureRegion.get("Start"), MarsGame.WIDTH / 2 - 96, 128);
+        else batch.draw(Textures.getInstance().textureRegion.get("Start"), MarsGame.WIDTH / 2 - 90, 134, 180, 180);
+        if (!touchExit) batch.draw(Textures.getInstance().textureRegion.get("Exit"), 32, 16, 128, 128);
+        else batch.draw(Textures.getInstance().textureRegion.get("Exit"), 36, 20, 120, 120);
         if (MarsGame.getPreference().loadMusic() == 0)
-            batch.draw(MarsGame.getTextures().textureRegion.get("MusicOff"), MarsGame.WIDTH - 132, MarsGame.HEIGHT - 128, 96, 96);
+            batch.draw(Textures.getInstance().textureRegion.get("MusicOff"), MarsGame.WIDTH - 132, MarsGame.HEIGHT - 128, 96, 96);
         else if (MarsGame.getPreference().loadMusic() == 1)
-            batch.draw(MarsGame.getTextures().textureRegion.get("MusicOn"), MarsGame.WIDTH - 132, MarsGame.HEIGHT - 128, 96, 96);
+            batch.draw(Textures.getInstance().textureRegion.get("MusicOn"), MarsGame.WIDTH - 132, MarsGame.HEIGHT - 128, 96, 96);
         if (MarsGame.getPreference().loadSound() == 1)
-            batch.draw(MarsGame.getTextures().textureRegion.get("SoundOn"), MarsGame.WIDTH - 132, MarsGame.HEIGHT - 224, 96, 96);
+            batch.draw(Textures.getInstance().textureRegion.get("SoundOn"), MarsGame.WIDTH - 132, MarsGame.HEIGHT - 224, 96, 96);
         else if (MarsGame.getPreference().loadSound() == 0)
-            batch.draw(MarsGame.getTextures().textureRegion.get("SoundOff"), MarsGame.WIDTH - 132, MarsGame.HEIGHT - 224, 96, 96);
+            batch.draw(Textures.getInstance().textureRegion.get("SoundOff"), MarsGame.WIDTH - 132, MarsGame.HEIGHT - 224, 96, 96);
         if (MarsGame.getPreference().loadVibro() == 1)
-            batch.draw(MarsGame.getTextures().textureRegion.get("VibroOn"), MarsGame.WIDTH - 216, MarsGame.HEIGHT - 176, 96, 96);
+            batch.draw(Textures.getInstance().textureRegion.get("VibroOn"), MarsGame.WIDTH - 216, MarsGame.HEIGHT - 176, 96, 96);
         else if (MarsGame.getPreference().loadVibro() == 0)
-            batch.draw(MarsGame.getTextures().textureRegion.get("VibroOff"), MarsGame.WIDTH - 216, MarsGame.HEIGHT - 176, 96, 96);
-        batch.draw(MarsGame.getTextures().textureRegion.get("AboutUs"), MarsGame.WIDTH - 132, 32, 96, 96);
-        batch.draw(MarsGame.getTextures().textureRegion.get("Help"), MarsGame.WIDTH - 216, 80, 96, 96);
+            batch.draw(Textures.getInstance().textureRegion.get("VibroOff"), MarsGame.WIDTH - 216, MarsGame.HEIGHT - 176, 96, 96);
+        batch.draw(Textures.getInstance().textureRegion.get("AboutUs"), MarsGame.WIDTH - 132, 32, 96, 96);
+        batch.draw(Textures.getInstance().textureRegion.get("Help"), MarsGame.WIDTH - 216, 80, 96, 96);
 
-        if (!touchFacebook) batch.draw(MarsGame.getTextures().textureRegion.get("Facebook"), 90, MarsGame.HEIGHT - 144, 96, 96);
-        else batch.draw(MarsGame.getTextures().textureRegion.get("Facebook"), 93, MarsGame.HEIGHT - 141, 90, 90);
-        if (!touchVK) batch.draw(MarsGame.getTextures().textureRegion.get("VK"), 175, MarsGame.HEIGHT - 144, 96, 96);
-        else batch.draw(MarsGame.getTextures().textureRegion.get("VK"), 178, MarsGame.HEIGHT - 141, 90, 90);
-        if (!touchTwitter) batch.draw(MarsGame.getTextures().textureRegion.get("Twitter"), 48, MarsGame.HEIGHT - 220, 96, 96);
-        else batch.draw(MarsGame.getTextures().textureRegion.get("Twitter"), 51, MarsGame.HEIGHT - 217, 90, 90);
-        if (!touchGooglePlus) batch.draw(MarsGame.getTextures().textureRegion.get("GooglePlus"), 133, MarsGame.HEIGHT - 220, 96, 96);
-        else batch.draw(MarsGame.getTextures().textureRegion.get("GooglePlus"), 136, MarsGame.HEIGHT - 217, 90, 90);
+        if (!touchFacebook) batch.draw(Textures.getInstance().textureRegion.get("Facebook"), 90, MarsGame.HEIGHT - 144, 96, 96);
+        else batch.draw(Textures.getInstance().textureRegion.get("Facebook"), 93, MarsGame.HEIGHT - 141, 90, 90);
+        if (!touchVK) batch.draw(Textures.getInstance().textureRegion.get("VK"), 175, MarsGame.HEIGHT - 144, 96, 96);
+        else batch.draw(Textures.getInstance().textureRegion.get("VK"), 178, MarsGame.HEIGHT - 141, 90, 90);
+        if (!touchTwitter) batch.draw(Textures.getInstance().textureRegion.get("Twitter"), 48, MarsGame.HEIGHT - 220, 96, 96);
+        else batch.draw(Textures.getInstance().textureRegion.get("Twitter"), 51, MarsGame.HEIGHT - 217, 90, 90);
+        if (!touchGooglePlus) batch.draw(Textures.getInstance().textureRegion.get("GooglePlus"), 133, MarsGame.HEIGHT - 220, 96, 96);
+        else batch.draw(Textures.getInstance().textureRegion.get("GooglePlus"), 136, MarsGame.HEIGHT - 217, 90, 90);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("NLO"), MarsGame.WIDTH / 2 - (360 + flyNLO), MarsGame.HEIGHT - 128);
-        batch.draw(MarsGame.getTextures().textureRegion.get("Ru"), MarsGame.WIDTH / 2 - (265 + flyNLO), MarsGame.HEIGHT - 94, 48, 48);
-        batch.draw(MarsGame.getTextures().textureRegion.get("NLO"), MarsGame.WIDTH / 2 - (160 + flyNLO), MarsGame.HEIGHT - 128);
-        batch.draw(MarsGame.getTextures().textureRegion.get("En"), MarsGame.WIDTH / 2 - (65 + flyNLO), MarsGame.HEIGHT - 94, 48, 48);
-        if (MarsGame.getPreference().language().equals("ru")) batch.draw(MarsGame.getTextures().textureRegion.get("Ru"), MarsGame.WIDTH / 2 - (325 + flyNLO), MarsGame.HEIGHT - 94, -48, 48);
-        else batch.draw(MarsGame.getTextures().textureRegion.get("En"), MarsGame.WIDTH / 2 - (125 + flyNLO), MarsGame.HEIGHT - 94, -48, 48);
+        batch.draw(Textures.getInstance().textureRegion.get("NLO"), MarsGame.WIDTH / 2 - (360 + flyNLO), MarsGame.HEIGHT - 128);
+        batch.draw(Textures.getInstance().textureRegion.get("Ru"), MarsGame.WIDTH / 2 - (265 + flyNLO), MarsGame.HEIGHT - 94, 48, 48);
+        batch.draw(Textures.getInstance().textureRegion.get("NLO"), MarsGame.WIDTH / 2 - (160 + flyNLO), MarsGame.HEIGHT - 128);
+        batch.draw(Textures.getInstance().textureRegion.get("En"), MarsGame.WIDTH / 2 - (65 + flyNLO), MarsGame.HEIGHT - 94, 48, 48);
+        if (MarsGame.getPreference().language().equals("ru")) batch.draw(Textures.getInstance().textureRegion.get("Ru"), MarsGame.WIDTH / 2 - (325 + flyNLO), MarsGame.HEIGHT - 94, -48, 48);
+        else batch.draw(Textures.getInstance().textureRegion.get("En"), MarsGame.WIDTH / 2 - (125 + flyNLO), MarsGame.HEIGHT - 94, -48, 48);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("OrbitalStation"), 256 + flyNLO / 2, 160 + flyNLO / 2, 560, 320);
+        batch.draw(Textures.getInstance().textureRegion.get("OrbitalStation"), 256 + flyNLO / 2, 160 + flyNLO / 2, 560, 320);
         redLightbulb.render(batch, 367 + flyNLO / 2, 456 + flyNLO / 2, 10, 6);
         redLightbulb.render(batch, 648 + flyNLO / 2, 466 + flyNLO / 2, 8, 7);
         redLightbulb.render(batch, 710 + flyNLO / 2, 300 + flyNLO / 2, 13, 10);

@@ -17,6 +17,7 @@ import java.util.Random;
 import studio.rashka.MarsGame;
 import studio.rashka.lib.AnimationModels;
 import studio.rashka.lib.FontTTF;
+import studio.rashka.lib.Textures;
 import studio.rashka.lib.implement.Buttons;
 
 public class R_7 {
@@ -42,9 +43,9 @@ public class R_7 {
         text = new HashMap<String, Label>();
         text.put("RobotMessage", new Label("", new LabelStyle(FontTTF.getInstance().getFont48(), Color.BLACK)));
 
-        animation = new AnimationModels(new TextureRegion(MarsGame.getTextures().textureRegionScreen.get("R-7_RUN")), 4, 0.6f);
+        animation = new AnimationModels(new TextureRegion(Textures.getInstance().textureRegionScreen.get("R-7_RUN")), 4, 0.6f);
 
-        buttonClick = new Buttons("Click", MarsGame.getTextures().getTextureButtonSkin().getDrawable("NULL"), 128, 128, 320, 96 + MarsGame.getRatioAdd());
+        buttonClick = new Buttons("Click", Textures.getInstance().getTextureButtonSkin().getDrawable("NULL"), 128, 128, 320, 96 + MarsGame.getRatioAdd());
         buttonClick.addListener(new ButtonsInputListener("Click"));
 
         stage.addActor(text.get("RobotMessage"));
@@ -100,12 +101,12 @@ public class R_7 {
         }
         else if (move == STOP) {
             batch.begin();
-            if (!isSend) batch.draw(MarsGame.getTextures().textureRegionScreen.get("R-7_norm"), position.x, position.y);
+            if (!isSend) batch.draw(Textures.getInstance().textureRegionScreen.get("R-7_norm"), position.x, position.y);
             else {
-                if (nomer == 10 || nomer == 18 || nomer == 19 || nomer == 32 || nomer == 33 || nomer == 35) batch.draw(MarsGame.getTextures().textureRegionScreen.get("R-7_anger"), position.x, position.y);
-                else if (nomer == 15 || nomer == 20 || nomer == 30 || nomer == 36 || nomer == 37) batch.draw(MarsGame.getTextures().textureRegionScreen.get("R-7_surprise"), position.x, position.y);
-                else batch.draw(MarsGame.getTextures().textureRegionScreen.get("R-7_mimi"), position.x, position.y);
-                batch.draw(MarsGame.getTextures().textureRegion.get("ColorWhite"), text.get("RobotMessage").getX() / MarsGame.getRatioMonitorW() - 10,
+                if (nomer == 10 || nomer == 18 || nomer == 19 || nomer == 32 || nomer == 33 || nomer == 35) batch.draw(Textures.getInstance().textureRegionScreen.get("R-7_anger"), position.x, position.y);
+                else if (nomer == 15 || nomer == 20 || nomer == 30 || nomer == 36 || nomer == 37) batch.draw(Textures.getInstance().textureRegionScreen.get("R-7_surprise"), position.x, position.y);
+                else batch.draw(Textures.getInstance().textureRegionScreen.get("R-7_mimi"), position.x, position.y);
+                batch.draw(Textures.getInstance().textureRegion.get("ColorWhite"), text.get("RobotMessage").getX() / MarsGame.getRatioMonitorW() - 10,
                         text.get("RobotMessage").getY() / MarsGame.getRatioMonitorH() - text.get("RobotMessage").getPrefHeight() / 2 / MarsGame.getRatioMonitorH(),
                         text.get("RobotMessage").getPrefWidth() / MarsGame.getRatioMonitorW() + 20, text.get("RobotMessage").getPrefHeight() / MarsGame.getRatioMonitorH());
             }

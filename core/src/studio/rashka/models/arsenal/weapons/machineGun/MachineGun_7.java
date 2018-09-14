@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.Textures;
 import studio.rashka.lib.implement.guns.Guns;
 
 public class MachineGun_7 implements Guns {
@@ -71,7 +72,7 @@ public class MachineGun_7 implements Guns {
 
     @Override
     public void render(SpriteBatch batch, Vector2 position) {
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGun_7"), MarsGame.WIDTH / 2 - 84, 540 - 173, 52, 237, 128, 320, 1, 1, -90 + position.angle());
+        batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGun_7"), MarsGame.WIDTH / 2 - 84, 540 - 173, 52, 237, 128, 320, 1, 1, -90 + position.angle());
 
         rotation(MarsGame.WIDTH / 2 + 15, MarsGame.HEIGHT / 2 - 10, -42, 70, position.angle());
         smoke.getEmitters().first().setPosition(x1, y1);

@@ -3,6 +3,7 @@ package studio.rashka.models.arsenal;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.Textures;
 
 public class BonusTactics {
 
@@ -38,18 +39,18 @@ public class BonusTactics {
 
     public void render(SpriteBatch batch) {
         if (bonus.equals("Attack")) {
-            if (MarsGame.getPreference().getTacticsAttackGenerator()) batch.draw(MarsGame.getTextures().textureRegion.get("DamageActive"), MarsGame.WIDTH / 2 - 32, 134, 40, 40);
-            else batch.draw(MarsGame.getTextures().textureRegion.get("DamageNoActive"), MarsGame.WIDTH / 2 - 32, 134, 40, 40);
-            if (critBonus > 0) batch.draw(MarsGame.getTextures().textureRegion.get("CriticalActive"), MarsGame.WIDTH / 2 + 32, 134, 40, 40);
-            else batch.draw(MarsGame.getTextures().textureRegion.get("CriticalNoActive"), MarsGame.WIDTH / 2 + 32, 134, 40, 40);
+            if (MarsGame.getPreference().getTacticsAttackGenerator()) batch.draw(Textures.getInstance().textureRegion.get("DamageActive"), MarsGame.WIDTH / 2 - 32, 134, 40, 40);
+            else batch.draw(Textures.getInstance().textureRegion.get("DamageNoActive"), MarsGame.WIDTH / 2 - 32, 134, 40, 40);
+            if (critBonus > 0) batch.draw(Textures.getInstance().textureRegion.get("CriticalActive"), MarsGame.WIDTH / 2 + 32, 134, 40, 40);
+            else batch.draw(Textures.getInstance().textureRegion.get("CriticalNoActive"), MarsGame.WIDTH / 2 + 32, 134, 40, 40);
         } else if (bonus.equals("Defense")) {
-            if (MarsGame.getPreference().getTacticsDefenseGenerator()) batch.draw(MarsGame.getTextures().textureRegion.get("ShieldActive"), MarsGame.WIDTH / 2 - 32, 134, 40, 40);
-            else batch.draw(MarsGame.getTextures().textureRegion.get("ShieldNoActive"), MarsGame.WIDTH / 2 - 32, 134, 40, 40);
-            if (isLifeActive) batch.draw(MarsGame.getTextures().textureRegion.get("LifeActive"), MarsGame.WIDTH / 2 + 32, 134, 40, 40);
-            else batch.draw(MarsGame.getTextures().textureRegion.get("LifeNoActive"), MarsGame.WIDTH / 2 + 32, 134, 40, 40);
+            if (MarsGame.getPreference().getTacticsDefenseGenerator()) batch.draw(Textures.getInstance().textureRegion.get("ShieldActive"), MarsGame.WIDTH / 2 - 32, 134, 40, 40);
+            else batch.draw(Textures.getInstance().textureRegion.get("ShieldNoActive"), MarsGame.WIDTH / 2 - 32, 134, 40, 40);
+            if (isLifeActive) batch.draw(Textures.getInstance().textureRegion.get("LifeActive"), MarsGame.WIDTH / 2 + 32, 134, 40, 40);
+            else batch.draw(Textures.getInstance().textureRegion.get("LifeNoActive"), MarsGame.WIDTH / 2 + 32, 134, 40, 40);
         } else if (bonus.equals("Technologies")) {
-            if (isRadarActive) batch.draw(MarsGame.getTextures().textureRegion.get("RadarActive"), MarsGame.WIDTH / 2, 134, 40, 40);
-            else batch.draw(MarsGame.getTextures().textureRegion.get("RadarNoActive"), MarsGame.WIDTH / 2, 134, 40, 40);
+            if (isRadarActive) batch.draw(Textures.getInstance().textureRegion.get("RadarActive"), MarsGame.WIDTH / 2, 134, 40, 40);
+            else batch.draw(Textures.getInstance().textureRegion.get("RadarNoActive"), MarsGame.WIDTH / 2, 134, 40, 40);
         }
     }
 

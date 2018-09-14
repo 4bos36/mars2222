@@ -7,6 +7,7 @@ import com.brashmonkey.spriter.Player;
 import com.brashmonkey.spriter.gdx.Drawer;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.Textures;
 
 public class WormCave {
 
@@ -26,8 +27,8 @@ public class WormCave {
         scaleSize = scale;
         position = new Vector2(x, y);
 
-        drawer = new Drawer(MarsGame.getTextures().loader.get("WormCave"), MarsGame.getBatch(), null);
-        monster = new Player(MarsGame.getTextures().data.get("WormCave").getEntity(0));
+        drawer = new Drawer(Textures.getInstance().loader.get("WormCave"), MarsGame.getBatch(), null);
+        monster = new Player(Textures.getInstance().data.get("WormCave").getEntity(0));
         monster.setPosition(x, y);
         monster.setScale(scale);
 
@@ -51,7 +52,7 @@ public class WormCave {
 
     public void renderDie(SpriteBatch batch) {
         if (MarsGame.getFrustum().sphereInFrustum(position.x, position.y, 0, 75 * scaleSize))
-            batch.draw(MarsGame.getTextures().textureRegion.get("WormCaveDie"), position.x - 64 * scaleSize, position.y - 64 * scaleSize, 128 * scaleSize, 128 * scaleSize);
+            batch.draw(Textures.getInstance().textureRegion.get("WormCaveDie"), position.x - 64 * scaleSize, position.y - 64 * scaleSize, 128 * scaleSize, 128 * scaleSize);
     }
 
     public void render(SpriteBatch batch) {
@@ -60,11 +61,11 @@ public class WormCave {
                 drawer.draw(monster);
                 if (MarsGame.getPreference().getTacticsTechnologiesShowMonsterLife()) {
                     if (monster.getAngle() == 90 || monster.getAngle() == 270)
-                        batch.draw(MarsGame.getTextures().textureRegion.get("HP"), position.x - 96 * scaleSize, position.y + 120 * scaleSize, life * 192 * scaleSize / lifeMAX, 4);
+                        batch.draw(Textures.getInstance().textureRegion.get("HP"), position.x - 96 * scaleSize, position.y + 120 * scaleSize, life * 192 * scaleSize / lifeMAX, 4);
                     else if (monster.getAngle() == 180)
-                        batch.draw(MarsGame.getTextures().textureRegion.get("HP"), position.x - 96 * scaleSize, position.y + 140 * scaleSize, life * 192 * scaleSize / lifeMAX, 4);
+                        batch.draw(Textures.getInstance().textureRegion.get("HP"), position.x - 96 * scaleSize, position.y + 140 * scaleSize, life * 192 * scaleSize / lifeMAX, 4);
                     else if (monster.getAngle() == 0)
-                        batch.draw(MarsGame.getTextures().textureRegion.get("HP"), position.x - 96 * scaleSize, position.y + 100 * scaleSize, life * 192 * scaleSize / lifeMAX, 4);
+                        batch.draw(Textures.getInstance().textureRegion.get("HP"), position.x - 96 * scaleSize, position.y + 100 * scaleSize, life * 192 * scaleSize / lifeMAX, 4);
                 }
             }
         }

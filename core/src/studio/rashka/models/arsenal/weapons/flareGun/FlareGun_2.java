@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.Textures;
 import studio.rashka.lib.implement.guns.Guns;
 
 public class FlareGun_2 implements Guns {
@@ -24,7 +25,7 @@ public class FlareGun_2 implements Guns {
 
     @Override
     public void render(SpriteBatch batch, Vector2 position) {
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGun_2"), MarsGame.WIDTH / 2 - 92, 540 - 38, 64, 110, 128, 160, 1, 1, -90 + position.angle());
+        batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGun_2"), MarsGame.WIDTH / 2 - 92, 540 - 38, 64, 110, 128, 160, 1, 1, -90 + position.angle());
     }
 
     @Override

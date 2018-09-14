@@ -13,7 +13,6 @@ import studio.rashka.lib.Language;
 import studio.rashka.lib.Monitor;
 import studio.rashka.lib.MusicSound;
 import studio.rashka.lib.Preference;
-import studio.rashka.lib.Textures;
 import studio.rashka.models.load.Space;
 import studio.rashka.screen.LoadScreenStart;
 
@@ -41,7 +40,6 @@ public class MarsGame extends ApplicationAdapter {
 	private static Preference preference;
 	private static MusicSound musicSound;
 	private static Language language;
-	private static Textures textures;
 
 	private Monitor monitor;
 
@@ -51,7 +49,6 @@ public class MarsGame extends ApplicationAdapter {
 	public void create () {
 		preference = new Preference();
 		musicSound = new MusicSound();
-		textures = new Textures();
 		language = new Language();
 		monitor = new Monitor();
 
@@ -119,10 +116,6 @@ public class MarsGame extends ApplicationAdapter {
 		return language;
 	}
 
-	public static Textures getTextures() {
-		return textures;
-	}
-
 	@Override
 	public void pause() {
 		try {
@@ -148,7 +141,6 @@ public class MarsGame extends ApplicationAdapter {
 		try {
 			MarsGame.getMusicSound().fon.get("Fon").stop();
 			musicSound.dispose();
-			textures.dispose();
 			language.dispose();
 			batch.dispose();
 			Space.getInstance().dispose();

@@ -5,16 +5,12 @@ import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.InputListener;
-import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
-import com.badlogic.gdx.scenes.scene2d.ui.ImageButton.ImageButtonStyle;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.singleton.ScaleMap;
 
 public class Magic {
 
@@ -142,33 +138,33 @@ public class Magic {
         return magicPowerPoison;
     }
 
-    public void setPushMagicFire(float posX, float posY, boolean active, float scale) {
-        if (scale == 1.0f) {
+    public void setPushMagicFire(float posX, float posY, boolean active) {
+        if (ScaleMap.INSTANCE.getScale() == 1.0f) {
             this.positionFire.x = posX - MarsGame.WIDTH / 2;
             this.positionFire.y = posY - MarsGame.HEIGHT / 2;
-        } else if (scale == 0.5f) {
+        } else if (ScaleMap.INSTANCE.getScale() == 0.5f) {
             this.positionFire.x = posX - MarsGame.WIDTH;
             this.positionFire.y = posY - MarsGame.HEIGHT;
         }
         isActiveMagicFire = active;
     }
 
-    public void setPushMagicIce(float posX, float posY, boolean active, float scale) {
-        if (scale == 1.0f) {
+    public void setPushMagicIce(float posX, float posY, boolean active) {
+        if (ScaleMap.INSTANCE.getScale() == 1.0f) {
             this.positionIce.x = posX - MarsGame.WIDTH / 2;
             this.positionIce.y = posY - MarsGame.HEIGHT / 2;
-        } else if (scale == 0.5f) {
+        } else if (ScaleMap.INSTANCE.getScale() == 0.5f) {
             this.positionIce.x = posX - MarsGame.WIDTH;
             this.positionIce.y = posY - MarsGame.HEIGHT;
         }
         isActiveMagicIce = active;
     }
 
-    public void setPushMagicPoison(float posX, float posY, boolean active, float scale) {
-        if (scale == 1.0f) {
+    public void setPushMagicPoison(float posX, float posY, boolean active) {
+        if (ScaleMap.INSTANCE.getScale() == 1.0f) {
             this.positionPoison.x = posX - MarsGame.WIDTH / 2;
             this.positionPoison.y = posY - MarsGame.HEIGHT / 2;
-        } else if (scale == 0.5f) {
+        } else if (ScaleMap.INSTANCE.getScale() == 0.5f) {
             this.positionPoison.x = posX - MarsGame.WIDTH;
             this.positionPoison.y = posY - MarsGame.HEIGHT;
         }

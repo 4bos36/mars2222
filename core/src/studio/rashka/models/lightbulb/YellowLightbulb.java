@@ -3,15 +3,15 @@ package studio.rashka.models.lightbulb;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
-import studio.rashka.MarsGame;
 import studio.rashka.lib.AnimationModels;
+import studio.rashka.lib.Textures;
 
 public class YellowLightbulb {
 
     private AnimationModels animation;
 
     public YellowLightbulb() {
-        animation = new AnimationModels(new TextureRegion(MarsGame.getTextures().textureRegion.get("LightbulbYellow")), 2, 0.08f);
+        animation = new AnimationModels(new TextureRegion(Textures.getInstance().textureRegion.get("LightbulbYellow")), 2, 0.08f);
     }
 
     public void update(float deltaTime) {

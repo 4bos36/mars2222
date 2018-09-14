@@ -17,6 +17,7 @@ import studio.rashka.MarsGame;
 import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
+import studio.rashka.lib.Textures;
 import studio.rashka.lib.implement.Buttons;
 import studio.rashka.models.Loading;
 import studio.rashka.models.Stars;
@@ -36,7 +37,7 @@ public class BridgeScreen extends State {
     private int money, mineral;
     private boolean isMoney = false, isMineral = false;
 
-    private static final Drawable img = MarsGame.getTextures().getTextureButtonSkin().getDrawable("NULL");
+    private static final Drawable img = Textures.getInstance().getTextureButtonSkin().getDrawable("NULL");
     private static final LabelStyle style35 = new LabelStyle(FontTTF.getInstance().getFont35(), Color.WHITE);
 
     public BridgeScreen(Game game) {
@@ -156,26 +157,26 @@ public class BridgeScreen extends State {
     }
 
     private void menuButtonsRender(SpriteBatch batch) {
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonFon"), text.get("Hangar").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Hangar").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonL"), text.get("Hangar").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonR"), (text.get("Hangar").getX() + text.get("Hangar").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonFon"), text.get("Hangar").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Hangar").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonL"), text.get("Hangar").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonR"), (text.get("Hangar").getX() + text.get("Hangar").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonFon"), text.get("Bridge").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Bridge").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonL"), text.get("Bridge").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonR"), (text.get("Bridge").getX() + text.get("Bridge").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuHere"), (text.get("Bridge").getX() + text.get("Bridge").getPrefWidth() / 2) / MarsGame.getRatioMonitorW() - 6, 115, 12, 12);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonFon"), text.get("Bridge").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Bridge").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonL"), text.get("Bridge").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonR"), (text.get("Bridge").getX() + text.get("Bridge").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuHere"), (text.get("Bridge").getX() + text.get("Bridge").getPrefWidth() / 2) / MarsGame.getRatioMonitorW() - 6, 115, 12, 12);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonFon"), text.get("Arsenal").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Arsenal").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonL"), text.get("Arsenal").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonR"), (text.get("Arsenal").getX() + text.get("Arsenal").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonFon"), text.get("Arsenal").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Arsenal").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonL"), text.get("Arsenal").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonR"), (text.get("Arsenal").getX() + text.get("Arsenal").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonFon"), text.get("Laboratory").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Laboratory").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonL"), text.get("Laboratory").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonR"), (text.get("Laboratory").getX() + text.get("Laboratory").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonFon"), text.get("Laboratory").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Laboratory").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonL"), text.get("Laboratory").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonR"), (text.get("Laboratory").getX() + text.get("Laboratory").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonFon"), text.get("Reactor").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Reactor").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonL"), text.get("Reactor").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonR"), (text.get("Reactor").getX() + text.get("Reactor").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonFon"), text.get("Reactor").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Reactor").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonL"), text.get("Reactor").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonR"), (text.get("Reactor").getX() + text.get("Reactor").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
     }
 
     @Override
@@ -203,21 +204,21 @@ public class BridgeScreen extends State {
     public void render(SpriteBatch batch) {
         batch.begin();
         stars.render(batch);
-        batch.draw(MarsGame.getTextures().textureRegion.get("Mars"), MarsGame.WIDTH / 2 - 80, 614 + MarsGame.getRatioAdd(), 80, 80, 160, 160, 1, 1, angleMars);
-        batch.draw(MarsGame.getTextures().textureRegion.get("FonBG"), 0, MarsGame.HEIGHT - 64 - MarsGame.getRatioAdd(), MarsGame.WIDTH, 64 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegion.get("FonSpaceshipDeck"), 0, 0 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("Mars"), MarsGame.WIDTH / 2 - 80, 614 + MarsGame.getRatioAdd(), 80, 80, 160, 160, 1, 1, angleMars);
+        batch.draw(Textures.getInstance().textureRegion.get("FonBG"), 0, MarsGame.HEIGHT - 64 - MarsGame.getRatioAdd(), MarsGame.WIDTH, 64 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("FonSpaceshipDeck"), 0, 0 + MarsGame.getRatioAdd());
 
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Pedestal"), MarsGame.WIDTH / 2 - 192, 160 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("TerminalCenter"), MarsGame.WIDTH / 2 - 256, 370 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("MonitorVideo"), 608, 340 + MarsGame.getRatioAdd(), -192, 256);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("MonitorVideo"), 508, 60 + MarsGame.getRatioAdd(), -192, 256);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("MonitorVideo"), MarsGame.WIDTH - 608, 340 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Pedestal"), MarsGame.WIDTH / 2 - 192, 160 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegionScreen.get("TerminalCenter"), MarsGame.WIDTH / 2 - 256, 370 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegionScreen.get("MonitorVideo"), 608, 340 + MarsGame.getRatioAdd(), -192, 256);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("MonitorVideo"), 508, 60 + MarsGame.getRatioAdd(), -192, 256);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("MonitorVideo"), MarsGame.WIDTH - 608, 340 + MarsGame.getRatioAdd());
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("PlayVideo"), 480, 450 + MarsGame.getRatioAdd(), 80, 80);
-        batch.draw(MarsGame.getTextures().textureRegion.get("PlayVideo"), MarsGame.WIDTH - 545, 453 + MarsGame.getRatioAdd(), 80, 80);
-        batch.draw(MarsGame.getTextures().textureRegion.get("PlayVideo"), MarsGame.WIDTH / 2 - 32, 525 + MarsGame.getRatioAdd(), 64, 64);
-        batch.draw(MarsGame.getTextures().textureRegion.get("PlayVideo"), MarsGame.WIDTH / 2 - 192, 528 + MarsGame.getRatioAdd(), 48, 48);
-        batch.draw(MarsGame.getTextures().textureRegion.get("PlayVideo"), MarsGame.WIDTH / 2 + 150, 528 + MarsGame.getRatioAdd(), 48, 48);
+        batch.draw(Textures.getInstance().textureRegion.get("PlayVideo"), 480, 450 + MarsGame.getRatioAdd(), 80, 80);
+        batch.draw(Textures.getInstance().textureRegion.get("PlayVideo"), MarsGame.WIDTH - 545, 453 + MarsGame.getRatioAdd(), 80, 80);
+        batch.draw(Textures.getInstance().textureRegion.get("PlayVideo"), MarsGame.WIDTH / 2 - 32, 525 + MarsGame.getRatioAdd(), 64, 64);
+        batch.draw(Textures.getInstance().textureRegion.get("PlayVideo"), MarsGame.WIDTH / 2 - 192, 528 + MarsGame.getRatioAdd(), 48, 48);
+        batch.draw(Textures.getInstance().textureRegion.get("PlayVideo"), MarsGame.WIDTH / 2 + 150, 528 + MarsGame.getRatioAdd(), 48, 48);
 
         tv.render(batch, 422, 447 + MarsGame.getRatioAdd(), 180, 90, 12);
         tv.render(batch, 322, 167 + MarsGame.getRatioAdd(), 180, 90, 12);
@@ -227,21 +228,21 @@ public class BridgeScreen extends State {
         tv.render(batch, MarsGame.WIDTH / 2 - 227, 517 + MarsGame.getRatioAdd(), 119, 76, 0);
         tv.render(batch, MarsGame.WIDTH / 2 + 110, 517 + MarsGame.getRatioAdd(), 119, 76, 0);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("Money"), 562, 400 + MarsGame.getRatioAdd(), 40, 40);
-        batch.draw(MarsGame.getTextures().textureRegion.get("Mineral"), MarsGame.WIDTH - 600, 400 + MarsGame.getRatioAdd(), 40, 40);
+        batch.draw(Textures.getInstance().textureRegion.get("Money"), 562, 400 + MarsGame.getRatioAdd(), 40, 40);
+        batch.draw(Textures.getInstance().textureRegion.get("Mineral"), MarsGame.WIDTH - 600, 400 + MarsGame.getRatioAdd(), 40, 40);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("DownRight"), 500, 400 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegion.get("UpRight"), 400, 180 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegion.get("DownLeft"), MarsGame.WIDTH - 564, 400 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegion.get("DownLeft"), MarsGame.WIDTH / 2 - 48, 460 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegion.get("UpLeft"), MarsGame.WIDTH / 2 - 224, 572 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegion.get("UpRight"), MarsGame.WIDTH / 2 + 160, 572 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("DownRight"), 500, 400 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("UpRight"), 400, 180 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("DownLeft"), MarsGame.WIDTH - 564, 400 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("DownLeft"), MarsGame.WIDTH / 2 - 48, 460 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("UpLeft"), MarsGame.WIDTH / 2 - 224, 572 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("UpRight"), MarsGame.WIDTH / 2 + 160, 572 + MarsGame.getRatioAdd());
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("FrameTop"), 0, MarsGame.HEIGHT - 256);
-        if (MarsGame.getRatioAdd() > 120) batch.draw(MarsGame.getTextures().textureRegion.get("FrameBottom"), 0, 1 + MarsGame.getRatioAdd(), 1920, -64);
-        batch.draw(MarsGame.getTextures().textureRegion.get("FrameBottom"), 0, 0 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegion.get("Money"), MarsGame.WIDTH / 2 - 116, MarsGame.HEIGHT - 110, 45, 45);
-        batch.draw(MarsGame.getTextures().textureRegion.get("Mineral"), MarsGame.WIDTH / 2 + 70, MarsGame.HEIGHT - 114, 50, 50);
+        batch.draw(Textures.getInstance().textureRegion.get("FrameTop"), 0, MarsGame.HEIGHT - 256);
+        if (MarsGame.getRatioAdd() > 120) batch.draw(Textures.getInstance().textureRegion.get("FrameBottom"), 0, 1 + MarsGame.getRatioAdd(), 1920, -64);
+        batch.draw(Textures.getInstance().textureRegion.get("FrameBottom"), 0, 0 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("Money"), MarsGame.WIDTH / 2 - 116, MarsGame.HEIGHT - 110, 45, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("Mineral"), MarsGame.WIDTH / 2 + 70, MarsGame.HEIGHT - 114, 50, 50);
         batch.end();
 
         r_7.render(batch);

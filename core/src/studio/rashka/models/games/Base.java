@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.Vector2;
 import java.util.ArrayList;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.Textures;
 import studio.rashka.lib.implement.guns.AbstractFactoryGuns;
 import studio.rashka.lib.implement.guns.Guns;
 import studio.rashka.lib.implement.guns.CreateGun;
@@ -78,12 +79,12 @@ public class Base {
     }
 
     public void render(SpriteBatch batch, Vector2 position) {
-        batch.draw(MarsGame.getTextures().textureRegion.get("BaseGoal"), MarsGame.WIDTH / 2 - 70, 540 - 60, 76, 54);
-        batch.draw(MarsGame.getTextures().textureRegion.get("BaseSupport"), MarsGame.WIDTH / 2 - 189, 540 - 89, 128, 128);
-        batch.draw(MarsGame.getTextures().textureRegion.get("BaseSupport"), MarsGame.WIDTH / 2 + 125, 540 - 89, -128, 128);
-        batch.draw(MarsGame.getTextures().textureRegion.get("BaseSupport"), MarsGame.WIDTH / 2 - 189, 540 + 225, 128, -128);
-        batch.draw(MarsGame.getTextures().textureRegion.get("BaseSupport"), MarsGame.WIDTH / 2 + 125, 540 + 225, -128, -128);
-        batch.draw(MarsGame.getTextures().textureRegion.get("Base"), MarsGame.WIDTH / 2 - 128, 540 - 28, 192, 192);
+        batch.draw(Textures.getInstance().textureRegion.get("BaseGoal"), MarsGame.WIDTH / 2 - 70, 540 - 60, 76, 54);
+        batch.draw(Textures.getInstance().textureRegion.get("BaseSupport"), MarsGame.WIDTH / 2 - 189, 540 - 89, 128, 128);
+        batch.draw(Textures.getInstance().textureRegion.get("BaseSupport"), MarsGame.WIDTH / 2 + 125, 540 - 89, -128, 128);
+        batch.draw(Textures.getInstance().textureRegion.get("BaseSupport"), MarsGame.WIDTH / 2 - 189, 540 + 225, 128, -128);
+        batch.draw(Textures.getInstance().textureRegion.get("BaseSupport"), MarsGame.WIDTH / 2 + 125, 540 + 225, -128, -128);
+        batch.draw(Textures.getInstance().textureRegion.get("Base"), MarsGame.WIDTH / 2 - 128, 540 - 28, 192, 192);
         for (int i = 0; i < 4; i++) {
             if (MarsGame.getFrustum().boundsInFrustum(fireBase.get(i).getBoundingBox()))
                 fireBase.get(i).draw(batch);

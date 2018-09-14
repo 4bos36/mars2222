@@ -3,15 +3,15 @@ package studio.rashka.models.bridge;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
-import studio.rashka.MarsGame;
 import studio.rashka.lib.AnimationModels;
+import studio.rashka.lib.Textures;
 
 public class TV {
 
     private AnimationModels animation;
 
     public TV() {
-        animation = new AnimationModels(new TextureRegion(MarsGame.getTextures().textureRegion.get("TV")), 2, 0.2f);
+        animation = new AnimationModels(new TextureRegion(Textures.getInstance().textureRegion.get("TV")), 2, 0.2f);
     }
 
     public void update(float deltaTime) {

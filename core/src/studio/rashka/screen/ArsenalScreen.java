@@ -18,6 +18,7 @@ import studio.rashka.MarsGame;
 import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Game;
 import studio.rashka.lib.State;
+import studio.rashka.lib.Textures;
 import studio.rashka.lib.implement.Buttons;
 import studio.rashka.models.Loading;
 import studio.rashka.models.Stars;
@@ -51,7 +52,7 @@ public class ArsenalScreen extends State {
     private Weapons weapons;
     private Tactics tactics;
 
-    private static final Drawable img = MarsGame.getTextures().getTextureButtonSkin().getDrawable("NULL");
+    private static final Drawable img = Textures.getInstance().getTextureButtonSkin().getDrawable("NULL");
     private static final LabelStyle style28 = new LabelStyle(FontTTF.getInstance().getFont28(), Color.WHITE);
 
     public ArsenalScreen(Game game) {
@@ -873,285 +874,285 @@ public class ArsenalScreen extends State {
     }
 
     private void menuButtonsRender(SpriteBatch batch) {
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonFon"), text.get("Hangar").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Hangar").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonL"), text.get("Hangar").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonR"), (text.get("Hangar").getX() + text.get("Hangar").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonFon"), text.get("Hangar").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Hangar").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonL"), text.get("Hangar").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonR"), (text.get("Hangar").getX() + text.get("Hangar").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonFon"), text.get("Bridge").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Bridge").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonL"), text.get("Bridge").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonR"), (text.get("Bridge").getX() + text.get("Bridge").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonFon"), text.get("Bridge").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Bridge").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonL"), text.get("Bridge").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonR"), (text.get("Bridge").getX() + text.get("Bridge").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonFon"), text.get("Arsenal").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Arsenal").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonL"), text.get("Arsenal").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonR"), (text.get("Arsenal").getX() + text.get("Arsenal").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuHere"), (text.get("Arsenal").getX() + text.get("Arsenal").getPrefWidth() / 2) / MarsGame.getRatioMonitorW() - 6, 115, 12, 12);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonFon"), text.get("Arsenal").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Arsenal").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonL"), text.get("Arsenal").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonR"), (text.get("Arsenal").getX() + text.get("Arsenal").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuHere"), (text.get("Arsenal").getX() + text.get("Arsenal").getPrefWidth() / 2) / MarsGame.getRatioMonitorW() - 6, 115, 12, 12);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonFon"), text.get("Laboratory").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Laboratory").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonL"), text.get("Laboratory").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonR"), (text.get("Laboratory").getX() + text.get("Laboratory").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonFon"), text.get("Laboratory").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Laboratory").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonL"), text.get("Laboratory").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonR"), (text.get("Laboratory").getX() + text.get("Laboratory").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonFon"), text.get("Reactor").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Reactor").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonL"), text.get("Reactor").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
-        batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonR"), (text.get("Reactor").getX() + text.get("Reactor").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonFon"), text.get("Reactor").getX() / MarsGame.getRatioMonitorW() - 6, 71, text.get("Reactor").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonL"), text.get("Reactor").getX() / MarsGame.getRatioMonitorW() - 10, 68, 34, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("MenuButtonR"), (text.get("Reactor").getX() + text.get("Reactor").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, 68, 34, 45);
     }
 
     private void terminalWeaponsRender(SpriteBatch batch) {
         if (showWeapons == MACHINEGUN) {
             if (!MarsGame.getPreference().getWeaponClose("MachineGun_1")) {
                 if (!touchWeapons_1)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_1"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_1"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_1"), 91, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_1"), 91, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("MachineGun_2")) {
                 if (!touchWeapons_2)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_2"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_2"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_2"), 215, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_2"), 215, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("MachineGun_3")) {
                 if (!touchWeapons_3)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_3"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_3"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_3"), 339, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_3"), 339, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("MachineGun_4")) {
                 if (!touchWeapons_4)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_4"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_4"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_4"), 463, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_4"), 463, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("MachineGun_5")) {
                 if (!touchWeapons_5)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_5"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_5"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_5"), 91, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_5"), 91, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("MachineGun_6")) {
                 if (!touchWeapons_6)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_6"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_6"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_6"), 215, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_6"), 215, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("MachineGun_7")) {
                 if (!touchWeapons_7)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_7"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_7"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_7"), 339, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_7"), 339, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("MachineGun_8")) {
                 if (!touchWeapons_8)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_8"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_8"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGunButton_8"), 463, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGunButton_8"), 463, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
         } else if (showWeapons == GRENADELAUNCHERS) {
             if (!MarsGame.getPreference().getWeaponClose("LauncherGun_1")) {
                 if (!touchWeapons_1)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_1"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_1"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_1"), 91, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_1"), 91, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("LauncherGun_2")) {
                 if (!touchWeapons_2)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_2"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_2"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_2"), 215, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_2"), 215, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("LauncherGun_3")) {
                 if (!touchWeapons_3)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_3"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_3"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_3"), 339, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_3"), 339, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("LauncherGun_4")) {
                 if (!touchWeapons_4)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_4"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_4"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_4"), 463, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_4"), 463, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("LauncherGun_5")) {
                 if (!touchWeapons_5)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_5"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_5"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_5"), 91, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_5"), 91, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("LauncherGun_6")) {
                 if (!touchWeapons_6)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_6"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_6"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_6"), 215, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_6"), 215, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("LauncherGun_7")) {
                 if (!touchWeapons_7)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_7"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_7"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_7"), 339, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_7"), 339, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("LauncherGun_8")) {
                 if (!touchWeapons_8)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_8"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_8"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGunButton_8"), 463, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGunButton_8"), 463, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
         } else if (showWeapons == ROCKETLAUNCHERS) {
             if (!MarsGame.getPreference().getWeaponClose("FlareGun_1")) {
                 if (!touchWeapons_1)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_1"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_1"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_1"), 91, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_1"), 91, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("FlareGun_2")) {
                 if (!touchWeapons_2)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_2"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_2"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_2"), 215, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_2"), 215, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("FlareGun_3")) {
                 if (!touchWeapons_3)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_3"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_3"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_3"), 339, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_3"), 339, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("FlareGun_4")) {
                 if (!touchWeapons_4)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_4"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_4"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_4"), 463, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_4"), 463, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("FlareGun_5")) {
                 if (!touchWeapons_5)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_5"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_5"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_5"), 91, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_5"), 91, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("FlareGun_6")) {
                 if (!touchWeapons_6)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_6"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_6"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_6"), 215, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_6"), 215, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("FlareGun_7")) {
                 if (!touchWeapons_7)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_7"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_7"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_7"), 339, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_7"), 339, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("FlareGun_8")) {
                 if (!touchWeapons_8)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_8"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_8"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGunButton_8"), 463, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGunButton_8"), 463, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
         } else if (showWeapons == LASERGUNS) {
             if (!MarsGame.getPreference().getWeaponClose("LaserGun_1")) {
                 if (!touchWeapons_1)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_1"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_1"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_1"), 91, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_1"), 91, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 88, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("LaserGun_2")) {
                 if (!touchWeapons_2)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_2"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_2"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_2"), 215, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_2"), 215, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 212, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("LaserGun_3")) {
                 if (!touchWeapons_3)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_3"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_3"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_3"), 339, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_3"), 339, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 336, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("LaserGun_4")) {
                 if (!touchWeapons_4)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_4"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_4"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_4"), 463, 433 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_4"), 463, 433 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 460, 430 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("LaserGun_5")) {
                 if (!touchWeapons_5)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_5"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_5"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_5"), 91, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_5"), 91, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 88, 320 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("LaserGun_6")) {
                 if (!touchWeapons_6)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_6"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_6"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_6"), 215, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_6"), 215, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 212, 320 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("LaserGun_7")) {
                 if (!touchWeapons_7)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_7"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_7"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_7"), 339, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_7"), 339, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 336, 320 + MarsGame.getRatioAdd(), 92, 92);
 
             if (!MarsGame.getPreference().getWeaponClose("LaserGun_8")) {
                 if (!touchWeapons_8)
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_8"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_8"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
                 else
-                    batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGunButton_8"), 463, 323 + MarsGame.getRatioAdd(), 86, 86);
+                    batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGunButton_8"), 463, 323 + MarsGame.getRatioAdd(), 86, 86);
             } else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("CloseGun"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("CloseGun"), 460, 320 + MarsGame.getRatioAdd(), 92, 92);
         }
     }
 
@@ -1168,9 +1169,9 @@ public class ArsenalScreen extends State {
     public void render(SpriteBatch batch) {
         batch.begin();
         stars.render(batch);
-        batch.draw(MarsGame.getTextures().textureRegion.get("Goal_l"), MarsGame.WIDTH / 2 - 429, 224 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegion.get("Goal_r"), MarsGame.WIDTH / 2 - 23, 224 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegion.get("Fon"), 0, 0 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("Goal_l"), MarsGame.WIDTH / 2 - 429, 224 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("Goal_r"), MarsGame.WIDTH / 2 - 23, 224 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("Fon"), 0, 0 + MarsGame.getRatioAdd());
         yellowLightbulb.render(batch, 200, 292 + MarsGame.getRatioAdd(), 180, 16);
         yellowLightbulb.render(batch, 200, 694 + MarsGame.getRatioAdd(), 180, 16);
         yellowLightbulb.render(batch, MarsGame.WIDTH - 385, 292 + MarsGame.getRatioAdd(), 180, 16);
@@ -1178,109 +1179,109 @@ public class ArsenalScreen extends State {
         redLightbulb.render(batch, 1359, 366 + MarsGame.getRatioAdd(), 16, 16);
         redLightbulb.render(batch, 1359, 342 + MarsGame.getRatioAdd(), 16, 16);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("Terminal"), 32, 160 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("Terminal"), 32, 160 + MarsGame.getRatioAdd());
         if (!touchTurnOffTerminal)
-            batch.draw(MarsGame.getTextures().textureRegion.get("TurnOff"), 106, 232 + MarsGame.getRatioAdd(), 60, 60);
+            batch.draw(Textures.getInstance().textureRegion.get("TurnOff"), 106, 232 + MarsGame.getRatioAdd(), 60, 60);
         else
-            batch.draw(MarsGame.getTextures().textureRegion.get("TurnOff"), 109, 235 + MarsGame.getRatioAdd(), 54, 54);
+            batch.draw(Textures.getInstance().textureRegion.get("TurnOff"), 109, 235 + MarsGame.getRatioAdd(), 54, 54);
         if (!touchMachineGun)
-            batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGun"), 198, 232 + MarsGame.getRatioAdd(), 60, 60);
+            batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGun"), 198, 232 + MarsGame.getRatioAdd(), 60, 60);
         else
-            batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGun"), 201, 235 + MarsGame.getRatioAdd(), 54, 54);
+            batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGun"), 201, 235 + MarsGame.getRatioAdd(), 54, 54);
         if (!touchLauncherGun)
-            batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGun"), 290, 232 + MarsGame.getRatioAdd(), 60, 60);
+            batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGun"), 290, 232 + MarsGame.getRatioAdd(), 60, 60);
         else
-            batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGun"), 293, 235 + MarsGame.getRatioAdd(), 54, 54);
+            batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGun"), 293, 235 + MarsGame.getRatioAdd(), 54, 54);
         if (!touchFlareGun)
-            batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGun"), 382, 232 + MarsGame.getRatioAdd(), 60, 60);
+            batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGun"), 382, 232 + MarsGame.getRatioAdd(), 60, 60);
         else
-            batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGun"), 385, 235 + MarsGame.getRatioAdd(), 54, 54);
+            batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGun"), 385, 235 + MarsGame.getRatioAdd(), 54, 54);
         if (!touchLaserGun)
-            batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGun"), 476, 232 + MarsGame.getRatioAdd(), 60, 60);
+            batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGun"), 476, 232 + MarsGame.getRatioAdd(), 60, 60);
         else
-            batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGun"), 479, 235 + MarsGame.getRatioAdd(), 54, 54);
+            batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGun"), 479, 235 + MarsGame.getRatioAdd(), 54, 54);
 
         if (!isOffTerminal) terminalWeaponsRender(batch);
 
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Rack"), 610, MarsGame.HEIGHT - 290, 60, 90);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Rack"), 610, MarsGame.HEIGHT - 200, 60, 90);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Rack"), 194, MarsGame.HEIGHT - 290, 60, 90);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Rack"), 194, MarsGame.HEIGHT - 200, 60, 90);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Rack"), MarsGame.WIDTH / 2 - 64, MarsGame.HEIGHT - 320 - MarsGame.getRatioAdd() / 2);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Rack"), MarsGame.WIDTH / 2 - 64, MarsGame.HEIGHT - 512 - MarsGame.getRatioAdd() / 2);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Monitor"), 480, MarsGame.HEIGHT - 480);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("Monitor"), 64, MarsGame.HEIGHT - 480);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("MonitorBig"), MarsGame.WIDTH / 2 - 256, MarsGame.HEIGHT / 2 - 220 + MarsGame.getRatioAdd() / 2, 512, 256);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Rack"), 610, MarsGame.HEIGHT - 290, 60, 90);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Rack"), 610, MarsGame.HEIGHT - 200, 60, 90);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Rack"), 194, MarsGame.HEIGHT - 290, 60, 90);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Rack"), 194, MarsGame.HEIGHT - 200, 60, 90);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Rack"), MarsGame.WIDTH / 2 - 64, MarsGame.HEIGHT - 320 - MarsGame.getRatioAdd() / 2);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Rack"), MarsGame.WIDTH / 2 - 64, MarsGame.HEIGHT - 512 - MarsGame.getRatioAdd() / 2);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Monitor"), 480, MarsGame.HEIGHT - 480);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("Monitor"), 64, MarsGame.HEIGHT - 480);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("MonitorBig"), MarsGame.WIDTH / 2 - 256, MarsGame.HEIGHT / 2 - 220 + MarsGame.getRatioAdd() / 2, 512, 256);
 
         if (!touchAttack)
-            batch.draw(MarsGame.getTextures().textureRegionScreen.get("Attack"), MarsGame.WIDTH / 2 - 206, MarsGame.HEIGHT / 2 - 145 + MarsGame.getRatioAdd() / 2, 120, 120);
+            batch.draw(Textures.getInstance().textureRegionScreen.get("Attack"), MarsGame.WIDTH / 2 - 206, MarsGame.HEIGHT / 2 - 145 + MarsGame.getRatioAdd() / 2, 120, 120);
         else
-            batch.draw(MarsGame.getTextures().textureRegionScreen.get("Attack"), MarsGame.WIDTH / 2 - 203, MarsGame.HEIGHT / 2 - 142 + MarsGame.getRatioAdd() / 2, 114, 114);
+            batch.draw(Textures.getInstance().textureRegionScreen.get("Attack"), MarsGame.WIDTH / 2 - 203, MarsGame.HEIGHT / 2 - 142 + MarsGame.getRatioAdd() / 2, 114, 114);
         if (!touchDefense)
-            batch.draw(MarsGame.getTextures().textureRegionScreen.get("Defense"), MarsGame.WIDTH / 2 - 60, MarsGame.HEIGHT / 2 - 145 + MarsGame.getRatioAdd() / 2, 120, 120);
+            batch.draw(Textures.getInstance().textureRegionScreen.get("Defense"), MarsGame.WIDTH / 2 - 60, MarsGame.HEIGHT / 2 - 145 + MarsGame.getRatioAdd() / 2, 120, 120);
         else
-            batch.draw(MarsGame.getTextures().textureRegionScreen.get("Defense"), MarsGame.WIDTH / 2 - 57, MarsGame.HEIGHT / 2 - 142 + MarsGame.getRatioAdd() / 2, 114, 114);
+            batch.draw(Textures.getInstance().textureRegionScreen.get("Defense"), MarsGame.WIDTH / 2 - 57, MarsGame.HEIGHT / 2 - 142 + MarsGame.getRatioAdd() / 2, 114, 114);
         if (!touchTechnologies)
-            batch.draw(MarsGame.getTextures().textureRegionScreen.get("Technologies"), MarsGame.WIDTH / 2 + 86, MarsGame.HEIGHT / 2 - 145 + MarsGame.getRatioAdd() / 2, 120, 120);
+            batch.draw(Textures.getInstance().textureRegionScreen.get("Technologies"), MarsGame.WIDTH / 2 + 86, MarsGame.HEIGHT / 2 - 145 + MarsGame.getRatioAdd() / 2, 120, 120);
         else
-            batch.draw(MarsGame.getTextures().textureRegionScreen.get("Technologies"), MarsGame.WIDTH / 2 + 89, MarsGame.HEIGHT / 2 - 142 + MarsGame.getRatioAdd() / 2, 114, 114);
+            batch.draw(Textures.getInstance().textureRegionScreen.get("Technologies"), MarsGame.WIDTH / 2 + 89, MarsGame.HEIGHT / 2 - 142 + MarsGame.getRatioAdd() / 2, 114, 114);
         if (MarsGame.getPreference().getTacticsAttackStart()) {
             if (!touchDefense)
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 50, MarsGame.HEIGHT / 2 - 135 + MarsGame.getRatioAdd() / 2, 100, 100);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 50, MarsGame.HEIGHT / 2 - 135 + MarsGame.getRatioAdd() / 2, 100, 100);
             else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 45, MarsGame.HEIGHT / 2 - 130 + MarsGame.getRatioAdd() / 2, 90, 90);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 45, MarsGame.HEIGHT / 2 - 130 + MarsGame.getRatioAdd() / 2, 90, 90);
             if (!touchTechnologies)
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 + 96, MarsGame.HEIGHT / 2 - 135 + MarsGame.getRatioAdd() / 2, 100, 100);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 + 96, MarsGame.HEIGHT / 2 - 135 + MarsGame.getRatioAdd() / 2, 100, 100);
             else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 + 101, MarsGame.HEIGHT / 2 - 130 + MarsGame.getRatioAdd() / 2, 90, 90);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 + 101, MarsGame.HEIGHT / 2 - 130 + MarsGame.getRatioAdd() / 2, 90, 90);
         } else if (MarsGame.getPreference().getTacticsDefenseStart()) {
             if (!touchAttack)
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 196, MarsGame.HEIGHT / 2 - 135 + MarsGame.getRatioAdd() / 2, 100, 100);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 196, MarsGame.HEIGHT / 2 - 135 + MarsGame.getRatioAdd() / 2, 100, 100);
             else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 191, MarsGame.HEIGHT / 2 - 130 + MarsGame.getRatioAdd() / 2, 90, 90);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 191, MarsGame.HEIGHT / 2 - 130 + MarsGame.getRatioAdd() / 2, 90, 90);
             if (!touchTechnologies)
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 + 96, MarsGame.HEIGHT / 2 - 135 + MarsGame.getRatioAdd() / 2, 100, 100);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 + 96, MarsGame.HEIGHT / 2 - 135 + MarsGame.getRatioAdd() / 2, 100, 100);
             else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 + 101, MarsGame.HEIGHT / 2 - 130 + MarsGame.getRatioAdd() / 2, 90, 90);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 + 101, MarsGame.HEIGHT / 2 - 130 + MarsGame.getRatioAdd() / 2, 90, 90);
         } else if (MarsGame.getPreference().getTacticsTechnologiesStart()) {
             if (!touchAttack)
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 196, MarsGame.HEIGHT / 2 - 135 + MarsGame.getRatioAdd() / 2, 100, 100);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 196, MarsGame.HEIGHT / 2 - 135 + MarsGame.getRatioAdd() / 2, 100, 100);
             else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 191, MarsGame.HEIGHT / 2 - 130 + MarsGame.getRatioAdd() / 2, 90, 90);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 191, MarsGame.HEIGHT / 2 - 130 + MarsGame.getRatioAdd() / 2, 90, 90);
             if (!touchDefense)
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 50, MarsGame.HEIGHT / 2 - 135 + MarsGame.getRatioAdd() / 2, 100, 100);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 50, MarsGame.HEIGHT / 2 - 135 + MarsGame.getRatioAdd() / 2, 100, 100);
             else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 45, MarsGame.HEIGHT / 2 - 130 + MarsGame.getRatioAdd() / 2, 90, 90);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("TacticsClose"), MarsGame.WIDTH / 2 - 45, MarsGame.HEIGHT / 2 - 130 + MarsGame.getRatioAdd() / 2, 90, 90);
         }
 
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("ProjectionMonitor"), MarsGame.WIDTH - 448, 80 + MarsGame.getRatioAdd(), 32, 96, 64, 192, 1, 1, 90);
-        batch.draw(MarsGame.getTextures().textureRegionScreen.get("ProjectionMonitor"), MarsGame.WIDTH - 448, 80 + MarsGame.getRatioAdd(), 32, 96, 64, -192, 1, 1, 90);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("ProjectionMonitor"), MarsGame.WIDTH - 448, 80 + MarsGame.getRatioAdd(), 32, 96, 64, 192, 1, 1, 90);
+        batch.draw(Textures.getInstance().textureRegionScreen.get("ProjectionMonitor"), MarsGame.WIDTH - 448, 80 + MarsGame.getRatioAdd(), 32, 96, 64, -192, 1, 1, 90);
 
         weapons.render(batch);
         if (showInfoBuy.equals("Buy")) {
-            batch.draw(MarsGame.getTextures().textureRegion.get("Money"), 160, MarsGame.HEIGHT - 365, 45, 45);
-            batch.draw(MarsGame.getTextures().textureRegion.get("Mineral"), 160, MarsGame.HEIGHT - 420, 50, 50);
+            batch.draw(Textures.getInstance().textureRegion.get("Money"), 160, MarsGame.HEIGHT - 365, 45, 45);
+            batch.draw(Textures.getInstance().textureRegion.get("Mineral"), 160, MarsGame.HEIGHT - 420, 50, 50);
         }
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("ColorOrange"), 500, MarsGame.HEIGHT - 463, 280, 158);
-        batch.draw(MarsGame.getTextures().textureRegion.get("ColorOrange"), 84, MarsGame.HEIGHT - 463, 280, 158);
-        batch.draw(MarsGame.getTextures().textureRegion.get("ColorOrange"), MarsGame.WIDTH / 2 - 221, MarsGame.HEIGHT / 2 - 190 + MarsGame.getRatioAdd() / 2, 442, 208);
+        batch.draw(Textures.getInstance().textureRegion.get("ColorOrange"), 500, MarsGame.HEIGHT - 463, 280, 158);
+        batch.draw(Textures.getInstance().textureRegion.get("ColorOrange"), 84, MarsGame.HEIGHT - 463, 280, 158);
+        batch.draw(Textures.getInstance().textureRegion.get("ColorOrange"), MarsGame.WIDTH / 2 - 221, MarsGame.HEIGHT / 2 - 190 + MarsGame.getRatioAdd() / 2, 442, 208);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("UpLeft"), MarsGame.WIDTH / 2 - 206, MarsGame.HEIGHT / 2 - 50 + MarsGame.getRatioAdd() / 2);
-        batch.draw(MarsGame.getTextures().textureRegion.get("Down"), MarsGame.WIDTH / 2 - 30, MarsGame.HEIGHT / 2 + 15 + MarsGame.getRatioAdd() / 2, 64, -64);
-        batch.draw(MarsGame.getTextures().textureRegion.get("UpRight"), MarsGame.WIDTH / 2 + 145, MarsGame.HEIGHT / 2 - 50 + MarsGame.getRatioAdd() / 2);
+        batch.draw(Textures.getInstance().textureRegion.get("UpLeft"), MarsGame.WIDTH / 2 - 206, MarsGame.HEIGHT / 2 - 50 + MarsGame.getRatioAdd() / 2);
+        batch.draw(Textures.getInstance().textureRegion.get("Down"), MarsGame.WIDTH / 2 - 30, MarsGame.HEIGHT / 2 + 15 + MarsGame.getRatioAdd() / 2, 64, -64);
+        batch.draw(Textures.getInstance().textureRegion.get("UpRight"), MarsGame.WIDTH / 2 + 145, MarsGame.HEIGHT / 2 - 50 + MarsGame.getRatioAdd() / 2);
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("Down"), 108, 198 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegion.get("Down"), 199, 320 + MarsGame.getRatioAdd(), 64, -64);
-        batch.draw(MarsGame.getTextures().textureRegion.get("Down"), 293, 198 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegion.get("UpRight"), 400, 262 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegion.get("DownRight"), 494, 198 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("Down"), 108, 198 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("Down"), 199, 320 + MarsGame.getRatioAdd(), 64, -64);
+        batch.draw(Textures.getInstance().textureRegion.get("Down"), 293, 198 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("UpRight"), 400, 262 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("DownRight"), 494, 198 + MarsGame.getRatioAdd());
 
         if (MarsGame.getPreference().loadMissionFinish("Missions_4_3")) {
-            batch.draw(MarsGame.getTextures().textureRegion.get("TerminalUpdateTower"), MarsGame.WIDTH / 2 + 320, 128 + MarsGame.getRatioAdd(), 96, 256);
-            batch.draw(MarsGame.getTextures().textureRegion.get("DownLeft"), MarsGame.WIDTH / 2 + 310, 250 + MarsGame.getRatioAdd());
+            batch.draw(Textures.getInstance().textureRegion.get("TerminalUpdateTower"), MarsGame.WIDTH / 2 + 320, 128 + MarsGame.getRatioAdd(), 96, 256);
+            batch.draw(Textures.getInstance().textureRegion.get("DownLeft"), MarsGame.WIDTH / 2 + 310, 250 + MarsGame.getRatioAdd());
         } else
-            batch.draw(MarsGame.getTextures().textureRegion.get("HandOFF"), MarsGame.WIDTH / 2 + 320, 128 + MarsGame.getRatioAdd(), 96, 256);
+            batch.draw(Textures.getInstance().textureRegion.get("HandOFF"), MarsGame.WIDTH / 2 + 320, 128 + MarsGame.getRatioAdd(), 96, 256);
         batch.end();
 
         r_7.render(batch);
@@ -1288,25 +1289,25 @@ public class ArsenalScreen extends State {
         batch.begin();
         menuButtonsRender(batch);
         if (showInfoBuy.equals("Buy") || showInfoBuy.equals("Install")) {
-            batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonFon"), text.get("InstallBuy").getX() / MarsGame.getRatioMonitorW() - 6, MarsGame.HEIGHT - 465, text.get("InstallBuy").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
-            batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonL"), text.get("InstallBuy").getX() / MarsGame.getRatioMonitorW() - 10, MarsGame.HEIGHT - 468, 34, 45);
-            batch.draw(MarsGame.getTextures().textureRegion.get("MenuButtonR"), (text.get("InstallBuy").getX() + text.get("InstallBuy").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, MarsGame.HEIGHT - 468, 34, 45);
+            batch.draw(Textures.getInstance().textureRegion.get("MenuButtonFon"), text.get("InstallBuy").getX() / MarsGame.getRatioMonitorW() - 6, MarsGame.HEIGHT - 465, text.get("InstallBuy").getPrefWidth() / MarsGame.getRatioMonitorW() + 10, 39);
+            batch.draw(Textures.getInstance().textureRegion.get("MenuButtonL"), text.get("InstallBuy").getX() / MarsGame.getRatioMonitorW() - 10, MarsGame.HEIGHT - 468, 34, 45);
+            batch.draw(Textures.getInstance().textureRegion.get("MenuButtonR"), (text.get("InstallBuy").getX() + text.get("InstallBuy").getPrefWidth()) / MarsGame.getRatioMonitorW() - 25, MarsGame.HEIGHT - 468, 34, 45);
         }
 
         tactics.render(batch);
         if (showReset) {
             if (!touchReset)
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("Reset"), MarsGame.WIDTH - 200, 80 + MarsGame.getRatioAdd(), 128, 128);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("Reset"), MarsGame.WIDTH - 200, 80 + MarsGame.getRatioAdd(), 128, 128);
             else
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("Reset"), MarsGame.WIDTH - 196, 84 + MarsGame.getRatioAdd(), 120, 120);
+                batch.draw(Textures.getInstance().textureRegionScreen.get("Reset"), MarsGame.WIDTH - 196, 84 + MarsGame.getRatioAdd(), 120, 120);
         }
 
-        batch.draw(MarsGame.getTextures().textureRegion.get("FrameTop"), 0, MarsGame.HEIGHT - 256);
+        batch.draw(Textures.getInstance().textureRegion.get("FrameTop"), 0, MarsGame.HEIGHT - 256);
         if (MarsGame.getRatioAdd() > 120)
-            batch.draw(MarsGame.getTextures().textureRegion.get("FrameBottom"), 0, 1 + MarsGame.getRatioAdd(), 1920, -64);
-        batch.draw(MarsGame.getTextures().textureRegion.get("FrameBottom"), 0, 0 + MarsGame.getRatioAdd());
-        batch.draw(MarsGame.getTextures().textureRegion.get("Money"), MarsGame.WIDTH / 2 - 116, MarsGame.HEIGHT - 110, 45, 45);
-        batch.draw(MarsGame.getTextures().textureRegion.get("Mineral"), MarsGame.WIDTH / 2 + 70, MarsGame.HEIGHT - 114, 50, 50);
+            batch.draw(Textures.getInstance().textureRegion.get("FrameBottom"), 0, 1 + MarsGame.getRatioAdd(), 1920, -64);
+        batch.draw(Textures.getInstance().textureRegion.get("FrameBottom"), 0, 0 + MarsGame.getRatioAdd());
+        batch.draw(Textures.getInstance().textureRegion.get("Money"), MarsGame.WIDTH / 2 - 116, MarsGame.HEIGHT - 110, 45, 45);
+        batch.draw(Textures.getInstance().textureRegion.get("Mineral"), MarsGame.WIDTH / 2 + 70, MarsGame.HEIGHT - 114, 50, 50);
         batch.end();
 
         stage.act();

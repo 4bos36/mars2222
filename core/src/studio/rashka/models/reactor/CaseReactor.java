@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 import studio.rashka.MarsGame;
 import studio.rashka.lib.AnimationModels;
+import studio.rashka.lib.Textures;
 
 public class CaseReactor {
 
@@ -12,7 +13,7 @@ public class CaseReactor {
     private float ration = 0;
 
     public CaseReactor() {
-        caseReactor = new AnimationModels(new TextureRegion(MarsGame.getTextures().textureRegionScreen.get("ReactorCase")), 2, 0.6f);
+        caseReactor = new AnimationModels(new TextureRegion(Textures.getInstance().textureRegionScreen.get("ReactorCase")), 2, 0.6f);
     }
 
     public void update(float deltaTime) {

@@ -5,6 +5,7 @@ import com.brashmonkey.spriter.Player;
 import com.brashmonkey.spriter.gdx.Drawer;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.Textures;
 import studio.rashka.lib.Time;
 
 public class Worker {
@@ -32,8 +33,8 @@ public class Worker {
 
         path = new PathRobot(mission, position.x, position.y, 1, -90, crystal);
 
-        drawer = new Drawer(MarsGame.getTextures().loader.get("Worker"), MarsGame.getBatch(), null);
-        monster = new Player(MarsGame.getTextures().data.get("Worker").getEntity(0));
+        drawer = new Drawer(Textures.getInstance().loader.get("Worker"), MarsGame.getBatch(), null);
+        monster = new Player(Textures.getInstance().data.get("Worker").getEntity(0));
 
         monster.setPosition(-MarsGame.WIDTH * 2, 0);
         monster.setScale(0.5f);

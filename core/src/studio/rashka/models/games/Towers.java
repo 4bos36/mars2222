@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.Textures;
 import studio.rashka.lib.implement.Buttons;
 
 public class Towers {
@@ -42,7 +43,7 @@ public class Towers {
     private Map<String, Sound> sounds;
     private AssetManager loadSoundWeapon;
 
-    private static final Drawable img = MarsGame.getTextures().getTextureButtonSkin().getDrawable("NULL");
+    private static final Drawable img = Textures.getInstance().getTextureButtonSkin().getDrawable("NULL");
 
     public Towers(float x, float y) {
         posX = x;
@@ -423,130 +424,130 @@ public class Towers {
     }
 
     public void render(SpriteBatch batch) {
-        batch.draw(MarsGame.getTextures().textureRegion.get("Base"), posX + 24, posY + 28, 80, 80);
+        batch.draw(Textures.getInstance().textureRegion.get("Base"), posX + 24, posY + 28, 80, 80);
         if (!isBuy) {
             if (!isActiveMenu)
-                batch.draw(MarsGame.getTextures().textureRegion.get("BuyTower"), posX, posY);
-            else batch.draw(MarsGame.getTextures().textureRegion.get("BuyTowerClose"), posX, posY);
+                batch.draw(Textures.getInstance().textureRegion.get("BuyTower"), posX, posY);
+            else batch.draw(Textures.getInstance().textureRegion.get("BuyTowerClose"), posX, posY);
             if (isActiveMenu) {
-                if (MarsGame.getPreference().loadMissionFinish("Missions_1_1")) batch.draw(MarsGame.getTextures().textureRegion.get("BuyTowerMachineGun"), posX - distance, posY - distance);
-                else batch.draw(MarsGame.getTextures().textureRegion.get("BuyTowerNone"), posX - distance, posY - distance);
-                if (isActiveLauncher) batch.draw(MarsGame.getTextures().textureRegion.get("BuyTowerLauncherGun"), posX - distance, posY + distance);
-                else batch.draw(MarsGame.getTextures().textureRegion.get("BuyTowerNone"), posX - distance, posY + distance);
-                if (isActiveFlare) batch.draw(MarsGame.getTextures().textureRegion.get("BuyTowerFlareGun"), posX + distance, posY + distance);
-                else batch.draw(MarsGame.getTextures().textureRegion.get("BuyTowerNone"), posX + distance, posY + distance);
-                if (isActiveLaser) batch.draw(MarsGame.getTextures().textureRegion.get("BuyTowerLaserGun"), posX + distance, posY - distance);
-                else batch.draw(MarsGame.getTextures().textureRegion.get("BuyTowerNone"), posX + distance, posY - distance);
+                if (MarsGame.getPreference().loadMissionFinish("Missions_1_1")) batch.draw(Textures.getInstance().textureRegion.get("BuyTowerMachineGun"), posX - distance, posY - distance);
+                else batch.draw(Textures.getInstance().textureRegion.get("BuyTowerNone"), posX - distance, posY - distance);
+                if (isActiveLauncher) batch.draw(Textures.getInstance().textureRegion.get("BuyTowerLauncherGun"), posX - distance, posY + distance);
+                else batch.draw(Textures.getInstance().textureRegion.get("BuyTowerNone"), posX - distance, posY + distance);
+                if (isActiveFlare) batch.draw(Textures.getInstance().textureRegion.get("BuyTowerFlareGun"), posX + distance, posY + distance);
+                else batch.draw(Textures.getInstance().textureRegion.get("BuyTowerNone"), posX + distance, posY + distance);
+                if (isActiveLaser) batch.draw(Textures.getInstance().textureRegion.get("BuyTowerLaserGun"), posX + distance, posY - distance);
+                else batch.draw(Textures.getInstance().textureRegion.get("BuyTowerNone"), posX + distance, posY - distance);
             }
         } else {
             //region MachineGun
             if (towerLV.equals("MachineGun_1"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGun_1"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGun_1"),
                         posX + 32, posY - 60, 32, 128, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("MachineGun_2"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGun_2"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGun_2"),
                         posX + 32, posY - 60, 32, 128, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("MachineGun_3"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGun_3"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGun_3"),
                         posX + 32, posY - 40, 32, 108, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("MachineGun_4"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGun_4"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGun_4"),
                         posX + 32, posY - 50, 32, 118, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("MachineGun_5"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGun_5"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGun_5"),
                         posX + 32, posY - 45, 32, 113, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("MachineGun_6"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGun_6"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGun_6"),
                         posX + 36, posY - 45, 26, 113, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("MachineGun_7"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGun_7"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGun_7"),
                         posX + 36, posY - 44, 26, 112, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("MachineGun_8"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("MachineGun_8"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("MachineGun_8"),
                         posX + 32, posY - 28, 32, 96, 64, 128, 1, 1, angelTower);
             //endregion
             //region LauncherGun
             else if (towerLV.equals("LauncherGun_1"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGun_1"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGun_1"),
                         posX + 32, posY - 60, 32, 128, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("LauncherGun_2"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGun_2"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGun_2"),
                         posX + 32, posY - 60, 32, 128, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("LauncherGun_3"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGun_3"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGun_3"),
                         posX + 32, posY - 60, 32, 128, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("LauncherGun_4"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGun_4"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGun_4"),
                         posX + 32, posY - 60, 32, 128, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("LauncherGun_5"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGun_5"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGun_5"),
                         posX + 32, posY - 40, 32, 108, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("LauncherGun_6"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGun_6"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGun_6"),
                         posX + 32, posY - 42, 32, 110, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("LauncherGun_7"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGun_7"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGun_7"),
                         posX + 32, posY - 20, 32, 88, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("LauncherGun_8"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LauncherGun_8"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LauncherGun_8"),
                         posX + 32, posY - 40, 32, 108, 64, 160, 1, 1, angelTower);
             //endregion
             //region FlareGun
             else if (towerLV.equals("FlareGun_1"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGun_1"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGun_1"),
                         posX + 32, posY + 13, 32, 55, 64, 80, 1, 1, angelTower);
             else if (towerLV.equals("FlareGun_2"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGun_2"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGun_2"),
                         posX + 32, posY + 13, 32, 55, 64, 80, 1, 1, angelTower);
             else if (towerLV.equals("FlareGun_3"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGun_3"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGun_3"),
                         posX + 25, posY - 20, 39, 88, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("FlareGun_4"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGun_4"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGun_4"),
                         posX + 32, posY + 32, 32, 32, 64, 64, 1, 1, angelTower);
             else if (towerLV.equals("FlareGun_5"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGun_5"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGun_5"),
                         posX + 32, posY - 45, 32, 113, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("FlareGun_6"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGun_6"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGun_6"),
                         posX + 32, posY + 32, 32, 32, 64, 64, 1, 1, angelTower);
             else if (towerLV.equals("FlareGun_7"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGun_7"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGun_7"),
                         posX + 32, posY - 35, 32, 103, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("FlareGun_8"))
-              batch.draw(MarsGame.getTextures().textureRegionScreen.get("FlareGun_8"),
+              batch.draw(Textures.getInstance().textureRegionScreen.get("FlareGun_8"),
                     posX + 24, posY + 35, 40, 33, 80, 80, 1, 1, angelTower);
             //endregion
             //region LaserGun
             else if (towerLV.equals("LaserGun_1"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGun_1"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGun_1"),
                         posX + 32, posY - 28, 32, 96, 64, 128, 1, 1, angelTower);
             else if (towerLV.equals("LaserGun_2"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGun_2"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGun_2"),
                         posX + 32, posY - 28, 32, 96, 64, 128, 1, 1, angelTower);
             else if (towerLV.equals("LaserGun_3"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGun_3"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGun_3"),
                         posX + 32, posY - 60, 32, 128, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("LaserGun_4"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGun_4"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGun_4"),
                         posX + 32, posY - 28, 32, 96, 64, 128, 1, 1, angelTower);
             else if (towerLV.equals("LaserGun_5"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGun_5"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGun_5"),
                         posX + 32, posY - 60, 32, 128, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("LaserGun_6"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGun_6"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGun_6"),
                         posX + 32, posY - 22, 32, 90, 64, 128, 1, 1, angelTower);
             else if (towerLV.equals("LaserGun_7"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGun_7"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGun_7"),
                         posX + 32, posY - 50, 32, 118, 64, 160, 1, 1, angelTower);
             else if (towerLV.equals("LaserGun_8"))
-                batch.draw(MarsGame.getTextures().textureRegionScreen.get("LaserGun_8"),
+                batch.draw(Textures.getInstance().textureRegionScreen.get("LaserGun_8"),
                         posX + 32, posY - 50, 32, 118, 64, 160, 1, 1, angelTower);
             //endregion
             fire.setPosition(posMonster.x, posMonster.y);
             if (isActiveShoot && this.mp > energy) fire.draw(batch);
         }
-        if (mp <= 0 && isBuy) batch.draw(MarsGame.getTextures().textureRegion.get("EnergyIcon"), posX + 48, posY + 52, 32, 32);
+        if (mp <= 0 && isBuy) batch.draw(Textures.getInstance().textureRegion.get("EnergyIcon"), posX + 48, posY + 52, 32, 32);
     }
 
     public void setPosBtnX(float posBtnX) {

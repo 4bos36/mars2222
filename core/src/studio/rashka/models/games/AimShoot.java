@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
 
 import studio.rashka.MarsGame;
+import studio.rashka.lib.Textures;
 import studio.rashka.lib.implement.aim.AbstractFactoryAim;
 import studio.rashka.lib.implement.aim.Aims;
 import studio.rashka.lib.implement.aim.CreateAim;
@@ -189,7 +190,7 @@ public class AimShoot {
     }
 
     public void render(SpriteBatch batch, Vector2 position, Vector2 pos, Vector2 positionFireAim, OrthographicCamera camera) {
-        batch.draw(MarsGame.getTextures().textureRegion.get("Aim"), position(MarsGame.WIDTH / 2, camera.position.x, posCamX, camera.zoom) - 64, position(540 - MarsGame.getRatioAdd() / 2, camera.position.y, posCamY, camera.zoom) + 36, 32, 32, 64, 64, 1, 1, pos.angle());
+        batch.draw(Textures.getInstance().textureRegion.get("Aim"), position(MarsGame.WIDTH / 2, camera.position.x, posCamX, camera.zoom) - 64, position(540 - MarsGame.getRatioAdd() / 2, camera.position.y, posCamY, camera.zoom) + 36, 32, 32, 64, 64, 1, 1, pos.angle());
         aim.setPosition(position(MarsGame.WIDTH / 2 + positionFireAim.x, camera.position.x, posCamX, camera.zoom) - 32, position(540 + positionFireAim.y - MarsGame.getRatioAdd() / 2, camera.position.y, posCamY, camera.zoom) + 72);
         aims.shooting(position, positionFireAim, camera);
         if (isFire)
