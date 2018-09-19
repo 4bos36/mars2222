@@ -30,7 +30,9 @@ import studio.rashka.lib.implement.Buttons;
 import studio.rashka.lib.implement.crystals.AbstractFactoryCrystals;
 import studio.rashka.lib.implement.crystals.CreateMissionCrystals;
 import studio.rashka.lib.implement.crystals.Crystals;
+import studio.rashka.lib.singleton.MicrowavesMonster;
 import studio.rashka.lib.singleton.ScaleMap;
+import studio.rashka.lib.singleton.SpeedMonster;
 import studio.rashka.models.Loading;
 import studio.rashka.models.games.AimShoot;
 import studio.rashka.models.games.Base;
@@ -44,7 +46,7 @@ public class Missions extends State {
     private static final int NONE = 0, NORM = 1, MIMI = 2, SURPRISE = 3, ANGER = 4, MARSIAN = 5;
     private boolean isCompleteMission, isCompleteCrystals, isCompleteIntact, isCompleteDieWormCave, isGameEnd = false,
             isVibroDie, isSoundDie = true,
-            isMicrowaves = false, isFaster = false, isFasterActive = false,
+            isMicrowaves = false,
             isStoryActive = false;
     private String mission, type;
     private StringBuilder textMission;
@@ -2162,36 +2164,14 @@ public class Missions extends State {
                     //region code
                     if (!runMicrowaves.isActive()) {
                         runMicrowaves.updateTime();
-                        for (int i = 0; i < monsterArmy.getMonster_List().size(); i++)
-                            if (monsterArmy.getMonster_List().get(i).isLiving())
-                                monsterArmy.getMonster_List().get(i).setMicrowaves(0);
+                        MicrowavesMonster.INSTANCE.setRunMicrowaves(0);
                     } else {
                         isMicrowaves = false;
                         runMicrowaves.setTimeReset();
-                        for (int i = 0; i < monsterArmy.getMonster_List().size(); i++)
-                            if (monsterArmy.getMonster_List().get(i).isLiving())
-                                monsterArmy.getMonster_List().get(i).setMicrowaves(1);
+                        MicrowavesMonster.INSTANCE.setRunMicrowaves(1);
                     }
                     //endregion
                 }
-                //region code Faster monster
-                if (isFaster && isFasterActive) {
-                    for (int i = 0; i < monsterArmy.getMonster_List().size(); i++)
-                        if (monsterArmy.getMonster_List().get(i).isLiving())
-                            monsterArmy.getMonster_List().get(i).setSpeedMove(2);
-                    for (int i = 0; i < monsterArmy.getWorkers().size(); i++)
-                        monsterArmy.getWorkers().get(i).setSpeedMove(2);
-                    if (monsterArmy.getSpeedMoveBoss() == 1) monsterArmy.setSpeedMoveBoss(2);
-                } else if (!isFaster && isFasterActive) {
-                    for (int i = 0; i < monsterArmy.getMonster_List().size(); i++)
-                        if (monsterArmy.getMonster_List().get(i).isLiving())
-                            monsterArmy.getMonster_List().get(i).setSpeedMove(1);
-                    for (int i = 0; i < monsterArmy.getWorkers().size(); i++)
-                        monsterArmy.getWorkers().get(i).setSpeedMove(1);
-                    if (monsterArmy.getSpeedMoveBoss() == 2) monsterArmy.setSpeedMoveBoss(1);
-                    isFasterActive = false;
-                }
-                //endregion
                 //region code Game
                 if (isLive) base.update(deltaTime);
                 aimShoot.update(deltaTime, gamesPanel.getMP());
@@ -2222,12 +2202,8 @@ public class Missions extends State {
                 }
                 position.set(-touchpad.getKnobPercentX() * 3, -touchpad.getKnobPercentY() * 3);
                 newPosition.add(position.x * deltaTime * 120, position.y * deltaTime * 120);
-                if (!aimShoot.isShoot()) {
-                    if (scale == 1.0f)
-                        positionFireAim.add(position.x * deltaTime * 120, position.y * deltaTime * 120);
-                    else if (scale == 0.5f)
-                        positionFireAim.add(position.x * deltaTime * 60, position.y * deltaTime * 60);
-                } else if (aimShoot.getFireAim().isComplete()) positionFireAim.set(0, 0);
+                if (!aimShoot.isShoot()) positionFireAim.add(position.x * deltaTime * 120 * scale, position.y * deltaTime * 120 * scale);
+                else if (aimShoot.getFireAim().isComplete()) positionFireAim.set(0, 0);
                 monsterArmy.update(deltaTime, aimShoot.getAim(), aimShoot.getShotPower(), aimShoot.getEmitter().getActiveCount(), maps.getTowerses(), gamesPanel.getDamageBonus(), gamesPanel.getMagic());
                 maps.update(newPosition, deltaTime, gamesPanel.getMP());
                 if (maps.getPriceBuy() > 0) {
@@ -2824,16 +2800,8 @@ public class Missions extends State {
                 //region
                 if (MarsGame.getPreference().loadSound() == 1)
                     MarsGame.getMusicSound().sounds.get("ClickTerminal").play();
-                if (gamesPanel.getFaster() == 1) {
-                    gamesPanel.setFaster(2);
-                    monsterArmy.setFaster(true);
-                    isFaster = true;
-                    isFasterActive = true;
-                } else if (gamesPanel.getFaster() == 2) {
-                    gamesPanel.setFaster(1);
-                    monsterArmy.setFaster(false);
-                    isFaster = false;
-                }
+                if (SpeedMonster.INSTANCE.getSpeed() == 1) SpeedMonster.INSTANCE.setSpeed(2);
+                else if (SpeedMonster.INSTANCE.getSpeed() == 2) SpeedMonster.INSTANCE.setSpeed(1);
                 //endregion
             } else if (name.equals("NextWave")) {
                 if (monsterArmy.isStartNewWave()) {

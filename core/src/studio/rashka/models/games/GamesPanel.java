@@ -12,6 +12,7 @@ import studio.rashka.lib.Textures;
 import studio.rashka.lib.Time;
 import studio.rashka.lib.TimeRegeneration;
 import studio.rashka.lib.singleton.ScaleMap;
+import studio.rashka.lib.singleton.SpeedMonster;
 import studio.rashka.models.arsenal.BonusTactics;
 import studio.rashka.models.monsters.Boss;
 import studio.rashka.screen.missions.AllMonsters;
@@ -28,9 +29,9 @@ public class GamesPanel {
             touchMusic = false, touchSound = false, touchVibro = false,
             resetFire = false, resetIce = false, resetPoison = false;
     private float progressHP = 240, // 0 = 0 * 240 = 100
-            progressMP = 246, // 246 = 100 * 0 = 0
+            progressMP = 246; // 246 = 100 * 0 = 0
 //            scale = 1,
-            faster = 1;
+//            faster = 1;
     private float hideFire = 0, hidePoison = 0, hideIce = 0,
             hideFireH, hidePoisonH, hideIceH;
 
@@ -76,7 +77,7 @@ public class GamesPanel {
     }
 
     public void update() {
-        if (faster == 1) {
+        if (SpeedMonster.INSTANCE.getSpeed() == 1) {
             regenerationHP.updateAddHP();
             regenerationMP.updateAddMP();
         } else {
@@ -101,17 +102,17 @@ public class GamesPanel {
         }
 
         if (!timeFire.isActive()) {
-            if (faster == 1) timeFire.updateTime();
+            if (SpeedMonster.INSTANCE.getSpeed() == 1) timeFire.updateTime();
             else timeFire.updateTime2();
             hideFire = 120 - hideFireH * timeFire.getTime();
         }
         if (!timeIce.isActive()) {
-            if (faster == 1) timeIce.updateTime();
+            if (SpeedMonster.INSTANCE.getSpeed() == 1) timeIce.updateTime();
             else timeIce.updateTime2();
             hideIce = 120 - hideIceH * timeIce.getTime();
         }
         if (!timePoison.isActive()) {
-            if (faster == 1) timePoison.updateTime();
+            if (SpeedMonster.INSTANCE.getSpeed() == 1) timePoison.updateTime();
             else timePoison.updateTime2();
             hidePoison = 120 - hidePoisonH * timePoison.getTime();
         }
@@ -301,8 +302,8 @@ public class GamesPanel {
         if (ScaleMap.INSTANCE.getScale() == 1) batch.draw(Textures.getInstance().textureRegion.get("X1"), MarsGame.WIDTH - 240, MarsGame.HEIGHT - 80, 60, 60);
         else if (ScaleMap.INSTANCE.getScale() == 0.5) batch.draw(Textures.getInstance().textureRegion.get("X2"), MarsGame.WIDTH - 240, MarsGame.HEIGHT - 80, 60, 60);
 
-        if (faster == 1) batch.draw(Textures.getInstance().textureRegion.get("FastOff"), MarsGame.WIDTH - 320, MarsGame.HEIGHT - 80, 60, 60);
-        else if (faster == 2) batch.draw(Textures.getInstance().textureRegion.get("FastOk"), MarsGame.WIDTH - 320, MarsGame.HEIGHT - 80, 60, 60);
+        if (SpeedMonster.INSTANCE.getSpeed() == 1) batch.draw(Textures.getInstance().textureRegion.get("FastOff"), MarsGame.WIDTH - 320, MarsGame.HEIGHT - 80, 60, 60);
+        else if (SpeedMonster.INSTANCE.getSpeed() == 2) batch.draw(Textures.getInstance().textureRegion.get("FastOk"), MarsGame.WIDTH - 320, MarsGame.HEIGHT - 80, 60, 60);
         //endregion
         //region Rate
         if (showRate) {
@@ -440,14 +441,6 @@ public class GamesPanel {
 
     public void setSettings(boolean settings) {
         isSettings = settings;
-    }
-
-    public float getFaster() {
-        return faster;
-    }
-
-    public void setFaster(float faster) {
-        this.faster = faster;
     }
 
     public float getEnergyBonus() {

@@ -10,6 +10,8 @@ import studio.rashka.MarsGame;
 import studio.rashka.lib.implement.monster.AbstractFactoryMonsters;
 import studio.rashka.lib.implement.monster.CreateMonster;
 import studio.rashka.lib.implement.monster.Monsters;
+import studio.rashka.lib.singleton.MicrowavesMonster;
+import studio.rashka.lib.singleton.SpeedMonster;
 import studio.rashka.models.monsters.packMonsters.PathChoice;
 
 public class AllMonsters {
@@ -18,7 +20,7 @@ public class AllMonsters {
     private Monsters monsters;
 
     private float typeMonster;
-    private int speed, speedMove = 1, microwaves = 1;
+    private int speed;
     private boolean isWork = true;
 
     private Random random;
@@ -44,10 +46,10 @@ public class AllMonsters {
 
     public void update(float deltaTime) {
         if (typeMonster == 3) {
-            if (isWork) position.set(path.getPath().getPositionFlyToWorker(deltaTime, speed, speedMove * microwaves).x, path.getPath().getPosition(deltaTime, speed, speedMove * microwaves).y);
-            else position.set(path.getPath().getPositionFlyToBase(deltaTime, speed, speedMove * microwaves).x, path.getPath().getPosition(deltaTime, speed, speedMove * microwaves).y);
+            if (isWork) position.set(path.getPath().getPositionFlyToWorker(deltaTime, speed, SpeedMonster.INSTANCE.getSpeed() * MicrowavesMonster.INSTANCE.getRunMicrowaves()).x, path.getPath().getPosition(deltaTime, speed, SpeedMonster.INSTANCE.getSpeed() * MicrowavesMonster.INSTANCE.getRunMicrowaves()).y);
+            else position.set(path.getPath().getPositionFlyToBase(deltaTime, speed, SpeedMonster.INSTANCE.getSpeed() * MicrowavesMonster.INSTANCE.getRunMicrowaves()).x, path.getPath().getPosition(deltaTime, speed, SpeedMonster.INSTANCE.getSpeed() * MicrowavesMonster.INSTANCE.getRunMicrowaves()).y);
         } else {
-            position.set(path.getPath().getPosition(deltaTime, speed, speedMove * microwaves).x, path.getPath().getPosition(deltaTime, speed, speedMove * microwaves).y);
+            position.set(path.getPath().getPosition(deltaTime, speed, SpeedMonster.INSTANCE.getSpeed() * MicrowavesMonster.INSTANCE.getRunMicrowaves()).x, path.getPath().getPosition(deltaTime, speed, SpeedMonster.INSTANCE.getSpeed() * MicrowavesMonster.INSTANCE.getRunMicrowaves()).y);
         }
         monsters.setPosition(position);
         monsters.update(deltaTime, path.getPath().getAngel(), path.getPath().getNumberPath());
@@ -95,14 +97,6 @@ public class AllMonsters {
 
     public int getPower() {
         return monsters.getPower();
-    }
-
-    public void setSpeedMove(int speedMove) {
-        this.speedMove = speedMove;
-    }
-
-    public void setMicrowaves(int microwaves) {
-        this.microwaves = microwaves;
     }
 
     public boolean isLiving() {

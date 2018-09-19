@@ -243,7 +243,7 @@ public class AboutScreen extends State {
                 game.set(new Loading(game, "Menu"));
             } else if (name.equals("Site")) {
                 touchSite = false;
-                Gdx.net.openURI("http://rashka.studio/");
+                Gdx.net.openURI("https://rashka.studio/");
             } else if (name.equals("Google")) {
                 touchGoogle = false;
                 Gdx.net.openURI("https://play.google.com/store/apps/details?id=studio.rashka.mars2222");

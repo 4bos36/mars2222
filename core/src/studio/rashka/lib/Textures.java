@@ -334,6 +334,7 @@ public class Textures {
         textureRegion.put("HelpWeapon", new TextureRegion(texturesSpaceShip.get("Spaceship2"), 1920, 0, 128, 128));
         textureRegion.put("HelpMonster", new TextureRegion(texturesSpaceShip.get("Spaceship2"), 1408, 128, 128, 128));
         textureRegion.put("IconWeapon", new TextureRegion(texturesSpaceShip.get("Spaceship2"), 704, 640, 256, 64));
+        textureRegion.put("PrivacyPolicy", new TextureRegion(texturesSpaceShip.get("Spaceship2"), 1536, 128, 128, 128));
 
         textureRegion.put("LightbulbRed", new TextureRegion(texturesSpaceShip.get("Spaceship"), 1920, 1280 / 2, 64, 32));
         textureRegion.put("LightbulbYellow", new TextureRegion(texturesSpaceShip.get("Spaceship"), 1920, 1312 / 2, 64, 32));

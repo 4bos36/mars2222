@@ -13,6 +13,7 @@ import java.util.Random;
 import studio.rashka.MarsGame;
 import studio.rashka.lib.FontTTF;
 import studio.rashka.lib.Time;
+import studio.rashka.lib.singleton.SpeedMonster;
 import studio.rashka.models.games.Magic;
 import studio.rashka.models.games.Towers;
 import studio.rashka.models.monsters.Boss;
@@ -32,8 +33,9 @@ public class MonsterArmy {
 
     private Time timeStart, timeStart2, timeStart3, timeFinish, timeStartRobot;
     private int workersNumber, timeFinishMinute, timeFinishSecond,
-            add = 0, miniAdd = -1, wavesMonster = 0, totalWaveMonster, speedMoveBoss = 1;
-    private boolean isGameEnd = false, isStartNewWave = false, isBoss = false, isMiniAdd = false, isFaster = false;
+            add = 0, miniAdd = -1, wavesMonster = 0, totalWaveMonster;
+    private boolean isGameEnd = false, isStartNewWave = false, isBoss = false, isMiniAdd = false;
+//            isFaster = false;
 
     public MonsterArmy(String mission) {
         this.mission = mission;
@@ -363,7 +365,7 @@ public class MonsterArmy {
 
     private void timeGame() {
         if (!timeFinish.isActive()) {
-            if (!isFaster) timeFinish.updateTime();
+            if (SpeedMonster.INSTANCE.getSpeed() == 1) timeFinish.updateTime();
             else timeFinish.updateTimeFinish();
         }
         if (timeFinish.isActive()) {
@@ -1090,7 +1092,7 @@ public class MonsterArmy {
         }
 
         if (isBoss) {
-            boss.update(deltaTime, speedMoveBoss);
+            boss.update(deltaTime);
             collidesBossBase(deltaTime, aim, shotPower, isFire, damageBonus);
             collidesBossMagic(deltaTime, magic);
         }
@@ -1112,13 +1114,11 @@ public class MonsterArmy {
         int damage = 0;
         for (int i = 0; i < monster_List.size(); i++)
             if (monster_List.get(i).isShoot()) {
-                if (!isFaster) damage += monster_List.get(i).getPower();
-                else damage += monster_List.get(i).getPower() * 2;
+                damage += monster_List.get(i).getPower() * SpeedMonster.INSTANCE.getSpeed();
             }
         if (isBoss)
             if (boss.isShoot()) {
-                if (!isFaster) damage += boss.getPower();
-                else damage += boss.getPower() * 2;
+                damage += boss.getPower() * SpeedMonster.INSTANCE.getSpeed();
             }
         return damage;
     }
@@ -1147,10 +1147,6 @@ public class MonsterArmy {
         return monster_List;
     }
 
-    public ArrayList<Worker> getWorkers() {
-        return workers;
-    }
-
     public Boss getBoss() {
         return boss;
     }
@@ -1171,21 +1167,9 @@ public class MonsterArmy {
         return isStartNewWave;
     }
 
-    public void setSpeedMoveBoss(int speedMoveBoss) {
-        this.speedMoveBoss = speedMoveBoss;
-    }
-
-    public int getSpeedMoveBoss() {
-        return speedMoveBoss;
-    }
-
     public boolean isAbsorption() {
         if (isBoss) return boss.isAbsorption();
         else return false;
-    }
-
-    public void setFaster(boolean faster) {
-        isFaster = faster;
     }
 
     public void dispose() {

@@ -7,13 +7,14 @@ import com.brashmonkey.spriter.gdx.Drawer;
 import studio.rashka.MarsGame;
 import studio.rashka.lib.Textures;
 import studio.rashka.lib.Time;
+import studio.rashka.lib.singleton.SpeedMonster;
 
 public class Worker {
 
     private float life = 1; // жизни
     private int crystal, crystalNUN; // сколько кристалов
     private boolean isStartWorking = false;
-    private int speed, speedMove = 1, died = 0;
+    private int speed, died = 0;
     private String mission;
 
     private PathRobot path;
@@ -56,10 +57,7 @@ public class Worker {
 
     public void update(float deltaTime) {
         if (mission.equals("Missions_3_3")) {
-            if (isStartWorking) {
-                if (speedMove == 1) MarsGame.getPreference().taskGame -= deltaTime * 40;
-                else MarsGame.getPreference().taskGame -= deltaTime * 80;
-            }
+            if (isStartWorking) MarsGame.getPreference().taskGame -= deltaTime * 40 * SpeedMonster.INSTANCE.getSpeed();
         }
 
         if (path.isWork()) {
@@ -120,7 +118,7 @@ public class Worker {
             }
             //endregion
 
-            position.set(path.getPosition(deltaTime, speed, speedMove).x, path.getPosition(deltaTime, speed, speedMove).y);
+            position.set(path.getPosition(deltaTime, speed, SpeedMonster.INSTANCE.getSpeed()).x, path.getPosition(deltaTime, speed, SpeedMonster.INSTANCE.getSpeed()).y);
             monster.setAngle(path.getAngel());
             monster.update();
         }
@@ -148,10 +146,6 @@ public class Worker {
             monster.setPosition(position.x, position.y);
             drawer.draw(monster);
         }
-    }
-
-    public void setSpeedMove(int speedMove) {
-        this.speedMove = speedMove;
     }
 
     public void setLife(float life) {

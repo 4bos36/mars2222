@@ -84,16 +84,19 @@ public class HelpScreen extends State {
         buttons.put("Mission", new Buttons("Mission", img, 128, 128, MarsGame.WIDTH / 2 - 224, 64 + MarsGame.getRatioAdd()));
         buttons.put("Weapon", new Buttons("Weapon", img, 128, 128, MarsGame.WIDTH / 2 - 64, 64 + MarsGame.getRatioAdd()));
         buttons.put("Monster", new Buttons("Monster", img, 128, 128, MarsGame.WIDTH / 2 + 96, 64 + MarsGame.getRatioAdd()));
+        buttons.put("PrivacyPolicy", new Buttons("PrivacyPolicy", img, 128, 128, MarsGame.WIDTH - 130, MarsGame.HEIGHT - 130));
 
         buttons.get("Home").addListener(new ButtonsInputListener(buttons.get("Home").getName()));
         buttons.get("Mission").addListener(new ButtonsInputListener(buttons.get("Mission").getName()));
         buttons.get("Weapon").addListener(new ButtonsInputListener(buttons.get("Weapon").getName()));
         buttons.get("Monster").addListener(new ButtonsInputListener(buttons.get("Monster").getName()));
+        buttons.get("PrivacyPolicy").addListener(new ButtonsInputListener(buttons.get("PrivacyPolicy").getName()));
 
         stage.addActor(buttons.get("Home"));
         stage.addActor(buttons.get("Mission"));
         stage.addActor(buttons.get("Weapon"));
         stage.addActor(buttons.get("Monster"));
+        stage.addActor(buttons.get("PrivacyPolicy"));
         Gdx.input.setInputProcessor(stage);
     }
 
@@ -142,6 +145,8 @@ public class HelpScreen extends State {
         else batch.draw(Textures.getInstance().textureRegion.get("HelpWeapon"), MarsGame.WIDTH / 2 - 62, 66 + MarsGame.getRatioAdd(), 124, 124);
         if (!isTouchMonster) batch.draw(Textures.getInstance().textureRegion.get("HelpMonster"), MarsGame.WIDTH / 2 + 96, 64 + MarsGame.getRatioAdd());
         else batch.draw(Textures.getInstance().textureRegion.get("HelpMonster"), MarsGame.WIDTH / 2 + 98, 66 + MarsGame.getRatioAdd(), 124, 124);
+
+        batch.draw(Textures.getInstance().textureRegion.get("PrivacyPolicy"), MarsGame.WIDTH - 130, MarsGame.HEIGHT - 130, 128, 128);
 
         if (showIs.equals("Mission")) {
             batch.draw(Textures.getInstance().textureRegionScreen.get("ButtonsMission"), MarsGame.WIDTH / 2 - 96, 356 + MarsGame.getRatioAdd());
@@ -264,6 +269,9 @@ public class HelpScreen extends State {
                 text.get("3").setPosition((MarsGame.WIDTH / 2 + 65) * MarsGame.getRatioMonitorW(), (355 + MarsGame.getRatioAdd()) * MarsGame.getRatioMonitorH());
                 text.get("4").setPosition((MarsGame.WIDTH / 2 + 80) * MarsGame.getRatioMonitorW(), (510 + MarsGame.getRatioAdd()) * MarsGame.getRatioMonitorH());
                 text.get("5").setPosition((MarsGame.WIDTH / 2 + 110) * MarsGame.getRatioMonitorW(), (405 + MarsGame.getRatioAdd()) * MarsGame.getRatioMonitorH());
+            } else if (name.equals("PrivacyPolicy")) {
+                if (MarsGame.getPreference().loadSound() == 1) MarsGame.getMusicSound().sounds.get("ClickTerminal").play();
+                Gdx.net.openURI("https://rashka.studio/privacy-policy");
             }
         }
     }

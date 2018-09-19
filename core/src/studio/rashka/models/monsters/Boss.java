@@ -11,6 +11,7 @@ import java.util.Random;
 import studio.rashka.MarsGame;
 import studio.rashka.lib.Textures;
 import studio.rashka.lib.Time;
+import studio.rashka.lib.singleton.SpeedMonster;
 
 import static java.lang.Math.cos;
 import static java.lang.Math.sin;
@@ -113,14 +114,14 @@ public class Boss {
         monster.setAnimation("run");
     }
 
-    private void getPosition(float deltaTime, int speedMove) {
+    private void getPosition(float deltaTime) {
         if (typeBoss == 1) {
             //region code
             if (numberPath == 1) {
-                position.add(0, deltaTime * speed * speedMove);
+                position.add(0, deltaTime * speed * SpeedMonster.INSTANCE.getSpeed());
                 if (position.y > 640) numberPath = 2;
             } else if (numberPath == 2) {
-                angel.add(deltaTime * 35 * speedMove, 0);
+                angel.add(deltaTime * 35 * SpeedMonster.INSTANCE.getSpeed(), 0);
                 monster.setAngle(angel.x);
                 if (angel.x > 0) {
                     angel.x = 0;
@@ -128,17 +129,17 @@ public class Boss {
                     numberPath = 3;
                 }
             } else if (numberPath == 3) {
-                position.sub(deltaTime * speed * speedMove, 0);
+                position.sub(deltaTime * speed * SpeedMonster.INSTANCE.getSpeed(), 0);
                 if (position.x < 1372) numberPath = 0;
             }
             //endregion
         } else if (typeBoss == 2) {
             //region code
             if (numberPath == 1) {
-                position.sub(0, deltaTime * speed * speedMove);
+                position.sub(0, deltaTime * speed * SpeedMonster.INSTANCE.getSpeed());
                 if (position.y < 352) numberPath = 2;
             } else if (numberPath == 2) {
-                angel.sub(deltaTime * 20 * speedMove, 0);
+                angel.sub(deltaTime * 20 * SpeedMonster.INSTANCE.getSpeed(), 0);
                 monster.setAngle(angel.x);
                 if (angel.x < 0) {
                     angel.x = 0;
@@ -146,10 +147,10 @@ public class Boss {
                     numberPath = 3;
                 }
             } else if (numberPath == 3) {
-                position.sub(deltaTime * speed * speedMove, 0);
+                position.sub(deltaTime * speed * SpeedMonster.INSTANCE.getSpeed(), 0);
                 if (position.x < 1568) numberPath = 4;
             } else if (numberPath == 4) {
-                angel.add(deltaTime * 20 * speedMove, 0);
+                angel.add(deltaTime * 20 * SpeedMonster.INSTANCE.getSpeed(), 0);
                 monster.setAngle(angel.x);
                 if (angel.x > 90) {
                     angel.x = 90;
@@ -157,10 +158,10 @@ public class Boss {
                     numberPath = 5;
                 }
             } else if (numberPath == 5) {
-                position.sub(0, deltaTime * speed * speedMove);
+                position.sub(0, deltaTime * speed * SpeedMonster.INSTANCE.getSpeed());
                 if (position.y < 160) numberPath = 6;
             } else if (numberPath == 6) {
-                angel.sub(deltaTime * 20 * speedMove, 0);
+                angel.sub(deltaTime * 20 * SpeedMonster.INSTANCE.getSpeed(), 0);
                 monster.setAngle(angel.x);
                 if (angel.x < 0) {
                     angel.x = 0;
@@ -168,10 +169,10 @@ public class Boss {
                     numberPath = 7;
                 }
             } else if (numberPath == 7) {
-                position.sub(deltaTime * speed * speedMove, 0);
+                position.sub(deltaTime * speed * SpeedMonster.INSTANCE.getSpeed(), 0);
                 if (position.x < 160) numberPath = 8;
             } else if (numberPath == 8) {
-                angel.sub(deltaTime * 20 * speedMove, 0);
+                angel.sub(deltaTime * 20 * SpeedMonster.INSTANCE.getSpeed(), 0);
                 monster.setAngle(angel.x);
                 if (angel.x < -90) {
                     angel.x = -90;
@@ -179,10 +180,10 @@ public class Boss {
                     numberPath = 9;
                 }
             } else if (numberPath == 9) {
-                position.add(0, deltaTime * speed * speedMove);
+                position.add(0, deltaTime * speed * SpeedMonster.INSTANCE.getSpeed());
                 if (position.y > 608) numberPath = 10;
             } else if (numberPath == 10) {
-                angel.sub(deltaTime * 20 * speedMove, 0);
+                angel.sub(deltaTime * 20 * SpeedMonster.INSTANCE.getSpeed(), 0);
                 monster.setAngle(angel.x);
                 if (angel.x < -180) {
                     angel.x = -180;
@@ -190,14 +191,14 @@ public class Boss {
                     numberPath = 11;
                 }
             } else if (numberPath == 11) {
-                position.add(deltaTime * speed * speedMove, 0);
+                position.add(deltaTime * speed * SpeedMonster.INSTANCE.getSpeed(), 0);
                 if (position.x > 512) numberPath = 0;
             }
             //endregion
         } else if (typeBoss == 3) {
             //region code
             if (numberPath == 1) {
-                if (!isAbsorption) position.add(0, deltaTime * speed * speedMove);
+                if (!isAbsorption) position.add(0, deltaTime * speed * SpeedMonster.INSTANCE.getSpeed());
                 if (position.y > 480) numberPath = 2;
             } else if (numberPath == 2) {
                 scaleSize += deltaTime * 5;
@@ -218,11 +219,11 @@ public class Boss {
                     numberPath = 4;
                 }
             } else if (numberPath == 4) {
-                if (!isAbsorption) position.sub(deltaTime * speed * speedMove, 0);
+                if (!isAbsorption) position.sub(deltaTime * speed * SpeedMonster.INSTANCE.getSpeed(), 0);
                 if (position.x < 1504) numberPath = 5;
             } else if (numberPath == 5) {
                 if (!isAbsorption) {
-                    angel.add(deltaTime * 20 * speedMove, 0);
+                    angel.add(deltaTime * 20 * SpeedMonster.INSTANCE.getSpeed(), 0);
                     monster.setAngle(angel.x);
                 }
                 if (angel.x > 180) {
@@ -231,7 +232,7 @@ public class Boss {
                     numberPath = 6;
                 }
             } else if (numberPath == 6) {
-                if (!isAbsorption) position.sub(0, deltaTime * speed * speedMove);
+                if (!isAbsorption) position.sub(0, deltaTime * speed * SpeedMonster.INSTANCE.getSpeed());
                 if (position.y < 896) numberPath = 7;
             } else if (numberPath == 7) {
                 scaleSize += deltaTime * 5;
@@ -250,11 +251,11 @@ public class Boss {
                     numberPath = 9;
                 }
             } else if (numberPath == 9) {
-                if (!isAbsorption) position.add(0, deltaTime * speed * speedMove);
+                if (!isAbsorption) position.add(0, deltaTime * speed * SpeedMonster.INSTANCE.getSpeed());
                 if (position.y > 1088) numberPath = 10;
             } else if (numberPath == 10) {
                 if (!isAbsorption) {
-                    angel.sub(deltaTime * 20 * speedMove, 0);
+                    angel.sub(deltaTime * 20 * SpeedMonster.INSTANCE.getSpeed(), 0);
                     monster.setAngle(angel.x);
                 }
                 if (angel.x < -90) {
@@ -279,11 +280,11 @@ public class Boss {
                     numberPath = 13;
                 }
             } else if (numberPath == 13) {
-                if (!isAbsorption) position.sub(0, deltaTime * speed * speedMove);
+                if (!isAbsorption) position.sub(0, deltaTime * speed * SpeedMonster.INSTANCE.getSpeed());
                 if (position.y < 608) numberPath = 14;
             } else if (numberPath == 14) {
                 if (!isAbsorption) {
-                    angel.sub(deltaTime * 20 * speedMove, 0);
+                    angel.sub(deltaTime * 20 * SpeedMonster.INSTANCE.getSpeed(), 0);
                     monster.setAngle(angel.x);
                 }
                 if (angel.x < 90) {
@@ -292,7 +293,7 @@ public class Boss {
                     numberPath = 15;
                 }
             } else if (numberPath == 15) {
-                if (!isAbsorption) position.sub(deltaTime * speed * speedMove, 0);
+                if (!isAbsorption) position.sub(deltaTime * speed * SpeedMonster.INSTANCE.getSpeed(), 0);
                 if (position.x < 1344) numberPath = 16;
             } else if (numberPath == 16) {
                 scaleSize += deltaTime * 5;
@@ -311,11 +312,11 @@ public class Boss {
                     numberPath = 18;
                 }
             } else if (numberPath == 18) {
-                if (!isAbsorption) position.add(deltaTime * speed * speedMove, 0);
+                if (!isAbsorption) position.add(deltaTime * speed * SpeedMonster.INSTANCE.getSpeed(), 0);
                 if (position.x > 928) numberPath = 19;
             } else if (numberPath == 19) {
                 if (!isAbsorption) {
-                    angel.sub(deltaTime * 20 * speedMove, 0);
+                    angel.sub(deltaTime * 20 * SpeedMonster.INSTANCE.getSpeed(), 0);
                     monster.setAngle(angel.x);
                 }
                 if (angel.x < -180) {
@@ -324,7 +325,7 @@ public class Boss {
                     numberPath = 20;
                 }
             } else if (numberPath == 20) {
-                if (!isAbsorption) position.sub(0, deltaTime * speed * speedMove);
+                if (!isAbsorption) position.sub(0, deltaTime * speed * SpeedMonster.INSTANCE.getSpeed());
                 if (position.y > 928) numberPath = 21;
             } else if (numberPath == 21) {
                 scaleSize += deltaTime * 5;
@@ -347,10 +348,10 @@ public class Boss {
         } else if (typeBoss == 4) {
             //region code
             if (numberPath == 1) {
-                position.sub(0, deltaTime * speed * speedMove);
+                position.sub(0, deltaTime * speed * SpeedMonster.INSTANCE.getSpeed());
                 if (position.y < 160) numberPath = 2;
             } else if (numberPath == 2) {
-                angel.add(deltaTime * 20 * speedMove, 0);
+                angel.add(deltaTime * 20 * SpeedMonster.INSTANCE.getSpeed(), 0);
                 monster.setAngle(angel.x);
                 if (angel.x > 90) {
                     angel.x = 90;
@@ -358,10 +359,10 @@ public class Boss {
                     numberPath = 3;
                 }
             } else if (numberPath == 3) {
-                position.add(deltaTime * speed * speedMove, 0);
+                position.add(deltaTime * speed * SpeedMonster.INSTANCE.getSpeed(), 0);
                 if (position.x > 1568) numberPath = 4;
             } else if (numberPath == 4) {
-                angel.add(deltaTime * 20 * speedMove, 0);
+                angel.add(deltaTime * 20 * SpeedMonster.INSTANCE.getSpeed(), 0);
                 monster.setAngle(angel.x);
                 if (angel.x > 180) {
                     angel.x = 180;
@@ -369,10 +370,10 @@ public class Boss {
                     numberPath = 5;
                 }
             } else if (numberPath == 5) {
-                position.add(0, deltaTime * speed * speedMove);
+                position.add(0, deltaTime * speed * SpeedMonster.INSTANCE.getSpeed());
                 if (position.y > 928) numberPath = 6;
             } else if (numberPath == 6) {
-                angel.add(deltaTime * 20 * speedMove, 0);
+                angel.add(deltaTime * 20 * SpeedMonster.INSTANCE.getSpeed(), 0);
                 monster.setAngle(angel.x);
                 if (angel.x > 225) {
                     angel.x = 225;
@@ -380,10 +381,10 @@ public class Boss {
                     numberPath = 7;
                 }
             } else if (numberPath == 7) {
-                position.add(-deltaTime * speed * speedMove, deltaTime * speed * speedMove);
+                position.add(-deltaTime * speed * SpeedMonster.INSTANCE.getSpeed(), deltaTime * speed * SpeedMonster.INSTANCE.getSpeed());
                 if (position.y > 1120) numberPath = 8;
             } else if (numberPath == 8) {
-                angel.add(deltaTime * 20 * speedMove, 0);
+                angel.add(deltaTime * 20 * SpeedMonster.INSTANCE.getSpeed(), 0);
                 monster.setAngle(angel.x);
                 if (angel.x > 270) {
                     angel.x = 270;
@@ -391,10 +392,10 @@ public class Boss {
                     numberPath = 9;
                 }
             } else if (numberPath == 9) {
-                position.sub(deltaTime * speed * speedMove, 0);
+                position.sub(deltaTime * speed * SpeedMonster.INSTANCE.getSpeed(), 0);
                 if (position.x < 1056) numberPath = 10;
             } else if (numberPath == 10) {
-                angel.add(deltaTime * 20 * speedMove, 0);
+                angel.add(deltaTime * 20 * SpeedMonster.INSTANCE.getSpeed(), 0);
                 monster.setAngle(angel.x);
                 if (angel.x > 360) {
                     angel.x = 360;
@@ -402,18 +403,18 @@ public class Boss {
                     numberPath = 11;
                 }
             } else if (numberPath == 11) {
-                position.sub(0, deltaTime * speed * speedMove);
+                position.sub(0, deltaTime * speed * SpeedMonster.INSTANCE.getSpeed());
                 if (position.y < 896) numberPath = 0;
             }
             //endregion
         }
     }
 
-    public void update(float deltaTime, int speedMove) {
+    public void update(float deltaTime) {
         if (life > 0) {
             if (typeBoss == 1) {
                 //region code
-                getPosition(deltaTime, speedMove);
+                getPosition(deltaTime);
 
                 if (life <= 4000 && typeBody == 1) {
                     monster.setAnimation("run_2");
@@ -493,7 +494,7 @@ public class Boss {
                         time.setTimeReset();
                     }
                 }
-                getPosition(deltaTime, speedMove);
+                getPosition(deltaTime);
 
                 if (life <= 6500 && typeBody == 1) {
                     monster.setAnimation("run_2");
@@ -551,7 +552,7 @@ public class Boss {
                         time.setTimeReset();
                     }
                 }
-                getPosition(deltaTime, speedMove);
+                getPosition(deltaTime);
 
                 if (life > 12100 && life <= 15300 && monster.getAnimation().name.equals("run")) monster.setAnimation("run_2");
                 else if (life > 8900 && life <= 12100 && monster.getAnimation().name.equals("run_2")) monster.setAnimation("run_3");
@@ -576,7 +577,7 @@ public class Boss {
                         time.setTimeReset();
                     }
                 }
-                getPosition(deltaTime, speedMove);
+                getPosition(deltaTime);
 
                 if (life > 6000 && life <= 8500 && monster.getAnimation().name.equals("run")) monster.setAnimation("run_2");
                 else if (life > 3500 && life <= 6000 && monster.getAnimation().name.equals("run_2")) monster.setAnimation("run_3");
